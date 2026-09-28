@@ -21,3 +21,12 @@ There is no backend. The contact form and the "Selection Tray" (shortlist of des
 
 ## Hero banners
 `_build/banner.py` rebuilds the three banners in `Logo_Banner/Banner_1024 x 512.psd` at 2x from the PSD's embedded full-resolution sources: desktop 2:1 (`assets/hero/d0N.webp`), mobile 1:1 (`m0N.webp`) and 16:9 plates (`w0N.webp`). Headline text is set as live text (Playfair Display / Jost standing in for Bodoni BT / Futura BT) at the PSD's exact positions. Flattened exports in the content-doc sizes (960x540, 512x512, plus @2x) are in `Logo_Banner/Banner exports/`.
+
+## Hosting (GitHub Pages) & SEO
+Live: https://brillbrainstechteam.github.io/disha_platinum/ served from the `gh-pages` branch. Republish after changes with:
+
+    bash _build/deploy_pages.sh
+
+`main` holds the source; its committed HTML is built for the root of a custom domain (SITE = https://www.dishaaplatinum.com). To move to a custom domain: set `BASE=""` and `SITE` in `deploy_pages.sh`, add a `CNAME` file, and point DNS at GitHub Pages.
+
+SEO included: unique titles + meta descriptions, canonical URLs, Open Graph + Twitter cards with per-page images, JSON-LD (JewelryStore/Organization with address and phone, WebSite, BreadcrumbList), one h1 per page, image alt text, sitemap.xml with lastmod/priority, robots.txt, and a branded 404 page (noindex).

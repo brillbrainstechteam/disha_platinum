@@ -13,7 +13,12 @@ PHONE2, PHONE2_T = "+912268956666", "+91 22 6895 6666"
 EMAIL = "sales@dishaaplatinum.com"
 WA = "918169120942"
 ADDRESS = "F7 A&amp;B, 2nd Floor, 61, Chandra Darshan Building,<br>Next to Diamond Plaza, Dhanji Street,<br>Zaveri Bazaar, Mumbai 400 005"
-SITE = "https://www.dishaaplatinum.com"
+# Deploy config (env overrides). BASE is the URL path prefix (e.g. "/disha_platinum" on GitHub Pages,
+# "" on a custom domain). SITE is the public origin + BASE, used for canonical/OG/sitemap URLs.
+BASE = os.environ.get("DISHAA_BASE", "").rstrip("/")
+SITE = os.environ.get("DISHAA_SITE", "https://www.dishaaplatinum.com").rstrip("/")
+OUT = os.environ.get("DISHAA_OUT", "") or None
+LASTMOD = date.today().isoformat()
 
 # ------------------------------------------------------------------ collections
 COLS = [
@@ -92,7 +97,39 @@ HEX = """<div class="hex rv"><svg viewBox="0 0 220 246" aria-hidden="true"><path
 NAV = [("index.html", "Home"), ("about.html", "About"), ("collections.html", "Collections"),
        ("why-platinum.html", "Why Platinum"), ("partner.html", "Partner"), ("lookbook.html", "Lookbook"), ("contact.html", "Contact")]
 
-def head(title, desc, page):
+ORG_LD = {
+  "@context": "https://schema.org", "@type": ["JewelryStore", "Organization"],
+  "@id": "SITE_URL/#org", "name": "Dishaa Platinum", "alternateName": "Dishaa — The Platinum Hub",
+  "url": "SITE_URL/", "logo": "SITE_URL/assets/brand/dishaa-lockup.png", "image": "SITE_URL/assets/hero/d01.webp",
+  "description": "India’s preferred B2B platinum jewellery partner: PGI-certified collections, display, training and branding support for retail jewellers.",
+  "telephone": "+91-81691-20942", "email": "sales@dishaaplatinum.com", "priceRange": "B2B",
+  "address": {"@type": "PostalAddress", "streetAddress": "F7 A&B, 2nd Floor, 61, Chandra Darshan Building, Next to Diamond Plaza, Dhanji Street, Zaveri Bazaar",
+              "addressLocality": "Mumbai", "addressRegion": "Maharashtra", "postalCode": "400005", "addressCountry": "IN"},
+  "areaServed": "IN", "slogan": "Pure · Precious · Progressive",
+  "brand": [{"@type": "Brand", "name": n} for n in ["Men of Platinum", "Evara", "Platinum Days of Love", "Bandhan", "Farishtey", "Pride N Perfect"]],
+}
+CRUMB_NAMES = {"about": "About", "collections": "Collections", "why-platinum": "Why Platinum", "partner": "Partner With Us",
+               "lookbook": "Lookbook", "contact": "Contact"}
+
+def ld_json(obj):
+    return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False).replace("SITE_URL", SITE) + "</script>"
+
+def head(title, desc, page, img="assets/hero/d01.webp", crumbs=None):
+    url = f"{SITE}{page}"
+    ogimg = f"{SITE}/{img}"
+    lds = [ld_json(ORG_LD)]
+    if page == "/":
+        lds.append(ld_json({"@context": "https://schema.org", "@type": "WebSite", "name": "Dishaa Platinum", "url": "SITE_URL/",
+                            "inLanguage": "en-IN", "publisher": {"@id": "SITE_URL/#org"}}))
+    else:
+        parts = [p for p in page.strip("/").split("/") if p]
+        items = [{"@type": "ListItem", "position": 1, "name": "Home", "item": "SITE_URL/"}]
+        path = ""
+        for k, p in enumerate(parts):
+            path += f"/{p}"
+            name = (crumbs or {}).get(p) or CRUMB_NAMES.get(p) or next((c["name"] for c in COLS if c["slug"] == p), p.replace("-", " ").title())
+            items.append({"@type": "ListItem", "position": k + 2, "name": name, "item": f"SITE_URL{path}/"})
+        lds.append(ld_json({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": items}))
     return f"""<!doctype html>
 <html lang="en-IN">
 <head>
@@ -100,17 +137,31 @@ def head(title, desc, page):
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>{title}</title>
 <meta name="description" content="{E(desc)}">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Dishaa Platinum">
 <meta name="theme-color" content="#2e3490">
+<link rel="canonical" href="{url}">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Dishaa Platinum">
+<meta property="og:locale" content="en_IN">
+<meta property="og:url" content="{url}">
 <meta property="og:title" content="{E(title)}">
 <meta property="og:description" content="{E(desc)}">
-<meta property="og:image" content="{SITE}/assets/insta/c05.webp">
-<link rel="canonical" href="{SITE}{page}">
+<meta property="og:image" content="{ogimg}">
+<meta property="og:image:alt" content="Dishaa Platinum — platinum jewellery">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{E(title)}">
+<meta name="twitter:description" content="{E(desc)}">
+<meta name="twitter:image" content="{ogimg}">
 <link rel="icon" href="assets/brand/d-mark.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/brand/d-mark.png">
+<link rel="sitemap" type="application/xml" href="sitemap.xml">
+{'<link rel="preload" as="image" href="assets/hero/x01.webp" media="(min-width:761px)"><link rel="preload" as="image" href="assets/hero/m01.webp" media="(max-width:760px)">' if page == "/" else ""}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/site.css?v={VER}">
+{chr(10).join(lds)}
 </head>"""
 
 def header(active):
@@ -166,17 +217,23 @@ ROUTES.update({f'{c["slug"]}.html': f'/collections/{c["slug"]}/' for c in COLS})
 def route_links(html_text):
     """Rewrite internal links to clean folder URLs and assets to root-absolute paths."""
     def repl(m):
-        return f'href="{ROUTES[m.group(1)]}{m.group(2) or ""}"'
+        return f'href="{BASE}{ROUTES[m.group(1)]}{m.group(2) or ""}"'
     html_text = re.sub(r'href="([a-z0-9-]+\.html)([?#][^"]*)?"', repl, html_text)
-    html_text = html_text.replace('"assets/', '"/assets/').replace("'assets/", "'/assets/").replace("(assets/", "(/assets/")
+    html_text = html_text.replace('href="sitemap.xml"', f'href="{BASE}/sitemap.xml"')
+    html_text = html_text.replace('"assets/', f'"{BASE}/assets/').replace("'assets/", f"'{BASE}/assets/").replace("(assets/", f"({BASE}/assets/")
     return html_text
+
+OG_IMG = {"index.html": "assets/hero/d01.webp", "about.html": "assets/insta/c18.webp", "collections.html": "assets/insta/c05.webp",
+          "why-platinum.html": "assets/insta/c07.webp", "partner.html": "assets/insta/c10.webp", "lookbook.html": "assets/lookbook/ph10.webp",
+          "contact.html": "assets/insta/c11.webp", "accessories.html": "assets/props/sha00153.webp", "d-the-platinum.html": "assets/dthe/dthe-5.webp"}
 
 def page(fname, title, desc, body, active=None):
     route = ROUTES[fname]
     hero = "light"  # header is always the solid light bar (readable over dark page heroes)
-    out = head(title, desc, route) + f'\n<body data-hero="{hero}">\n' + header(active or fname) + "\n<main>" + body + "</main>\n" + shells() + footer()
+    img = OG_IMG.get(fname) or next((c["hero"] or c["photo"] for c in COLS if f'{c["slug"]}.html' == fname), "assets/hero/d01.webp")
+    out = head(title, desc, route, img) + f'\n<body data-hero="{hero}">\n' + header(active or fname) + "\n<main>" + body + "</main>\n" + shells() + footer()
     out = route_links(out)
-    d = os.path.join(ROOT, route.strip("/").replace("/", os.sep))
+    d = os.path.join(OUT or ROOT, route.strip("/").replace("/", os.sep))
     os.makedirs(d, exist_ok=True)
     with open(os.path.join(d, "index.html"), "w", encoding="utf-8") as f:
         f.write(out)
@@ -368,7 +425,7 @@ def home():
     support = [("pgi", "PGI partner plan"), ("training", "Staff training"), ("branding", "360° branding"), ("display", "Display &amp; counters"), ("fast", "Ready stock"), ("buyback", "Best buyback")]
     ch = "".join(f'<div class="chipc rv d{k%4}">{icon(i)}<span>{t}</span></div>' for k, (i, t) in enumerate(support))
     compass_ticks = "".join(f'<line x1="100" y1="6" x2="100" y2="{16 if k%2==0 else 11}" stroke="rgba(255,255,255,.6)" transform="rotate({k*22.5} 100 100)"/>' for k in range(16))
-    body = hero + f"""
+    body = '<h1 class="sr">Dishaa Platinum — India’s most trusted platinum jewellery wholesaler for retail jewellers</h1>' + hero + f"""
 {words(["Couple Bands", "Chains", "Kadas", "Bracelets", "Pendants", "Mangalsutras", "Earrings", "Cufflinks", "Watch Straps"])}
 <section class="sec-sm mistbg"><div class="wrap">
 <div class="center" style="margin-bottom:40px"><span class="kick">One brand · six collections</span><h2 class="h2 rv" style="margin-top:14px">The best <em>selection.</em></h2></div>
@@ -786,9 +843,19 @@ def contact():
     page("contact.html", "Contact Dishaa Platinum — Zaveri Bazaar, Mumbai", "Visit Dishaa Platinum at Chandra Darshan Building, Dhanji Street, Zaveri Bazaar, Mumbai. Call +91 81691 20942 or email sales@dishaaplatinum.com.", body)
 
 def extras():
-    sm = "".join(f"<url><loc>{SITE}{r}</loc></url>" for r in ROUTES.values())
-    open(os.path.join(ROOT, "sitemap.xml"), "w").write(f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{sm}</urlset>')
-    open(os.path.join(ROOT, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\nSitemap: {SITE}/sitemap.xml\n")
+    out = OUT or ROOT
+    pri = lambda r: "1.0" if r == "/" else ("0.9" if r.count("/") == 2 else "0.8")
+    sm = "".join(f"<url><loc>{SITE}{r}</loc><lastmod>{LASTMOD}</lastmod><changefreq>monthly</changefreq><priority>{pri(r)}</priority></url>" for r in ROUTES.values())
+    open(os.path.join(out, "sitemap.xml"), "w").write(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{sm}</urlset>\n')
+    open(os.path.join(out, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
+    # branded 404 (GitHub Pages / most hosts serve /404.html)
+    body = f"""<section class="phero mistbg" style="min-height:70vh;display:flex;align-items:center"><div class="wrap center">
+<span class="kick">Error 404</span><h1 class="h1" style="margin:18px auto 14px">This piece isn’t <em>in our vault.</em></h1>
+<p class="sub">The page you’re looking for has moved or doesn’t exist.</p>
+<div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px"><a class="btn btn-royal" href="index.html">Back to home {ARROW}</a><a class="btn btn-line" href="collections.html">Browse collections</a></div></div></section>"""
+    html404 = head("Page not found | Dishaa Platinum", "The page you are looking for could not be found.", "/404.html").replace('content="index, follow, max-image-preview:large"', 'content="noindex, follow"')
+    html404 += '\n<body data-hero="light">\n' + header("") + "\n<main>" + body + "</main>\n" + shells() + footer()
+    open(os.path.join(out, "404.html"), "w", encoding="utf-8").write(route_links(html404))
     # remove the old flat *.html pages (now served from folders)
     for f in ROUTES:
         fp = os.path.join(ROOT, f)
@@ -814,4 +881,5 @@ body{{margin:0;background:#fff}} .ex{{position:relative;container-type:inline-si
 </style></head><body>{items}</body></html>"""
     open(os.path.join(ROOT, "_build", "export.html"), "w", encoding="utf-8").write(html_)
 
-export_page()
+if not OUT:
+    export_page()
