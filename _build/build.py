@@ -475,7 +475,7 @@ def home():
 <span class="pin n" style="left:43.2%;top:38.4%"><i></i><em>North</em></span>
 <span class="pin e" style="left:57.5%;top:52%"><i></i><em>East</em></span>
 <span class="pin s" style="left:43.6%;top:71%"><i></i><em>South</em></span>
-<span class="pin w hq" style="left:37%;top:58.4%"><i></i><em>Mumbai · The Platinum Hub</em></span>
+<span class="pin w hq" style="left:37%;top:58.4%"><i></i><em>Mumbai<span class="lgx"> · The Platinum Hub</span></em></span>
 </div>
 <div class="hexmini">{HEX}</div></div></section>
 

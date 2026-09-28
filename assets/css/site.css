@@ -842,3 +842,39 @@ a,button,[data-i]{cursor:pointer}
 .g-link:hover{background-size:40% 1px}
 @media (max-width:760px){.live,.bnr .slide.is-live .sparkle{display:none}}
 @media (max-width:1200px){.glass01{width:44cqw;right:2cqw;bottom:2cqw;padding:1.6cqw 2cqw}.g-meta{display:none}.bnr .s01 .tx.d{translate:none}}
+
+/* ================= mobile responsiveness fixes ================= */
+@media (max-width:900px){
+  .split[style*="grid-template-columns"]{grid-template-columns:1fr!important}
+  .chips[style*="grid-template-columns"]{grid-template-columns:repeat(2,1fr)!important}
+}
+@media (max-width:640px){
+  html,body{overflow-x:clip}
+  .form{padding:24px 18px;border-radius:24px 24px 70px 24px}
+  .dirs{gap:8px}
+  .dirs .dir{grid-template-columns:32px 1fr;column-gap:10px;padding:14px 12px;min-width:0}
+  .dirs .arr{width:32px;height:32px}
+  .dirs small{font-size:9px;letter-spacing:.16em}
+  .dirs b{font-size:24px}
+  .reach-copy,.reach-copy *{min-width:0;overflow-wrap:anywhere}
+  .chipc{padding:18px 8px;font-size:13px;min-width:0}
+  .cinfo .card a{word-break:break-word}
+
+  /* compact footer */
+  .ftr{padding:44px 0 22px;font-size:14px}
+  .ftr-top{grid-template-columns:1fr 1fr;gap:26px 18px;padding-bottom:28px}
+  .ftr-top>div:first-child{grid-column:1/-1;display:flex;align-items:center;gap:18px;padding-bottom:22px;border-bottom:1px solid var(--line-dk)}
+  .ftr .flogo{height:84px}
+  .ftr-top>div:first-child .hinglish{margin:0!important;font-size:21px!important}
+  .ftr-top>div:last-child{grid-column:1/-1;padding-top:22px;border-top:1px solid var(--line-dk)}
+  .ftr h4{margin-bottom:12px;font-size:10.5px}
+  .ftr ul{gap:7px}
+  .ftr li a{display:inline-block;padding:3px 0}
+  .ftr address{font-size:13.5px}
+  .ftr-bot{flex-direction:column;gap:6px;font-size:11.5px;text-align:center;align-items:center}
+}
+.reach-map{aspect-ratio:1460/1000}
+.reach-map>img{height:100%;object-fit:cover}
+@media (max-width:640px){.pin em{font-size:8.5px;padding:4px 7px;letter-spacing:.12em}.pin.hq em{max-width:none}.hexmini{width:130px}}
+@media (max-width:640px){.pin.w{translate:-6px -50%}.pin.w em{order:0}}
+@media (max-width:640px){.pin .lgx{display:none}.pin.w{translate:-50% calc(-100% - 8px);flex-direction:column-reverse;gap:4px}}
