@@ -798,3 +798,47 @@ a,button,[data-i]{cursor:pointer}
 .bento-tiles .tile:not(.big):not(.wide) h3{font-size:clamp(24px,2vw,30px);max-width:52%}
 .bento-tiles .tile:not(.big):not(.wide) small{max-width:52%;line-height:1.6}
 .bento-tiles .tile:not(.big):not(.wide) img,.bento-tiles .tile:nth-child(5) img{height:52%;max-width:40%;right:7%;bottom:12%}
+
+
+/* ================= Banner 1 — live layers + liquid-glass copy ================= */
+.bnr .slide .sparkle{z-index:2}
+.live{position:absolute;inset:0;pointer-events:none}
+.pc{position:absolute;display:block;opacity:0;transition:opacity 1.1s var(--ease),translate 1.3s var(--ease)}
+.pc img{width:100%;height:100%;display:block;filter:drop-shadow(0 1.4cqw 1.2cqw rgba(34,40,110,.18))}
+/* glint: a light sweep clipped to each piece's own silhouette */
+.pc::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 42%,rgba(255,255,255,.85) 50%,transparent 58%) 0 0/300% 100% no-repeat;
+  -webkit-mask:var(--m) center/100% 100% no-repeat;mask:var(--m) center/100% 100% no-repeat;animation:glint 6s ease-in-out infinite;mix-blend-mode:screen}
+@keyframes glint{0%,55%{background-position:120% 0}85%,100%{background-position:-60% 0}}
+.pc-ring1{translate:-2cqw 2cqw}.pc-ring2{translate:2cqw 2cqw}.pc-pendant{translate:0 -3cqw;transform-origin:50% 0}
+.slide.on .pc{opacity:1;translate:0 0}
+.slide.on .pc-ring2{transition-delay:.15s}.slide.on .pc-pendant{transition-delay:.3s}
+.slide.on .pc-ring1 img{animation:bob 6s ease-in-out 1.2s infinite}
+.slide.on .pc-ring2 img{animation:bob 6s ease-in-out -1.8s infinite}
+.slide.on .pc-pendant{animation:swing 7s ease-in-out 1.4s infinite}
+.pc-ring2::after{animation-delay:1.2s}.pc-pendant::after{animation-delay:2.4s}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-.9cqw) rotate(-1.2deg)}}
+@keyframes swing{0%,100%{rotate:-1.6deg}50%{rotate:1.6deg}}
+
+.glass01{position:absolute;right:3.906cqw;bottom:3.4cqw;width:37cqw;padding:1.9cqw 2.3cqw 2cqw;pointer-events:auto;
+  background:linear-gradient(135deg,rgba(255,255,255,.62),rgba(255,255,255,.28));border:1px solid rgba(255,255,255,.75);
+  border-radius:1.6cqw 1.6cqw 6cqw 1.6cqw;backdrop-filter:blur(14px) saturate(1.4);-webkit-backdrop-filter:blur(14px) saturate(1.4);
+  box-shadow:0 2cqw 4cqw -2cqw rgba(34,40,110,.35),inset 0 1px 0 rgba(255,255,255,.9);color:#2d3371;
+  opacity:0;translate:0 1.2cqw;transition:opacity 1s var(--ease) .35s,translate 1s var(--ease) .35s}
+.slide.on .glass01{opacity:1;translate:0 0}
+.g-kick{display:inline-flex;align-items:center;gap:.7cqw;font:500 max(9px,.78cqw)/1 var(--sans);letter-spacing:.28em;text-transform:uppercase;color:var(--violet)}
+.g-kick::before{content:"";width:.6cqw;height:.6cqw;min-width:6px;min-height:6px;background:linear-gradient(135deg,#6fb8e4,#e889b8);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
+.g-1{margin:.9cqw 0 .2cqw;font:300 max(13px,1.55cqw)/1.15 "Jost",sans-serif;letter-spacing:-.02em}
+.g-2{margin:0;font:500 max(22px,2.85cqw)/1.02 var(--serif);letter-spacing:-.005em}
+.g-2 em{display:block;font-style:italic;color:var(--royal-2)}
+.g-meta{display:flex;flex-wrap:wrap;gap:.5cqw 1.3cqw;margin:1cqw 0 1.2cqw;font:500 max(9px,.8cqw)/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.g-meta span{display:inline-flex;align-items:center;gap:.5cqw}
+.g-meta span+span::before{content:"";width:4px;height:4px;border-radius:50%;background:var(--rose)}
+.g-ctas{display:flex;align-items:center;gap:1.6cqw;flex-wrap:wrap}
+.g-btn{display:inline-flex;align-items:center;gap:.7cqw;padding:max(10px,.95cqw) max(16px,1.7cqw);border-radius:99px;background:var(--royal);color:#fff;
+  font:500 max(10.5px,.88cqw)/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;box-shadow:0 1cqw 2cqw -1cqw rgba(46,52,144,.7);transition:background .3s,transform .3s}
+.g-btn:hover{background:var(--violet);transform:translateY(-2px)}
+.g-link{font:500 max(10.5px,.88cqw)/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--royal);padding-bottom:4px;
+  background:linear-gradient(currentColor,currentColor) 0 100%/100% 1px no-repeat;transition:background-size .4s var(--ease)}
+.g-link:hover{background-size:40% 1px}
+@media (max-width:760px){.live,.bnr .slide.is-live .sparkle{display:none}}
+@media (max-width:1200px){.glass01{width:44cqw;right:2cqw;bottom:2cqw;padding:1.6cqw 2cqw}.g-meta{display:none}.bnr .s01 .tx.d{translate:none}}

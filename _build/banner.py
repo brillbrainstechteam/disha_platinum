@@ -183,7 +183,7 @@ PRODUCTS = {
 from PIL import ImageFilter
 STRETCH = {("03", False)}  # (banner, left?) sides that continue straight instead of mirroring
 
-def wide_plate(group, n, banner_img, side=512):
+def wide_plate(group, n, banner_img, side=512, keep=None):
     """4:1 edge-to-edge plate. The product-free background is extended (mirrored, or stretched where
     a shape runs off the edge) and blurred as ONE continuous image, so there is no seam; the blur
     starts ~90 units inside the banner and deepens outwards. Products/logos are composited back sharp."""
@@ -214,11 +214,30 @@ def wide_plate(group, n, banner_img, side=512):
     out = sharp * (1 - ws - wh) + soft * ws + heavy * wh
     plate = Image.fromarray(np.clip(out, 0, 255).astype(np.uint8), "RGB").convert("RGBA")
     # products & logos back on top, crisp
-    keep = set(PRODUCTS[n]) - ({"Dishaa Platinum Hub", "Shape 1"} if n == "01" else set())
+    if keep is None:
+        keep = set(PRODUCTS[n]) - ({"Dishaa Platinum Hub", "Shape 1"} if n == "01" else set())
     others = [l.name for l in group if l.name not in keep]
     prod = render(group, View(skip=others), fill=None)
     plate.alpha_composite(prod, (sp, 0))
     return plate.convert("RGB")
+
+LIVE = {"01": {"ring1": "PGDRN1595 -F (1)", "ring2": "PDRN1627 (1)", "pendant": "PPPS1169"}}
+LIVE_STATIC = {"01": {"Pt black logo", "Untitled-2 copy 2", "Untitled-2 copy 6"}}  # stays in the plate (logo + ring shadows)
+
+def live_parts(group, n):
+    """Background plate without the animated pieces + each piece as a transparent cut-out with its box."""
+    import json
+    plate = wide_plate(group, n, None, keep=LIVE_STATIC[n])
+    save(plate, f"x{n}bg", q=84)
+    boxes = {}
+    names = [l.name for l in group]
+    for key, lname in LIVE[n].items():
+        im = render(group, View(skip=[x for x in names if x != lname]), fill=None)
+        bb = im.split()[3].getbbox()
+        im.crop(bb).save(f"{OUT}/{n}-{key}.webp", "WEBP", quality=90, method=6)
+        boxes[key] = [round(v / S, 2) for v in bb]
+        print(key, boxes[key])
+    json.dump(boxes, open(f"{OUT}/live{n}.json", "w"))
 
 def save(img, name, q=86):
     img.convert("RGB").save(f"{OUT}/{name}.webp", "WEBP", quality=q, method=6)

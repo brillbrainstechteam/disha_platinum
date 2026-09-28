@@ -156,7 +156,7 @@ def head(title, desc, page, img="assets/hero/d01.webp", crumbs=None):
 <link rel="icon" href="assets/brand/d-mark.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/brand/d-mark.png">
 <link rel="sitemap" type="application/xml" href="sitemap.xml">
-{'<link rel="preload" as="image" href="assets/hero/x01.webp" media="(min-width:761px)"><link rel="preload" as="image" href="assets/hero/m01.webp" media="(max-width:760px)">' if page == "/" else ""}
+{'<link rel="preload" as="image" href="assets/hero/x01bg.webp" media="(min-width:761px)"><link rel="preload" as="image" href="assets/hero/m01.webp" media="(max-width:760px)">' if page == "/" else ""}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -322,6 +322,26 @@ def banner_logos(box, W):
     u = 100 / W; x0, y0, x1, y1 = box; cw, ch = (x1 - x0) / 2, (y1 - y0) / 3
     return "".join(f'<a class="hot" href="{s}.html" aria-label="{COLMAP[s]["name"]}" style="left:{(x0 + (k % 2) * cw) * u:.3f}cqw;top:{(y0 + (k // 2) * ch) * u:.3f}cqw;width:{cw * u:.3f}cqw;height:{ch * u:.3f}cqw"></a>' for k, s in enumerate(LOGO_ORDER))
 
+def live_layers(n):
+    """Animated product cut-outs placed at their exact PSD positions (art units -> cqw)."""
+    p = os.path.join(ROOT, "assets", "hero", f"live{n}.json")
+    if not os.path.exists(p):
+        return ""
+    boxes = json.load(open(p)); u = 100 / 1024; out = ""
+    for key, (x0, y0, x1, y1) in boxes.items():
+        img = f"assets/hero/{n}-{key}.webp"
+        out += (f'<span class="pc pc-{key}" style="left:{x0*u:.3f}cqw;top:{y0*u:.3f}cqw;width:{(x1-x0)*u:.3f}cqw;'
+                f'height:{(y1-y0)*u:.3f}cqw;--m:url({img})"><img src="{img}" alt="" fetchpriority="high"></span>')
+    return f'<div class="live" aria-hidden="true">{out}</div>'
+
+GLASS01 = f"""<div class="glass01">
+<span class="g-kick">Dishaa · The Platinum Hub</span>
+<p class="g-1">Empowering Retailers with</p>
+<p class="g-2">India’s Most Trusted <em>Platinum Collections</em></p>
+<p class="g-meta"><span>PGI certified</span><span>1000+ jewellers</span><span>25+ years</span></p>
+<div class="g-ctas"><a class="g-btn" href="collections.html">Explore collections {ARROW}</a><a class="g-link" href="partner.html">Become a partner</a></div>
+</div>"""
+
 def hero_banners():
     slides = ""
     for i, b in enumerate(BANNERS):
@@ -333,9 +353,13 @@ def hero_banners():
         logos = ""
         if "logos_d" in b:
             logos = f'<div class="tx d">{banner_logos(b["logos_d"], 1024)}</div><div class="tx m">{banner_logos(b["logos_m"], 512)}</div>'
-        slides += f"""<div class="slide s{n}{' on' if i == 0 else ''}">
-<a class="blink" href="{b['href']}" aria-label="{E(b['alt'])}"><picture><source media="(max-width:760px)" srcset="assets/hero/m{n}.webp"><img class="plate" src="assets/hero/x{n}.webp" alt="{E(b['alt'])}" {'fetchpriority="high"' if i == 0 else 'loading="lazy"'}></picture></a>
-<div class="art"><div class="tx d" aria-hidden="true">{banner_lines(b['d'], 1024)}{cta}</div>
+        live = live_layers(n) if n == "01" else ""
+        plate = f"x{n}bg" if live else f"x{n}"
+        dcopy = GLASS01 if n == "01" else f"{banner_lines(b['d'], 1024)}{cta}"
+        slides += f"""<div class="slide s{n}{' on' if i == 0 else ''}{' is-live' if live else ''}">
+<a class="blink" href="{b['href']}" aria-label="{E(b['alt'])}"><picture><source media="(max-width:760px)" srcset="assets/hero/m{n}.webp"><img class="plate" src="assets/hero/{plate}.webp" alt="{E(b['alt'])}" {'fetchpriority="high"' if i == 0 else 'loading="lazy"'}></picture></a>
+{sparkle(30) if live else ""}
+<div class="art">{live}<div class="tx d">{dcopy}</div>
 <div class="tx m" aria-hidden="true">{banner_lines(b['m'], 512)}</div>{logos}</div>
 </div>"""
     return f"""<section class="bnr" aria-label="Featured">
