@@ -7,10 +7,12 @@ REPO="https://github.com/brillbrainstechteam/disha_platinum.git"
 BASE="/disha_platinum"
 SITE="https://brillbrainstechteam.github.io/disha_platinum"
 TMP="$(mktemp -d)"
+WTMP="$(cygpath -m "$TMP" 2>/dev/null || echo "$TMP")"   # Windows Python needs a native path
 cp -r assets "$TMP/"
 rm -f "$TMP"/assets/css/*.bak
 touch "$TMP/.nojekyll"
-MSYS_NO_PATHCONV=1 MSYS2_ARG_CONV_EXCL="*" DISHAA_BASE="$BASE" DISHAA_SITE="$SITE" DISHAA_OUT="$TMP" python _build/build.py >/dev/null
+MSYS_NO_PATHCONV=1 MSYS2_ARG_CONV_EXCL="*" DISHAA_BASE="$BASE" DISHAA_SITE="$SITE" DISHAA_OUT="$WTMP" python _build/build.py >/dev/null
+test -f "$TMP/index.html" && test -f "$TMP/about/index.html" || { echo "Build output missing — aborting deploy"; exit 1; }
 cd "$TMP"
 git init -q -b gh-pages
 git add -A
