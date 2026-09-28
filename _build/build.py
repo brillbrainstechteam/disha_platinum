@@ -173,7 +173,7 @@ def route_links(html_text):
 
 def page(fname, title, desc, body, active=None):
     route = ROUTES[fname]
-    hero = "light" if fname == "index.html" else "dark"
+    hero = "light"  # header is always the solid light bar (readable over dark page heroes)
     out = head(title, desc, route) + f'\n<body data-hero="{hero}">\n' + header(active or fname) + "\n<main>" + body + "</main>\n" + shells() + footer()
     out = route_links(out)
     d = os.path.join(ROOT, route.strip("/").replace("/", os.sep))
