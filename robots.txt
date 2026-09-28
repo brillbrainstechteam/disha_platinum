@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.dishaaplatinum.com/sitemap.xml

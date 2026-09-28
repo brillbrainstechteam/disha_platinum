@@ -1,0 +1,3680 @@
+{
+ "men-of-platinum": [
+  {
+   "code": "EPGP1001",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-epgp1001-1.webp",
+    "assets/p/men-of-platinum/mop-ch-epgp1001-2.webp",
+    "assets/p/men-of-platinum/mop-ch-epgp1001-3.webp",
+    "assets/p/men-of-platinum/mop-ch-epgp1001-4.webp"
+   ]
+  },
+  {
+   "code": "GCC22371TP",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-gcc22371tp.webp"
+   ]
+  },
+  {
+   "code": "GCC22463TP",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-gcc22463tp.webp"
+   ]
+  },
+  {
+   "code": "GCC22470TP",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-gcc22470tp.webp"
+   ]
+  },
+  {
+   "code": "GCC22518TP",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-gcc22518tp.webp"
+   ]
+  },
+  {
+   "code": "GCC22637TP",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-gcc22637tp.webp"
+   ]
+  },
+  {
+   "code": "GCC22670TP",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-gcc22670tp.webp"
+   ]
+  },
+  {
+   "code": "GCC22671TP",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-gcc22671tp.webp"
+   ]
+  },
+  {
+   "code": "GCC22705TP",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-gcc22705tp.webp"
+   ]
+  },
+  {
+   "code": "GCC22794DTP",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-gcc22794dtp.webp"
+   ]
+  },
+  {
+   "code": "GCSC22263P",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-gcsc22263p.webp"
+   ]
+  },
+  {
+   "code": "GCSC22264TP",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-gcsc22264tp.webp"
+   ]
+  },
+  {
+   "code": "GCSC22373TP",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-gcsc22373tp-copy.webp"
+   ]
+  },
+  {
+   "code": "PGPNC1165",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-pgpnc1165-1.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1165-2.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1165-3.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1165-4.webp"
+   ]
+  },
+  {
+   "code": "PGPNC1167",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-pgpnc1167-1.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1167-2.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1167-3.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1167-4.webp"
+   ]
+  },
+  {
+   "code": "PGPNC1168",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-pgpnc1168-1.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1168-2.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1168-3.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1168-4.webp"
+   ]
+  },
+  {
+   "code": "PGPNC1171",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-pgpnc1171-1.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1171-2.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1171-3.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1171-4.webp"
+   ]
+  },
+  {
+   "code": "PGPNC1172",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-pgpnc1172-1.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1172-2.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1172-3.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1172-4.webp"
+   ]
+  },
+  {
+   "code": "PGPNC1180",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-pgpnc1180-1.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1180-2.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1180-3.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1180-4.webp"
+   ]
+  },
+  {
+   "code": "PGPNC1191",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-pgpnc1191-1.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1191-2.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1191-3.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1191-4.webp"
+   ]
+  },
+  {
+   "code": "PGPNC1199",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-pgpnc1199-1.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1199-2.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1199-3.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1199-4.webp"
+   ]
+  },
+  {
+   "code": "PGPNC1203",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-pgpnc1203-1.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1203-2.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1203-3.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1203-4.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1203-5.webp"
+   ]
+  },
+  {
+   "code": "PGPNC1204",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-pgpnc1204-1.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1204-2.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1204-3.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1204-4.webp"
+   ]
+  },
+  {
+   "code": "PGPNC1212",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-pgpnc1212-1.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1212-2.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1212-3.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1212-4.webp"
+   ]
+  },
+  {
+   "code": "PGPNC1220",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-pgpnc1220-1.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1220-2.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1220-3.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1220-4.webp"
+   ]
+  },
+  {
+   "code": "PGPNC1236",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-pgpnc1236-1.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1236-2.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1236-3.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1236-4.webp"
+   ]
+  },
+  {
+   "code": "PGPNC1263",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-pgpnc1263-1.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1263-2.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1263-3.webp",
+    "assets/p/men-of-platinum/mop-ch-pgpnc1263-4.webp"
+   ]
+  },
+  {
+   "code": "MOP-CH-01",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-photo-2020-09-11-14-32-01.webp"
+   ]
+  },
+  {
+   "code": "PPC00004",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-ppc00004-1-platinum-small-version-copy.webp"
+   ]
+  },
+  {
+   "code": "PPC00008",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-ppc00008-platinum-copy.webp"
+   ]
+  },
+  {
+   "code": "PPC00038",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-ppc00038-f-copy.webp"
+   ]
+  },
+  {
+   "code": "PPC00041",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-ppc00041-f-copy.webp"
+   ]
+  },
+  {
+   "code": "PPC00044",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-ppc00044-f-copy.webp"
+   ]
+  },
+  {
+   "code": "PPC00046",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-ppc00046-f-copy-1.webp",
+    "assets/p/men-of-platinum/mop-ch-ppc00046-f-copy.webp"
+   ]
+  },
+  {
+   "code": "PPC00052",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-ppc00052-f-copy.webp"
+   ]
+  },
+  {
+   "code": "PPC00055",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-ppc00055-f-copy.webp"
+   ]
+  },
+  {
+   "code": "MOP-CH-02",
+   "cat": "Chains",
+   "views": [
+    "assets/p/men-of-platinum/mop-ch-chain.webp"
+   ]
+  },
+  {
+   "code": "GBR22253TP",
+   "cat": "Bracelets",
+   "views": [
+    "assets/p/men-of-platinum/mop-br-gbr22253tp-copy.webp"
+   ]
+  },
+  {
+   "code": "GBR2232TP",
+   "cat": "Bracelets",
+   "views": [
+    "assets/p/men-of-platinum/mop-br-gbr2232tp-copy.webp"
+   ]
+  },
+  {
+   "code": "GBR2235DTP",
+   "cat": "Bracelets",
+   "views": [
+    "assets/p/men-of-platinum/mop-br-gbr2235dtp-copy.webp"
+   ]
+  },
+  {
+   "code": "GBR22470DTP",
+   "cat": "Bracelets",
+   "views": [
+    "assets/p/men-of-platinum/mop-br-gbr22470dtp-copy.webp"
+   ]
+  },
+  {
+   "code": "GBR22616TP",
+   "cat": "Bracelets",
+   "views": [
+    "assets/p/men-of-platinum/mop-br-gbr22616tp-copy.webp"
+   ]
+  },
+  {
+   "code": "GBR22620TP",
+   "cat": "Bracelets",
+   "views": [
+    "assets/p/men-of-platinum/mop-br-gbr22620tp-copy.webp"
+   ]
+  },
+  {
+   "code": "GBR22671DTP",
+   "cat": "Bracelets",
+   "views": [
+    "assets/p/men-of-platinum/mop-br-gbr22671dtp-copy.webp"
+   ]
+  },
+  {
+   "code": "GBR22685DTP",
+   "cat": "Bracelets",
+   "views": [
+    "assets/p/men-of-platinum/mop-br-gbr22685dtp-copy.webp"
+   ]
+  },
+  {
+   "code": "GCSBR22264TP",
+   "cat": "Bracelets",
+   "views": [
+    "assets/p/men-of-platinum/mop-br-gcsbr22264tp-copy.webp"
+   ]
+  },
+  {
+   "code": "GCSBR22373TP",
+   "cat": "Bracelets",
+   "views": [
+    "assets/p/men-of-platinum/mop-br-gcsbr22373tp-copy.webp"
+   ]
+  },
+  {
+   "code": "GCK2220TP",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/men-of-platinum/mop-kd-gck2220tp.webp"
+   ]
+  },
+  {
+   "code": "GCK2228TP",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/men-of-platinum/mop-kd-gck2228tp-copy.webp"
+   ]
+  },
+  {
+   "code": "GOK2203TP",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/men-of-platinum/mop-kd-gok2203tp-copy.webp"
+   ]
+  },
+  {
+   "code": "GRK22369TP",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/men-of-platinum/mop-kd-grk22369tp.webp"
+   ]
+  },
+  {
+   "code": "GRK22700TP",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/men-of-platinum/mop-kd-grk22700tp.webp"
+   ]
+  },
+  {
+   "code": "PPK00004",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/men-of-platinum/mop-kd-ppk00004-copy.webp"
+   ]
+  },
+  {
+   "code": "PPK00017",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/men-of-platinum/mop-kd-ppk00017-f-copy.webp"
+   ]
+  },
+  {
+   "code": "PPK00017-F",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/men-of-platinum/mop-kd-ppk00017-f.webp"
+   ]
+  },
+  {
+   "code": "PPK00020",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/men-of-platinum/mop-kd-ppk00020.webp"
+   ]
+  },
+  {
+   "code": "PPK00030",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/men-of-platinum/mop-kd-ppk00030-f-copy.webp"
+   ]
+  },
+  {
+   "code": "PPK00034",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/men-of-platinum/mop-kd-ppk00034-f-copy.webp"
+   ]
+  },
+  {
+   "code": "PPK00036",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/men-of-platinum/mop-kd-ppk00036-f-copy.webp"
+   ]
+  },
+  {
+   "code": "PPK00060-P-ROSE",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/men-of-platinum/mop-kd-ppk00060-p-rose-copy.webp"
+   ]
+  },
+  {
+   "code": "PPK00060-P",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/men-of-platinum/mop-kd-ppk00060-p.webp"
+   ]
+  },
+  {
+   "code": "PPK00090-ROSE",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/men-of-platinum/mop-kd-ppk00090-rose-copy.webp"
+   ]
+  },
+  {
+   "code": "PPK00092-ROSE",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/men-of-platinum/mop-kd-ppk00092-rose-copy.webp"
+   ]
+  },
+  {
+   "code": "PPK00095-ROSE",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/men-of-platinum/mop-kd-ppk00095-rose-copy.webp"
+   ]
+  },
+  {
+   "code": "PPK00099",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/men-of-platinum/mop-kd-ppk00099-copy.webp"
+   ]
+  },
+  {
+   "code": "PPK00101",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/men-of-platinum/mop-kd-ppk00101-copy.webp"
+   ]
+  },
+  {
+   "code": "PPK00127",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/men-of-platinum/mop-kd-ppk00127-copy.webp"
+   ]
+  },
+  {
+   "code": "MOP-KD-01",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/men-of-platinum/mop-kd-kada-2.webp"
+   ]
+  },
+  {
+   "code": "MOP-KD-02",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/men-of-platinum/mop-kd-kada.webp"
+   ]
+  },
+  {
+   "code": "GR22113TP",
+   "cat": "Rings",
+   "views": [
+    "assets/p/men-of-platinum/mop-rg-gr22113tp-copy.webp"
+   ]
+  },
+  {
+   "code": "GR22115TP",
+   "cat": "Rings",
+   "views": [
+    "assets/p/men-of-platinum/mop-rg-gr22115tp-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR00099",
+   "cat": "Rings",
+   "views": [
+    "assets/p/men-of-platinum/mop-sr-ppr00099.webp"
+   ]
+  },
+  {
+   "code": "PPR00150",
+   "cat": "Rings",
+   "views": [
+    "assets/p/men-of-platinum/mop-sr-ppr00150.webp"
+   ]
+  },
+  {
+   "code": "PPR00187",
+   "cat": "Rings",
+   "views": [
+    "assets/p/men-of-platinum/mop-sr-ppr00187.webp"
+   ]
+  },
+  {
+   "code": "PPR00310",
+   "cat": "Rings",
+   "views": [
+    "assets/p/men-of-platinum/mop-sr-ppr00310.webp"
+   ]
+  },
+  {
+   "code": "PPR00334",
+   "cat": "Rings",
+   "views": [
+    "assets/p/men-of-platinum/mop-sr-ppr00334.webp"
+   ]
+  },
+  {
+   "code": "PPR01149",
+   "cat": "Rings",
+   "views": [
+    "assets/p/men-of-platinum/mop-sr-ppr01149.webp"
+   ]
+  },
+  {
+   "code": "PGPCS1058",
+   "cat": "Pendants",
+   "views": [
+    "assets/p/men-of-platinum/mop-pd-pgpcs1058-1.webp",
+    "assets/p/men-of-platinum/mop-pd-pgpcs1058-2.webp",
+    "assets/p/men-of-platinum/mop-pd-pgpcs1058-3.webp",
+    "assets/p/men-of-platinum/mop-pd-pgpcs1058-4.webp"
+   ]
+  },
+  {
+   "code": "PGPCS1059",
+   "cat": "Pendants",
+   "views": [
+    "assets/p/men-of-platinum/mop-pd-pgpcs1059-1.webp",
+    "assets/p/men-of-platinum/mop-pd-pgpcs1059-2.webp",
+    "assets/p/men-of-platinum/mop-pd-pgpcs1059-3.webp",
+    "assets/p/men-of-platinum/mop-pd-pgpcs1059-4.webp"
+   ]
+  },
+  {
+   "code": "PPCS1230",
+   "cat": "Pendants",
+   "views": [
+    "assets/p/men-of-platinum/mop-pd-ppcs1230-1.webp",
+    "assets/p/men-of-platinum/mop-pd-ppcs1230-2.webp",
+    "assets/p/men-of-platinum/mop-pd-ppcs1230-3.webp",
+    "assets/p/men-of-platinum/mop-pd-ppcs1230-4.webp"
+   ]
+  },
+  {
+   "code": "TP0014",
+   "cat": "Pendants",
+   "views": [
+    "assets/p/men-of-platinum/mop-pd-tp0014-1.webp",
+    "assets/p/men-of-platinum/mop-pd-tp0014-2.webp",
+    "assets/p/men-of-platinum/mop-pd-tp0014-3.webp",
+    "assets/p/men-of-platinum/mop-pd-tp0014-4.webp"
+   ]
+  },
+  {
+   "code": "TP0015",
+   "cat": "Pendants",
+   "views": [
+    "assets/p/men-of-platinum/mop-pd-tp0015-1.webp",
+    "assets/p/men-of-platinum/mop-pd-tp0015-2.webp",
+    "assets/p/men-of-platinum/mop-pd-tp0015-3.webp",
+    "assets/p/men-of-platinum/mop-pd-tp0015-4.webp"
+   ]
+  },
+  {
+   "code": "TP0018",
+   "cat": "Pendants",
+   "views": [
+    "assets/p/men-of-platinum/mop-pd-tp0018-1.webp",
+    "assets/p/men-of-platinum/mop-pd-tp0018-2.webp",
+    "assets/p/men-of-platinum/mop-pd-tp0018-3.webp",
+    "assets/p/men-of-platinum/mop-pd-tp0018-4.webp"
+   ]
+  },
+  {
+   "code": "TP0020",
+   "cat": "Pendants",
+   "views": [
+    "assets/p/men-of-platinum/mop-pd-tp0020-1.webp",
+    "assets/p/men-of-platinum/mop-pd-tp0020-2.webp",
+    "assets/p/men-of-platinum/mop-pd-tp0020-3.webp",
+    "assets/p/men-of-platinum/mop-pd-tp0020-4.webp"
+   ]
+  },
+  {
+   "code": "TP0021",
+   "cat": "Pendants",
+   "views": [
+    "assets/p/men-of-platinum/mop-pd-tp0021-1.webp",
+    "assets/p/men-of-platinum/mop-pd-tp0021-2.webp",
+    "assets/p/men-of-platinum/mop-pd-tp0021-3.webp",
+    "assets/p/men-of-platinum/mop-pd-tp0021-4.webp"
+   ]
+  },
+  {
+   "code": "TP0026-T",
+   "cat": "Pendants",
+   "views": [
+    "assets/p/men-of-platinum/mop-pd-tp0026-t-1.webp",
+    "assets/p/men-of-platinum/mop-pd-tp0026-t-2.webp",
+    "assets/p/men-of-platinum/mop-pd-tp0026-t-3.webp",
+    "assets/p/men-of-platinum/mop-pd-tp0026-t-4.webp"
+   ]
+  },
+  {
+   "code": "TP0027",
+   "cat": "Pendants",
+   "views": [
+    "assets/p/men-of-platinum/mop-pd-tp0027-1.webp",
+    "assets/p/men-of-platinum/mop-pd-tp0027-2.webp",
+    "assets/p/men-of-platinum/mop-pd-tp0027-3.webp",
+    "assets/p/men-of-platinum/mop-pd-tp0027-4.webp"
+   ]
+  },
+  {
+   "code": "TP0028",
+   "cat": "Pendants",
+   "views": [
+    "assets/p/men-of-platinum/mop-pd-tp0028-1.webp",
+    "assets/p/men-of-platinum/mop-pd-tp0028-2.webp",
+    "assets/p/men-of-platinum/mop-pd-tp0028-3.webp",
+    "assets/p/men-of-platinum/mop-pd-tp0028-4.webp"
+   ]
+  },
+  {
+   "code": "PPE00050",
+   "cat": "Balis & Studs",
+   "views": [
+    "assets/p/men-of-platinum/mop-er-ppe00050-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00189",
+   "cat": "Balis & Studs",
+   "views": [
+    "assets/p/men-of-platinum/mop-er-ppe00189-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00278-PPE00279",
+   "cat": "Balis & Studs",
+   "views": [
+    "assets/p/men-of-platinum/mop-er-ppe00278-ppe00279-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00280-PPE00281-PPE00282",
+   "cat": "Balis & Studs",
+   "views": [
+    "assets/p/men-of-platinum/mop-er-ppe00280-ppe00281-ppe00282-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00283-PPE00284-PPE00285",
+   "cat": "Balis & Studs",
+   "views": [
+    "assets/p/men-of-platinum/mop-er-ppe00283-ppe00284-ppe00285-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00293-PPE00294",
+   "cat": "Balis & Studs",
+   "views": [
+    "assets/p/men-of-platinum/mop-er-ppe00293-ppe00294-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00297",
+   "cat": "Balis & Studs",
+   "views": [
+    "assets/p/men-of-platinum/mop-er-ppe00297-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00298-PPE00299-PPE00300",
+   "cat": "Balis & Studs",
+   "views": [
+    "assets/p/men-of-platinum/mop-er-ppe00298-ppe00299-ppe00300-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00301-PPE00302-PPE00303",
+   "cat": "Balis & Studs",
+   "views": [
+    "assets/p/men-of-platinum/mop-er-ppe00301-ppe00302-ppe00303-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00310",
+   "cat": "Balis & Studs",
+   "views": [
+    "assets/p/men-of-platinum/mop-er-ppe00310-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00312",
+   "cat": "Balis & Studs",
+   "views": [
+    "assets/p/men-of-platinum/mop-er-ppe00312-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00314",
+   "cat": "Balis & Studs",
+   "views": [
+    "assets/p/men-of-platinum/mop-er-ppe00314-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00319",
+   "cat": "Balis & Studs",
+   "views": [
+    "assets/p/men-of-platinum/mop-er-ppe00319-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00320",
+   "cat": "Balis & Studs",
+   "views": [
+    "assets/p/men-of-platinum/mop-er-ppe00320-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00321",
+   "cat": "Balis & Studs",
+   "views": [
+    "assets/p/men-of-platinum/mop-er-ppe00321-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00328",
+   "cat": "Balis & Studs",
+   "views": [
+    "assets/p/men-of-platinum/mop-er-ppe00328-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00338",
+   "cat": "Balis & Studs",
+   "views": [
+    "assets/p/men-of-platinum/mop-er-ppe00338-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00339",
+   "cat": "Balis & Studs",
+   "views": [
+    "assets/p/men-of-platinum/mop-er-ppe00339-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00340",
+   "cat": "Balis & Studs",
+   "views": [
+    "assets/p/men-of-platinum/mop-er-ppe00340-copy.webp"
+   ]
+  },
+  {
+   "code": "PPF00001",
+   "cat": "Cufflinks",
+   "views": [
+    "assets/p/men-of-platinum/mop-cl-ppf00001-copy.webp"
+   ]
+  },
+  {
+   "code": "PPF00003",
+   "cat": "Cufflinks",
+   "views": [
+    "assets/p/men-of-platinum/mop-cl-ppf00003-copy.webp"
+   ]
+  },
+  {
+   "code": "PPF00004",
+   "cat": "Cufflinks",
+   "views": [
+    "assets/p/men-of-platinum/mop-cl-ppf00004-copy.webp"
+   ]
+  },
+  {
+   "code": "PPF00017",
+   "cat": "Cufflinks",
+   "views": [
+    "assets/p/men-of-platinum/mop-cl-ppf00017-copy.webp"
+   ]
+  },
+  {
+   "code": "PPF00018",
+   "cat": "Cufflinks",
+   "views": [
+    "assets/p/men-of-platinum/mop-cl-ppf00018-copy.webp"
+   ]
+  },
+  {
+   "code": "PPF00027",
+   "cat": "Cufflinks",
+   "views": [
+    "assets/p/men-of-platinum/mop-cl-ppf00027-copy.webp"
+   ]
+  },
+  {
+   "code": "PPF00032",
+   "cat": "Cufflinks",
+   "views": [
+    "assets/p/men-of-platinum/mop-cl-ppf00032-copy.webp"
+   ]
+  },
+  {
+   "code": "23PTMBB02",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmbb02.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMBB03",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmbb03.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMJB12",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmjb12.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMJB13",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmjb13.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMJB14",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmjb14.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMJB15",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmjb15.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMJB20",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmjb20.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMKB22",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmkb22.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMOB26",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmob26.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMOK25",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmok25.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMUB33",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmub33.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMBC04",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmbc04.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMBC05",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmbc05.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMBC06",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmbc06.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMBC07",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmbc07.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMBC08",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmbc08.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMJC18",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmjc18.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMJC19",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmjc19.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMOC27",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmoc27.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMOC30",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmoc30.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMBK01",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmbk01.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMEK11",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmek11.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMJK16",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmjk16.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMJK17",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmjk17.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMKK23",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmkk23.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMOK24",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmok24.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMUK32",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmuk32.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMER09",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmer09.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMER10",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmer10.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMKR21",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmkr21.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMOR28",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmor28.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMOR29",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmor29.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTMUR31",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/men-of-platinum/pgi-23ptmur31.webp"
+   ],
+   "pgi": true
+  }
+ ],
+ "evara": [
+  {
+   "code": "PDRN1589",
+   "cat": "Rings",
+   "views": [
+    "assets/p/evara/evr-rg-pdrn1589-1.webp"
+   ]
+  },
+  {
+   "code": "PDRN1627",
+   "cat": "Rings",
+   "views": [
+    "assets/p/evara/evr-rg-pdrn1627-1.webp"
+   ]
+  },
+  {
+   "code": "PDRN1704",
+   "cat": "Rings",
+   "views": [
+    "assets/p/evara/evr-rg-pdrn1704-1.webp"
+   ]
+  },
+  {
+   "code": "PDRN1717",
+   "cat": "Rings",
+   "views": [
+    "assets/p/evara/evr-rg-pdrn1717-1.webp"
+   ]
+  },
+  {
+   "code": "PGDRN1003",
+   "cat": "Rings",
+   "views": [
+    "assets/p/evara/evr-rg-pgdrn1003-3.webp"
+   ]
+  },
+  {
+   "code": "PGDRN1419",
+   "cat": "Rings",
+   "views": [
+    "assets/p/evara/evr-rg-pgdrn1419-1.webp"
+   ]
+  },
+  {
+   "code": "PGDRN1461",
+   "cat": "Rings",
+   "views": [
+    "assets/p/evara/evr-rg-pgdrn1461-3.webp"
+   ]
+  },
+  {
+   "code": "PGDRN1506",
+   "cat": "Rings",
+   "views": [
+    "assets/p/evara/evr-rg-pgdrn1506-1.webp"
+   ]
+  },
+  {
+   "code": "PGDRN1507",
+   "cat": "Rings",
+   "views": [
+    "assets/p/evara/evr-rg-pgdrn1507-3.webp"
+   ]
+  },
+  {
+   "code": "PGDRN1508",
+   "cat": "Rings",
+   "views": [
+    "assets/p/evara/evr-rg-pgdrn1508-1.webp",
+    "assets/p/evara/evr-rg-pgdrn1508-3.webp"
+   ]
+  },
+  {
+   "code": "PGDRN1509",
+   "cat": "Rings",
+   "views": [
+    "assets/p/evara/evr-rg-pgdrn1509-1.webp",
+    "assets/p/evara/evr-rg-pgdrn1509-3.webp"
+   ]
+  },
+  {
+   "code": "PGDRN1510",
+   "cat": "Rings",
+   "views": [
+    "assets/p/evara/evr-rg-pgdrn1510-3.webp"
+   ]
+  },
+  {
+   "code": "PGDRN1520",
+   "cat": "Rings",
+   "views": [
+    "assets/p/evara/evr-rg-pgdrn1520-3.webp"
+   ]
+  },
+  {
+   "code": "PGDRN1523",
+   "cat": "Rings",
+   "views": [
+    "assets/p/evara/evr-rg-pgdrn1523-3.webp"
+   ]
+  },
+  {
+   "code": "PGDRN1567",
+   "cat": "Rings",
+   "views": [
+    "assets/p/evara/evr-rg-pgdrn1567-3.webp"
+   ]
+  },
+  {
+   "code": "PGDRN1591",
+   "cat": "Rings",
+   "views": [
+    "assets/p/evara/evr-rg-pgdrn1591-3.webp"
+   ]
+  },
+  {
+   "code": "RGG8690PLA",
+   "cat": "Rings",
+   "views": [
+    "assets/p/evara/evr-rg-rgg8690pla-copy.webp"
+   ]
+  },
+  {
+   "code": "PBR13602",
+   "cat": "Bracelets",
+   "views": [
+    "assets/p/evara/evr-br-pbr13602-1.webp"
+   ]
+  },
+  {
+   "code": "PGPBR1059",
+   "cat": "Bracelets",
+   "views": [
+    "assets/p/evara/evr-br-pgpbr1059-3.webp"
+   ]
+  },
+  {
+   "code": "PGPBR1066",
+   "cat": "Bracelets",
+   "views": [
+    "assets/p/evara/evr-br-pgpbr1066-3.webp"
+   ]
+  },
+  {
+   "code": "PGPBR1067",
+   "cat": "Bracelets",
+   "views": [
+    "assets/p/evara/evr-br-pgpbr1067-3.webp"
+   ]
+  },
+  {
+   "code": "PGPBR1068",
+   "cat": "Bracelets",
+   "views": [
+    "assets/p/evara/evr-br-pgpbr1068-3.webp"
+   ]
+  },
+  {
+   "code": "PGPBR1076",
+   "cat": "Bracelets",
+   "views": [
+    "assets/p/evara/evr-br-pgpbr1076-1.webp"
+   ]
+  },
+  {
+   "code": "PGPBR1199",
+   "cat": "Bracelets",
+   "views": [
+    "assets/p/evara/evr-br-pgpbr1199-1.webp"
+   ]
+  },
+  {
+   "code": "PGPBR1200",
+   "cat": "Bracelets",
+   "views": [
+    "assets/p/evara/evr-br-pgpbr1200-1.webp"
+   ]
+  },
+  {
+   "code": "BRQ8087PLA",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-brq8087pla-copy.webp"
+   ]
+  },
+  {
+   "code": "BRQ8577PLA1",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-brq8577pla1-copy.webp"
+   ]
+  },
+  {
+   "code": "EVR-KD-01",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-dm-3d-brq6227pla-22-copy.webp"
+   ]
+  },
+  {
+   "code": "EVR-KD-02",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-dm-3d-brq6415pla-23-copy.webp"
+   ]
+  },
+  {
+   "code": "EPGP1012",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-epgp1012-1.webp"
+   ]
+  },
+  {
+   "code": "LB22275DTP",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-lb22275dtp-copy.webp"
+   ]
+  },
+  {
+   "code": "LB22276TP",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-lb22276tp.webp"
+   ]
+  },
+  {
+   "code": "LB22296TP",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-lb22296tp.webp"
+   ]
+  },
+  {
+   "code": "LB22300TP",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-lb22300tp.webp"
+   ]
+  },
+  {
+   "code": "LB22306TP",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-lb22306tp.webp"
+   ]
+  },
+  {
+   "code": "LB2322DTP",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-lb2322dtp-copy.webp"
+   ]
+  },
+  {
+   "code": "PDLB001-02",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pdlb001-02-1.webp"
+   ]
+  },
+  {
+   "code": "PDLB001-09",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pdlb001-09-1.webp"
+   ]
+  },
+  {
+   "code": "PDLB002-02",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pdlb002-02-1.webp"
+   ]
+  },
+  {
+   "code": "PDLB002-08",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pdlb002-08-1.webp"
+   ]
+  },
+  {
+   "code": "PDLB002-09",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pdlb002-09-1.webp"
+   ]
+  },
+  {
+   "code": "PDLB1004",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pdlb1004-1.webp"
+   ]
+  },
+  {
+   "code": "PDLB1008",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pdlb1008-1.webp"
+   ]
+  },
+  {
+   "code": "PDLB1009",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pdlb1009-1.webp"
+   ]
+  },
+  {
+   "code": "PDLB1015",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pdlb1015-1.webp"
+   ]
+  },
+  {
+   "code": "PDLB1019",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pdlb1019-1.webp"
+   ]
+  },
+  {
+   "code": "PDLB1023",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pdlb1023-1.webp"
+   ]
+  },
+  {
+   "code": "PDLB1025",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pdlb1025-1.webp"
+   ]
+  },
+  {
+   "code": "PDLB1027",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pdlb1027-1.webp"
+   ]
+  },
+  {
+   "code": "PDLB1030",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pdlb1030-1.webp"
+   ]
+  },
+  {
+   "code": "PDLB1033",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pdlb1033-1.webp"
+   ]
+  },
+  {
+   "code": "PDLB1038",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pdlb1038-1.webp"
+   ]
+  },
+  {
+   "code": "PDLB1041",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pdlb1041-1.webp"
+   ]
+  },
+  {
+   "code": "PDLB1043",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pdlb1043-1.webp"
+   ]
+  },
+  {
+   "code": "PDLB1045",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pdlb1045-1.webp"
+   ]
+  },
+  {
+   "code": "PGDLB1002",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pgdlb1002-1.webp"
+   ]
+  },
+  {
+   "code": "PGLB1001",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pglb1001-1.webp"
+   ]
+  },
+  {
+   "code": "PGLB1002",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pglb1002-1.webp"
+   ]
+  },
+  {
+   "code": "PGPLB1020",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pgplb1020-1.webp"
+   ]
+  },
+  {
+   "code": "PGPLB1023",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pgplb1023-1.webp"
+   ]
+  },
+  {
+   "code": "PPLB001-14",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pplb001-14-1.webp"
+   ]
+  },
+  {
+   "code": "PPLB1008",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pplb1008-1.webp"
+   ]
+  },
+  {
+   "code": "PPLB1024",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pplb1024-1.webp"
+   ]
+  },
+  {
+   "code": "PPLB1034",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pplb1034-1.webp"
+   ]
+  },
+  {
+   "code": "PPLB1038",
+   "cat": "Kadas",
+   "views": [
+    "assets/p/evara/evr-kd-pplb1038-1.webp"
+   ]
+  },
+  {
+   "code": "ERI7329FSA-22",
+   "cat": "Earrings",
+   "views": [
+    "assets/p/evara/evr-st-eri7329fsa-22-copy.webp"
+   ]
+  },
+  {
+   "code": "ERI8783PLA1",
+   "cat": "Earrings",
+   "views": [
+    "assets/p/evara/evr-st-eri8783pla1-copy.webp"
+   ]
+  },
+  {
+   "code": "ESF3434PLA",
+   "cat": "Earrings",
+   "views": [
+    "assets/p/evara/evr-st-esf3434pla-copy.webp"
+   ]
+  },
+  {
+   "code": "PGPPS1134",
+   "cat": "Earrings",
+   "views": [
+    "assets/p/evara/evr-st-pgpps1134.webp"
+   ]
+  },
+  {
+   "code": "PPE00015",
+   "cat": "Earrings",
+   "views": [
+    "assets/p/evara/evr-st-ppe00015-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00026",
+   "cat": "Earrings",
+   "views": [
+    "assets/p/evara/evr-st-ppe00026-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00027",
+   "cat": "Earrings",
+   "views": [
+    "assets/p/evara/evr-st-ppe00027-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00069",
+   "cat": "Earrings",
+   "views": [
+    "assets/p/evara/evr-st-ppe00069-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00109",
+   "cat": "Earrings",
+   "views": [
+    "assets/p/evara/evr-st-ppe00109-copy.webp"
+   ]
+  },
+  {
+   "code": "PPPS1220",
+   "cat": "Earrings",
+   "views": [
+    "assets/p/evara/evr-st-ppps1220.webp"
+   ]
+  },
+  {
+   "code": "PPE00021",
+   "cat": "Earrings",
+   "views": [
+    "assets/p/evara/evr-bl-ppe00021-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00022",
+   "cat": "Earrings",
+   "views": [
+    "assets/p/evara/evr-bl-ppe00022-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00042",
+   "cat": "Earrings",
+   "views": [
+    "assets/p/evara/evr-bl-ppe00042-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00046",
+   "cat": "Earrings",
+   "views": [
+    "assets/p/evara/evr-bl-ppe00046-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00253",
+   "cat": "Earrings",
+   "views": [
+    "assets/p/evara/evr-bl-ppe00253-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00257",
+   "cat": "Earrings",
+   "views": [
+    "assets/p/evara/evr-bl-ppe00257-copy.webp"
+   ]
+  },
+  {
+   "code": "E22160TP",
+   "cat": "Earrings",
+   "views": [
+    "assets/p/evara/evr-cd-e22160tp-copy.webp"
+   ]
+  },
+  {
+   "code": "E22163TP",
+   "cat": "Earrings",
+   "views": [
+    "assets/p/evara/evr-cd-e22163tp-copy.webp"
+   ]
+  },
+  {
+   "code": "E22170TP",
+   "cat": "Earrings",
+   "views": [
+    "assets/p/evara/evr-cd-e22170tp-copy.webp"
+   ]
+  },
+  {
+   "code": "E22178TP",
+   "cat": "Earrings",
+   "views": [
+    "assets/p/evara/evr-cd-e22178tp-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00058",
+   "cat": "Earrings",
+   "views": [
+    "assets/p/evara/evr-cd-ppe00058-copy.webp"
+   ]
+  },
+  {
+   "code": "PPE00060",
+   "cat": "Earrings",
+   "views": [
+    "assets/p/evara/evr-cd-ppe00060-copy.webp"
+   ]
+  },
+  {
+   "code": "ERJ6408PLB2-21",
+   "cat": "Earrings",
+   "views": [
+    "assets/p/evara/evr-jh-erj6408plb2-21-copy.webp"
+   ]
+  },
+  {
+   "code": "EVR-NK-01",
+   "cat": "Necklaces",
+   "views": [
+    "assets/p/evara/evr-nk-ladies-chain-2.webp"
+   ]
+  },
+  {
+   "code": "EVR-NK-02",
+   "cat": "Necklaces",
+   "views": [
+    "assets/p/evara/evr-nk-ladies-chain.webp"
+   ]
+  },
+  {
+   "code": "N22161TP",
+   "cat": "Necklaces",
+   "views": [
+    "assets/p/evara/evr-nk-n22161tp-copy.webp"
+   ]
+  },
+  {
+   "code": "NKO6479CIG1-22",
+   "cat": "Necklaces",
+   "views": [
+    "assets/p/evara/evr-nk-nko6479cig1-22-copy.webp"
+   ]
+  },
+  {
+   "code": "PH13",
+   "cat": "Necklaces",
+   "views": [
+    "assets/p/evara/evr-nk-ph13.webp"
+   ]
+  },
+  {
+   "code": "EVR-NK-03",
+   "cat": "Necklaces",
+   "views": [
+    "assets/p/evara/evr-nk-image.webp"
+   ]
+  },
+  {
+   "code": "PSS6286PLA1-21",
+   "cat": "Necklaces",
+   "views": [
+    "assets/p/evara/evr-cs-pss6286pla1-21-copy.webp"
+   ]
+  },
+  {
+   "code": "ESB6002PLA-21",
+   "cat": "Pendant Sets",
+   "views": [
+    "assets/p/evara/evr-ps-esb6002pla-21-copy.webp"
+   ]
+  },
+  {
+   "code": "ESB8970PLA",
+   "cat": "Pendant Sets",
+   "views": [
+    "assets/p/evara/evr-ps-esb8970pla-copy.webp"
+   ]
+  },
+  {
+   "code": "PGSPS1009",
+   "cat": "Pendant Sets",
+   "views": [
+    "assets/p/evara/evr-ps-pgsps1009.webp"
+   ]
+  },
+  {
+   "code": "PGSPS1010",
+   "cat": "Pendant Sets",
+   "views": [
+    "assets/p/evara/evr-ps-pgsps1010.webp"
+   ]
+  },
+  {
+   "code": "PGSPS1011",
+   "cat": "Pendant Sets",
+   "views": [
+    "assets/p/evara/evr-ps-pgsps1011.webp"
+   ]
+  },
+  {
+   "code": "PGSPS1012",
+   "cat": "Pendant Sets",
+   "views": [
+    "assets/p/evara/evr-ps-pgsps1012.webp"
+   ]
+  },
+  {
+   "code": "PGSPS1027",
+   "cat": "Pendant Sets",
+   "views": [
+    "assets/p/evara/evr-ps-pgsps1027.webp"
+   ]
+  },
+  {
+   "code": "PGSPS1028",
+   "cat": "Pendant Sets",
+   "views": [
+    "assets/p/evara/evr-ps-pgsps1028.webp"
+   ]
+  },
+  {
+   "code": "PPPS1167",
+   "cat": "Pendant Sets",
+   "views": [
+    "assets/p/evara/evr-ps-ppps1167.webp"
+   ]
+  },
+  {
+   "code": "PPPS1168",
+   "cat": "Pendant Sets",
+   "views": [
+    "assets/p/evara/evr-ps-ppps1168.webp"
+   ]
+  },
+  {
+   "code": "PPPS1169",
+   "cat": "Pendant Sets",
+   "views": [
+    "assets/p/evara/evr-ps-ppps1169.webp"
+   ]
+  },
+  {
+   "code": "PPPS1170",
+   "cat": "Pendant Sets",
+   "views": [
+    "assets/p/evara/evr-ps-ppps1170.webp"
+   ]
+  },
+  {
+   "code": "PPPS1197",
+   "cat": "Pendant Sets",
+   "views": [
+    "assets/p/evara/evr-ps-ppps1197.webp"
+   ]
+  },
+  {
+   "code": "PPPS1198",
+   "cat": "Pendant Sets",
+   "views": [
+    "assets/p/evara/evr-ps-ppps1198.webp"
+   ]
+  },
+  {
+   "code": "PSB6002PLA-21",
+   "cat": "Pendant Sets",
+   "views": [
+    "assets/p/evara/evr-ps-psb6002pla-21.webp"
+   ]
+  },
+  {
+   "code": "PSB8970PLA",
+   "cat": "Pendant Sets",
+   "views": [
+    "assets/p/evara/evr-ps-psb8970pla-copy.webp"
+   ]
+  },
+  {
+   "code": "EVR-DM-01",
+   "cat": "Diamond Edit",
+   "views": [
+    "assets/p/evara/evr-dm-01-pt.webp"
+   ]
+  },
+  {
+   "code": "EVR-DM-02",
+   "cat": "Diamond Edit",
+   "views": [
+    "assets/p/evara/evr-dm-02-pt.webp"
+   ]
+  },
+  {
+   "code": "EVR-DM-03",
+   "cat": "Diamond Edit",
+   "views": [
+    "assets/p/evara/evr-dm-03-pt.webp"
+   ]
+  },
+  {
+   "code": "EVR-DM-04",
+   "cat": "Diamond Edit",
+   "views": [
+    "assets/p/evara/evr-dm-04-pt.webp"
+   ]
+  },
+  {
+   "code": "EVR-DM-05",
+   "cat": "Diamond Edit",
+   "views": [
+    "assets/p/evara/evr-dm-05-pt.webp"
+   ]
+  },
+  {
+   "code": "EVR-DM-06",
+   "cat": "Diamond Edit",
+   "views": [
+    "assets/p/evara/evr-dm-06-pt.webp"
+   ]
+  },
+  {
+   "code": "EVR-DM-07",
+   "cat": "Diamond Edit",
+   "views": [
+    "assets/p/evara/evr-dm-07-pt.webp"
+   ]
+  },
+  {
+   "code": "EVR-DM-08",
+   "cat": "Diamond Edit",
+   "views": [
+    "assets/p/evara/evr-dm-08-pt.webp"
+   ]
+  },
+  {
+   "code": "23PTEBE03",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptebe03.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEBE04",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptebe04.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEBE05",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptebe05.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEEE09",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23pteee09.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEEE10",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23pteee10.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEEE12",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23pteee12.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEHE13",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptehe13.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEHE14",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptehe14.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEHE15",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptehe15.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEKE20",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23pteke20.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEKE21",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23pteke21.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEKGE22",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptekge22.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEPR32",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptepr32.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEPR33",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptepr33.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEPR34",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptepr34.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEUE43",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23pteue43.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEUE44",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23pteue44.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEUE45",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23pteue45.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEUE46",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23pteue46.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEBN01",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptebn01.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEBN02",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptebn02.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEBN08",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptebn08.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEEN11",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23pteen11.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEKGN25",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptekgn25.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEKN19",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptekn19.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEKPRN27,23PTEKPRN28",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptekprn27-23ptekprn28.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEON39",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23pteon39.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEON40",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23pteon40.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEUN41",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23pteun41.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEUN42",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23pteun42.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEUN48",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23pteun48.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEBB06",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptebb06.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEBB07",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptebb07.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEPN30",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptepn30.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEJB16",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptejb16.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEJB17",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptejb17.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEJB18",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptejb18.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEKPRB26",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptekprb26.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEPB36",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptepb36.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEPRB38",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23pteprb38.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEUB47",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23pteub47.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEKGR23",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptekgr23.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEKGR24",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptekgr24.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEKPRR29",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptekprr29.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEPR31",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptepr31.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEPR35",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23ptepr35.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTEPRR37",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/evara/pgi-23pteprr37.webp"
+   ],
+   "pgi": true
+  }
+ ],
+ "platinum-days-of-love": [
+  {
+   "code": "DPR01055--DPR01056",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-dpr01055-dpr01056.webp"
+   ]
+  },
+  {
+   "code": "PGDRN1595--F",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgdrn1595-f-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgdrn1595-f-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgdrn1595-f-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgdrn1595-f-4.webp"
+   ]
+  },
+  {
+   "code": "PGPRN1712-F",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgprn1712-f-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgprn1712-f-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgprn1712-f-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgprn1712-f-4.webp"
+   ]
+  },
+  {
+   "code": "PGPRN1714-M",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgprn1714-m-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgprn1714-m-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgprn1714-m-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgprn1714-m-4.webp"
+   ]
+  },
+  {
+   "code": "PGPRN1715-M",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgprn1715-m-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgprn1715-m-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgprn1715-m-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgprn1715-m-4.webp"
+   ]
+  },
+  {
+   "code": "PGWDRN1299-F",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1299-f-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1299-f-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1299-f-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1299-f-4.webp"
+   ]
+  },
+  {
+   "code": "PGWDRN1300-M",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1300-m-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1300-m-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1300-m-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1300-m-4.webp"
+   ]
+  },
+  {
+   "code": "PGWDRN1305-F",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1305-f-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1305-f-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1305-f-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1305-f-4.webp"
+   ]
+  },
+  {
+   "code": "PGWDRN1306-M",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1306-m-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1306-m-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1306-m-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1306-m-4.webp"
+   ]
+  },
+  {
+   "code": "PGWDRN1307-F",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1307-f-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1307-f-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1307-f-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1307-f-4.webp"
+   ]
+  },
+  {
+   "code": "PGWDRN1308-M",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1308-m-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1308-m-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1308-m-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1308-m-4.webp"
+   ]
+  },
+  {
+   "code": "PGWDRN1313-F",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1313-f-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1313-f-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1313-f-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1313-f-4.webp"
+   ]
+  },
+  {
+   "code": "PGWDRN1314",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1314-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1314-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1314-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1314-4.webp"
+   ]
+  },
+  {
+   "code": "PGWDRN1371--L",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1371-l-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1371-l-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1371-l-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1371-l-4.webp"
+   ]
+  },
+  {
+   "code": "PGWDRN1372--G",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1372-g-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1372-g-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1372-g-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1372-g-4.webp"
+   ]
+  },
+  {
+   "code": "PGWDRN1375-F",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1375-f-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1375-f-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1375-f-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1375-f-4.webp"
+   ]
+  },
+  {
+   "code": "PGWDRN1376-M",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1376-m-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1376-m-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1376-m-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1376-m-4.webp"
+   ]
+  },
+  {
+   "code": "PGWDRN1385--L",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1385-l-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1385-l-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1385-l-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1385-l-4.webp"
+   ]
+  },
+  {
+   "code": "PGWDRN1386--G",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1386-g-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1386-g-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1386-g-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1386-g-4.webp"
+   ]
+  },
+  {
+   "code": "PGWDRN1391-F",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1391-f-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1391-f-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1391-f-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1391-f-4.webp"
+   ]
+  },
+  {
+   "code": "PGWDRN1392--M",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1392-m-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1392-m-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1392-m-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1392-m-4.webp"
+   ]
+  },
+  {
+   "code": "PGWDRN1407--M",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1407-m-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1407-m-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1407-m-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1407-m-4.webp"
+   ]
+  },
+  {
+   "code": "PGWDRN1407-F",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1407-f-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1407-f-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1407-f-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1407-f-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1407-f-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1407-f-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1407-f-4.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1407-f-4.webp"
+   ]
+  },
+  {
+   "code": "PGWDRN1408-M",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1408-m-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1408-m-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1408-m-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1408-m-4.webp"
+   ]
+  },
+  {
+   "code": "PGWDRN1411--F",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1411-f-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1411-f-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1411-f-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1411-f-4.webp"
+   ]
+  },
+  {
+   "code": "PGWDRN1412-M",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1412-m-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1412-m-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1412-m-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwdrn1412-m-4.webp"
+   ]
+  },
+  {
+   "code": "PGWPRN1313",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwprn1313-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwprn1313-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwprn1313-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwprn1313-4.webp"
+   ]
+  },
+  {
+   "code": "PGWPRN1314-M",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwprn1314-m-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwprn1314-m-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwprn1314-m-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwprn1314-m-4.webp"
+   ]
+  },
+  {
+   "code": "PGWPRN1665-F",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwprn1665-f-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwprn1665-f-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwprn1665-f-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwprn1665-f-4.webp"
+   ]
+  },
+  {
+   "code": "PGWPRN1666-M",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwprn1666-m-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwprn1666-m-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwprn1666-m-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwprn1666-m-4.webp"
+   ]
+  },
+  {
+   "code": "PGWPRN1825--F",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwprn1825-f-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwprn1825-f-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwprn1825-f-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwprn1825-f-4.webp"
+   ]
+  },
+  {
+   "code": "PGWPRN1826-M",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwprn1826-m-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwprn1826-m-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwprn1826-m-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwprn1826-m-4.webp"
+   ]
+  },
+  {
+   "code": "PGWSRN1179--F",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1179-f-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1179-f-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1179-f-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1179-f-4.webp"
+   ]
+  },
+  {
+   "code": "PGWSRN1180--M",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1180-m-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1180-m-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1180-m-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1180-m-4.webp"
+   ]
+  },
+  {
+   "code": "PGWSRN1197-F",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1197-f-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1197-f-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1197-f-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1197-f-4.webp"
+   ]
+  },
+  {
+   "code": "PGWSRN1198--M",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1198-m-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1198-m-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1198-m-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1198-m-4.webp"
+   ]
+  },
+  {
+   "code": "PGWSRN1249-F",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1249-f-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1249-f-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1249-f-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1249-f-4.webp"
+   ]
+  },
+  {
+   "code": "PGWSRN1250-M",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1250-m-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1250-m-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1250-m-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1250-m-4.webp"
+   ]
+  },
+  {
+   "code": "PGWSRN1319-F",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1319-f-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1319-f-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1319-f-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1319-f-4.webp"
+   ]
+  },
+  {
+   "code": "PGWSRN1320-M",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1320-m-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1320-m-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1320-m-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1320-m-4.webp"
+   ]
+  },
+  {
+   "code": "PGWSRN1349-F",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1349-f-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1349-f-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1349-f-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1349-f-4.webp"
+   ]
+  },
+  {
+   "code": "PGWSRN1350-M",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1350-m-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1350-m-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1350-m-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pgwsrn1350-m-4.webp"
+   ]
+  },
+  {
+   "code": "PPPR00129-PR00130",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pppr00129-pr00130-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR00013-PPR00014",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr00013-ppr00014-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR00015-PPR00016",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr00015-ppr00016-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR00047-PPR00048",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr00047-ppr00048-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR00053-PPR00054",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr00053-ppr00054-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR00093-PPR00094",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr00093-ppr00094-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR00114-PPR00115",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr00114-ppr00115-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR00129-PPR00130",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr00129-ppr00130-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR00281-PPR00282",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr00281-ppr00282-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR00302-PPR00303",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr00302-ppr00303-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR00381-PPR00382",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr00381-ppr00382-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR00383-PPR00384",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr00383-ppr00384-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR00412-PPR00413",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr00412-ppr00413-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR00422-PPR00423",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr00422-ppr00423-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR00523-PPR00524",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr00523-ppr00524-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR00566---PPR00567--P",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr00566-ppr00567-p-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR00566---PPR00567--ROSE",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr00566-ppr00567-rose-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR00568-PPR00569",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr00568-ppr00569-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR00597-PPR00598",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr00597-ppr00598-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR00720--PPR00721",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr00720-ppr00721-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR00726-FG-PPR00727-FG",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr00726-fg-ppr00727-fg-1-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR00734-PPR00735",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr00734-ppr00735-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR00844-PPR00845-P",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr00844-ppr00845-p-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR00925-PPR00626-P",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr00925-ppr00626-p-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR00965-PPR00966",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr00965-ppr00966-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR01017-PPR01018",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr01017-ppr01018-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR01058-PPR01059",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr01058-ppr01059-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR01123-PPR01124",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr01123-ppr01124-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR01125-PPR01126",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr01125-ppr01126-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR01131-PPR01132",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr01131-ppr01132-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR01164-PPR01340",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr01164-ppr01340-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR01387-PPR01388",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr01387-ppr01388-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR01435-PPR01436-P",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr01435-ppr01436-p-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR01642(F)-FG-PPR01643(F)-FG",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr01642-f-fg-ppr01643-f-fg-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR01727-PPR01726",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr01727-ppr01726-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR01730-PPR01731",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr01730-ppr01731-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR01750-PPR01751",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr01750-ppr01751-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR01762-PPR01763",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr01762-ppr01763-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR01964-PPR01965",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr01964-ppr01965-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR01972-PPR01973",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr01972-ppr01973-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR01974-PPR01975",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr01974-ppr01975-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR02339-PPR02340",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr02339-ppr02340-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR02347-PPR02348",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr02347-ppr02348-copy.webp"
+   ]
+  },
+  {
+   "code": "PPR02349-PPR02350",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-ppr02349-ppr02350-copy.webp"
+   ]
+  },
+  {
+   "code": "PWDRN1787-F",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pwdrn1787-f-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pwdrn1787-f-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pwdrn1787-f-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pwdrn1787-f-4.webp"
+   ]
+  },
+  {
+   "code": "PWDRN1788-M",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-pwdrn1788-m-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pwdrn1788-m-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pwdrn1788-m-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-pwdrn1788-m-4.webp"
+   ]
+  },
+  {
+   "code": "SKCH6004147-19-M",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-skch6004147-19-m-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-skch6004147-19-m-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-skch6004147-19-m-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-skch6004147-19-m-4.webp"
+   ]
+  },
+  {
+   "code": "SKCH6004147-F",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-skch6004147-f-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-skch6004147-f-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-skch6004147-f-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-skch6004147-f-4.webp"
+   ]
+  },
+  {
+   "code": "SKCH6010587-F",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-skch6010587-f-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-skch6010587-f-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-skch6010587-f-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-skch6010587-f-4.webp"
+   ]
+  },
+  {
+   "code": "TMR0036-T",
+   "cat": "Couple Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-cb-tmr0036-t-1.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-tmr0036-t-2.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-tmr0036-t-3.webp",
+    "assets/p/platinum-days-of-love/pdl-cb-tmr0036-t-4.webp"
+   ]
+  },
+  {
+   "code": "GC22380P",
+   "cat": "Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-bd-gc22380p-copy.webp"
+   ]
+  },
+  {
+   "code": "GC22458P",
+   "cat": "Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-bd-gc22458p-copy.webp"
+   ]
+  },
+  {
+   "code": "GC22478DP",
+   "cat": "Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-bd-gc22478dp-copy.webp"
+   ]
+  },
+  {
+   "code": "GC2270TP",
+   "cat": "Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-bd-gc2270tp-copy.webp"
+   ]
+  },
+  {
+   "code": "GC2273DTP",
+   "cat": "Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-bd-gc2273dtp-copy.webp"
+   ]
+  },
+  {
+   "code": "GC22800DTP",
+   "cat": "Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-bd-gc22800dtp-copy.webp"
+   ]
+  },
+  {
+   "code": "GC22801DTP",
+   "cat": "Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-bd-gc22801dtp-copy.webp"
+   ]
+  },
+  {
+   "code": "GC22813DP",
+   "cat": "Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-bd-gc22813dp-copy.webp"
+   ]
+  },
+  {
+   "code": "GC23112DTP",
+   "cat": "Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-bd-gc23112dtp-copy.webp"
+   ]
+  },
+  {
+   "code": "LC22343TP",
+   "cat": "Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-bd-lc22343tp-copy.webp"
+   ]
+  },
+  {
+   "code": "LC22380P",
+   "cat": "Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-bd-lc22380p-copy.webp"
+   ]
+  },
+  {
+   "code": "LC22458P",
+   "cat": "Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-bd-lc22458p-copy.webp"
+   ]
+  },
+  {
+   "code": "LC22478DP",
+   "cat": "Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-bd-lc22478dp-copy.webp"
+   ]
+  },
+  {
+   "code": "LC2270DTP",
+   "cat": "Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-bd-lc2270dtp-copy.webp"
+   ]
+  },
+  {
+   "code": "LC2273DTP",
+   "cat": "Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-bd-lc2273dtp-copy.webp"
+   ]
+  },
+  {
+   "code": "LC22800DTP",
+   "cat": "Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-bd-lc22800dtp-copy.webp"
+   ]
+  },
+  {
+   "code": "LC22801DTP",
+   "cat": "Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-bd-lc22801dtp-copy.webp"
+   ]
+  },
+  {
+   "code": "LC22813DP",
+   "cat": "Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-bd-lc22813dp-copy.webp"
+   ]
+  },
+  {
+   "code": "LC2289DTP",
+   "cat": "Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-bd-lc2289dtp-copy.webp"
+   ]
+  },
+  {
+   "code": "LC23112DTP",
+   "cat": "Bands",
+   "views": [
+    "assets/p/platinum-days-of-love/pdl-bd-lc23112dtp-copy.webp"
+   ]
+  },
+  {
+   "code": "23PTLBB01,23PTLBB02",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/platinum-days-of-love/pgi-23ptlbb01-23ptlbb02.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTLBB04,23PTLBB03",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/platinum-days-of-love/pgi-23ptlbb04-23ptlbb03.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTLBB06,23PTLBB05",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/platinum-days-of-love/pgi-23ptlbb06-23ptlbb05.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTLBE07,23PTLBE08",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/platinum-days-of-love/pgi-23ptlbe07-23ptlbe08.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTLBE10,23PTLBE09",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/platinum-days-of-love/pgi-23ptlbe10-23ptlbe09.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTLBJ12,23PTLBJ11",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/platinum-days-of-love/pgi-23ptlbj12-23ptlbj11.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTLBJ14,23PTLBJ13",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/platinum-days-of-love/pgi-23ptlbj14-23ptlbj13.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTLBJ16,23PTLBJ15",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/platinum-days-of-love/pgi-23ptlbj16-23ptlbj15.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTLBJ17,23PTLBJ18",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/platinum-days-of-love/pgi-23ptlbj17-23ptlbj18.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTLBJ20,23PTLBJ19",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/platinum-days-of-love/pgi-23ptlbj20-23ptlbj19.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTLBJ22,23PTLBJ21",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/platinum-days-of-love/pgi-23ptlbj22-23ptlbj21.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTLBK24,23PTLBK23",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/platinum-days-of-love/pgi-23ptlbk24-23ptlbk23.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTLBK25,23PTLBK26",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/platinum-days-of-love/pgi-23ptlbk25-23ptlbk26.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTLBO27,23PTLBO28",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/platinum-days-of-love/pgi-23ptlbo27-23ptlbo28.webp"
+   ],
+   "pgi": true
+  },
+  {
+   "code": "23PTLBO30,23PTLBO29",
+   "cat": "PGI Campaign Picks",
+   "views": [
+    "assets/p/platinum-days-of-love/pgi-23ptlbo30-23ptlbo29.webp"
+   ],
+   "pgi": true
+  }
+ ],
+ "bandhan": [
+  {
+   "code": "BDN-MS-01",
+   "cat": "Mangalsutras",
+   "views": [
+    "assets/p/bandhan/bdn-ms-pt-1.webp"
+   ]
+  },
+  {
+   "code": "BDN-MS-02",
+   "cat": "Mangalsutras",
+   "views": [
+    "assets/p/bandhan/bdn-ms-pt-10-copy.webp"
+   ]
+  },
+  {
+   "code": "BDN-MS-03",
+   "cat": "Mangalsutras",
+   "views": [
+    "assets/p/bandhan/bdn-ms-pt-11.webp"
+   ]
+  },
+  {
+   "code": "BDN-MS-04",
+   "cat": "Mangalsutras",
+   "views": [
+    "assets/p/bandhan/bdn-ms-pt-12-copy.webp"
+   ]
+  },
+  {
+   "code": "BDN-MS-05",
+   "cat": "Mangalsutras",
+   "views": [
+    "assets/p/bandhan/bdn-ms-pt-13-copy.webp"
+   ]
+  },
+  {
+   "code": "BDN-MS-06",
+   "cat": "Mangalsutras",
+   "views": [
+    "assets/p/bandhan/bdn-ms-pt-14-copy.webp"
+   ]
+  },
+  {
+   "code": "BDN-MS-07",
+   "cat": "Mangalsutras",
+   "views": [
+    "assets/p/bandhan/bdn-ms-pt-15-copy.webp"
+   ]
+  },
+  {
+   "code": "BDN-MS-08",
+   "cat": "Mangalsutras",
+   "views": [
+    "assets/p/bandhan/bdn-ms-pt-17.webp"
+   ]
+  },
+  {
+   "code": "BDN-MS-09",
+   "cat": "Mangalsutras",
+   "views": [
+    "assets/p/bandhan/bdn-ms-pt-19-recovered.webp"
+   ]
+  },
+  {
+   "code": "BDN-MS-10",
+   "cat": "Mangalsutras",
+   "views": [
+    "assets/p/bandhan/bdn-ms-pt-2.webp"
+   ]
+  },
+  {
+   "code": "BDN-MS-11",
+   "cat": "Mangalsutras",
+   "views": [
+    "assets/p/bandhan/bdn-ms-pt-22-copy.webp"
+   ]
+  },
+  {
+   "code": "BDN-MS-12",
+   "cat": "Mangalsutras",
+   "views": [
+    "assets/p/bandhan/bdn-ms-pt-3.webp"
+   ]
+  },
+  {
+   "code": "BDN-MS-13",
+   "cat": "Mangalsutras",
+   "views": [
+    "assets/p/bandhan/bdn-ms-pt-4.webp"
+   ]
+  },
+  {
+   "code": "BDN-MS-14",
+   "cat": "Mangalsutras",
+   "views": [
+    "assets/p/bandhan/bdn-ms-pt-5.webp"
+   ]
+  },
+  {
+   "code": "BDN-MS-15",
+   "cat": "Mangalsutras",
+   "views": [
+    "assets/p/bandhan/bdn-ms-pt-6.webp"
+   ]
+  },
+  {
+   "code": "BDN-MS-16",
+   "cat": "Mangalsutras",
+   "views": [
+    "assets/p/bandhan/bdn-ms-pt-7-copy.webp"
+   ]
+  },
+  {
+   "code": "BDN-MS-17",
+   "cat": "Mangalsutras",
+   "views": [
+    "assets/p/bandhan/bdn-ms-pt-8.webp"
+   ]
+  },
+  {
+   "code": "BDN-MS-18",
+   "cat": "Mangalsutras",
+   "views": [
+    "assets/p/bandhan/bdn-ms-pt-9-copy.webp"
+   ]
+  }
+ ],
+ "farishtey": [
+  {
+   "code": "PPNP1020",
+   "cat": "Baby Tops",
+   "views": [
+    "assets/p/farishtey/frs-tp-ppnp1020.webp"
+   ]
+  },
+  {
+   "code": "PPNP1021",
+   "cat": "Baby Tops",
+   "views": [
+    "assets/p/farishtey/frs-tp-ppnp1021.webp"
+   ]
+  },
+  {
+   "code": "PPNP1022",
+   "cat": "Baby Tops",
+   "views": [
+    "assets/p/farishtey/frs-tp-ppnp1022.webp"
+   ]
+  },
+  {
+   "code": "PPNP1023",
+   "cat": "Baby Tops",
+   "views": [
+    "assets/p/farishtey/frs-tp-ppnp1023.webp"
+   ]
+  },
+  {
+   "code": "PPNP1024",
+   "cat": "Baby Tops",
+   "views": [
+    "assets/p/farishtey/frs-tp-ppnp1024.webp"
+   ]
+  },
+  {
+   "code": "PPNP1025",
+   "cat": "Baby Tops",
+   "views": [
+    "assets/p/farishtey/frs-tp-ppnp1025.webp"
+   ]
+  },
+  {
+   "code": "PPNP1026",
+   "cat": "Baby Tops",
+   "views": [
+    "assets/p/farishtey/frs-tp-ppnp1026.webp"
+   ]
+  },
+  {
+   "code": "PPNP1027",
+   "cat": "Baby Tops",
+   "views": [
+    "assets/p/farishtey/frs-tp-ppnp1027.webp"
+   ]
+  },
+  {
+   "code": "PPNP1028",
+   "cat": "Baby Tops",
+   "views": [
+    "assets/p/farishtey/frs-tp-ppnp1028.webp"
+   ]
+  },
+  {
+   "code": "PPNP1029",
+   "cat": "Baby Tops",
+   "views": [
+    "assets/p/farishtey/frs-tp-ppnp1029.webp"
+   ]
+  },
+  {
+   "code": "PPNP1030",
+   "cat": "Baby Tops",
+   "views": [
+    "assets/p/farishtey/frs-tp-ppnp1030.webp"
+   ]
+  },
+  {
+   "code": "PPNP1031",
+   "cat": "Baby Tops",
+   "views": [
+    "assets/p/farishtey/frs-tp-ppnp1031.webp"
+   ]
+  },
+  {
+   "code": "LP24093TP",
+   "cat": "Baby Pendants",
+   "views": [
+    "assets/p/farishtey/frs-pd-lp24093tp.webp"
+   ]
+  },
+  {
+   "code": "LP24098TP",
+   "cat": "Baby Pendants",
+   "views": [
+    "assets/p/farishtey/frs-pd-lp24098tp.webp"
+   ]
+  },
+  {
+   "code": "LP24374P",
+   "cat": "Baby Pendants",
+   "views": [
+    "assets/p/farishtey/frs-pd-lp24374p.webp"
+   ]
+  },
+  {
+   "code": "LP24375P",
+   "cat": "Baby Pendants",
+   "views": [
+    "assets/p/farishtey/frs-pd-lp24375p.webp"
+   ]
+  },
+  {
+   "code": "LP24376P",
+   "cat": "Baby Pendants",
+   "views": [
+    "assets/p/farishtey/frs-pd-lp24376p.webp"
+   ]
+  },
+  {
+   "code": "LP24382P",
+   "cat": "Baby Pendants",
+   "views": [
+    "assets/p/farishtey/frs-pd-lp24382p.webp"
+   ]
+  },
+  {
+   "code": "PKP0007",
+   "cat": "Baby Pendants",
+   "views": [
+    "assets/p/farishtey/frs-pd-pkp0007.webp"
+   ]
+  },
+  {
+   "code": "PKP0011",
+   "cat": "Baby Pendants",
+   "views": [
+    "assets/p/farishtey/frs-pd-pkp0011.webp"
+   ]
+  }
+ ]
+}
