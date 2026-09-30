@@ -38,9 +38,9 @@ brand = {"logo-evara": f"{opp}/image5.png", "logo-mop": f"{opp}/image7.png", "lo
          "pt950-program": f"{opp}/image9.png", "quality-card": f"{opp}/image16.png"}
 for k, v in brand.items():
     save(v, f"{A}/brand/{k}.webp", 900, 90, alpha=True)
-for k, v in {"store": f"{opp}/image13.png", "training": f"{opp}/image17.png", "campaigns": f"{opp}/image21.png",
-             "tray": f"{opp}/image10.png", "evara-campaign": f"{opp}/image6.jpg", "mop-campaign": f"{opp}/image8.jpg",
-             "pdol-campaign": f"{opp}/image19.jpg", "gold-vs-pt": f"{opp}/image4.png"}.items():
+for k, v in {"store": f"{opp}/image13.png", "training": f"{opp}/image17.png", "creatives": f"{opp}/image21.png",
+             "tray": f"{opp}/image10.png", "evara-story": f"{opp}/image6.jpg", "mop-story": f"{opp}/image8.jpg",
+             "pdol-story": f"{opp}/image19.jpg", "gold-vs-pt": f"{opp}/image4.png"}.items():
     save(v, f"{A}/support/{k}.webp", 1400, 80)
 # display & counter renders
 for i, n in enumerate([2,3,4,5,6,7]):

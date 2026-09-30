@@ -7,6 +7,8 @@ VER = str(int(time.time()))
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CAT = json.load(open(os.path.join(ROOT, "_build", "catalog.json")))
 E = html.escape
+for _col in CAT:  # PT_Mine pieces ("Diamond Edit") are not shown on the site
+    CAT[_col] = [i for i in CAT[_col] if i["cat"] != "Diamond Edit"]
 
 PHONE1, PHONE1_T = "+918169120942", "+91 81691 20942"
 PHONE2, PHONE2_T = "+912268956666", "+91 22 6895 6666"
@@ -27,7 +29,7 @@ COLS = [
        hero="assets/p/men-of-platinum/mop-ch-gcc22371tp.webp", bg="assets/banner/bg-room.webp", photo=None),
   dict(slug="evara", name="Evara", short="Evara", logo="assets/brand/col-evara.png",
        tag="Elegance that sells.", line="Add timeless platinum styles to your women’s counter. Evara is elegance that sells.",
-       hero="assets/p/evara/evr-dm-08-pt.webp", bg="assets/banner/bg-flowers.webp", photo=None),
+       hero="assets/p/evara/evr-ps-psb8970pla-copy.webp", bg="assets/banner/bg-flowers.webp", photo=None),
   dict(slug="platinum-days-of-love", name="Platinum Days of Love", short="PDOL", logo="assets/brand/col-pdol.png",
        tag="Love bands that last forever.", line="Offer love bands that last forever: the platinum rings every modern couple desires.",
        hero="assets/p/platinum-days-of-love/pdl-cb-pgprn1712-f-1.webp", bg="assets/banner/bg-podium.webp", photo=None),
@@ -42,6 +44,23 @@ COLS = [
        hero=None, bg=None, photo="assets/props/sha00318.webp"),
 ]
 COLMAP = {c["slug"]: c for c in COLS}
+
+# Shop by: who the jewellery is for (collection -> audience)
+AUD = [
+  dict(key="men", name="Men", cols=["men-of-platinum"], img="assets/spotlight/p-mop.webp", pos="44% 14%",
+       line="Chains, kadas, bracelets, rings, studs &amp; cufflinks.",
+       looks=["props/sha00145", "props/13372", "props/sha00183", "props/sha00195", "props/sha00151", "props/sha00153", "props/sha00201"]),
+  dict(key="women", name="Women", cols=["evara", "bandhan"], img="assets/spotlight/p-evara.webp", pos="34% 18%",
+       line="Necklaces, earrings, kadas, pendant sets &amp; mangalsutras.",
+       looks=["studio/st09", "studio/st01", "studio/st16", "props/sha00130", "studio/st19", "studio/st07", "props/sha00119", "studio/st22", "studio/st14", "studio/st10", "studio/st20", "studio/st17"]),
+  dict(key="kids", name="Kids", cols=["farishtey"], img="assets/props/sha00115.webp", pos="58% 60%",
+       line="Baby tops &amp; pendants, gentle on young skin.",
+       looks=["props/sha00115", "props/sha00118"]),
+  dict(key="couples", name="Couples", cols=["platinum-days-of-love", "pride-n-perfect"], img="assets/spotlight/p-pdol.webp", pos="50% 20%",
+       line="Couple bands &amp; matched sets for weddings and gifting.",
+       looks=["props/sha00053", "props/sha00318", "props/sha00050", "props/sha00089", "props/sha00059", "props/sha00046", "props/sha00098", "props/sha00062", "props/new1", "props/sha00081"]),
+]
+AUDOF = {c: a["key"] for a in AUD for c in a["cols"]}
 
 # ------------------------------------------------------------------ svg bits
 ARROW = '<svg width="16" height="10" viewBox="0 0 16 10" class="ar" aria-hidden="true"><path d="M0 5h14M10 1l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>'
@@ -108,7 +127,7 @@ ORG_LD = {
   "areaServed": "IN", "slogan": "Pure · Precious · Progressive",
   "brand": [{"@type": "Brand", "name": n} for n in ["Men of Platinum", "Evara", "Platinum Days of Love", "Bandhan", "Farishtey", "Pride N Perfect"]],
 }
-CRUMB_NAMES = {"about": "About", "collections": "Collections", "why-platinum": "Why Platinum", "partner": "Partner With Us",
+CRUMB_NAMES = {"explore": "Shop by", "about": "About", "collections": "Collections", "why-platinum": "Why Platinum", "partner": "Partner With Us",
                "lookbook": "Lookbook", "contact": "Contact"}
 
 def ld_json(obj):
@@ -166,6 +185,7 @@ def head(title, desc, page, img="assets/hero/d01.webp", crumbs=None):
 
 def header(active):
     cols = "".join(f'<a href="{c["slug"]}.html"><img src="{c["logo"]}" alt="{c["name"]}"></a>' for c in COLS)
+    cols += "".join(f'<a class="txt aud" href="explore.html#{a["key"]}"><b>{a["name"]}</b><span>Shop by</span></a>' for a in AUD)
     cols += '<a class="txt" href="accessories.html"><b>Accessories</b><span>Cufflinks &amp; more</span></a><a class="txt" href="d-the-platinum.html"><b>D — The Platinum</b><span>Bars &amp; coins</span></a><a class="txt" href="collections.html"><b>All collections</b><span>Overview</span></a>'
     items = []
     for href, label in NAV:
@@ -174,7 +194,7 @@ def header(active):
             items.append(f'<div class="dd"><a href="{href}"{on}>{label}</a><div class="dd-menu">{cols}</div></div>')
         else:
             items.append(f'<a href="{href}"{on}>{label}</a>')
-    msub = "".join(f'<a href="{c["slug"]}.html"><img src="{c["logo"]}" alt="{c["name"]}"></a>' for c in COLS) + '<a class="txt" href="accessories.html">Accessories</a><a class="txt" href="d-the-platinum.html">D — The Platinum</a>'
+    msub = "".join(f'<a class="txt" href="explore.html#{a["key"]}">{a["name"]}</a>' for a in AUD) + "".join(f'<a href="{c["slug"]}.html"><img src="{c["logo"]}" alt="{c["name"]}"></a>' for c in COLS) + '<a class="txt" href="accessories.html">Accessories</a><a class="txt" href="d-the-platinum.html">D — The Platinum</a>'
     mitems = "".join(f'<a href="{h}">{l}</a>' + (f'<div class="sub-m">{msub}</div>' if l == "Collections" else "") for h, l in NAV)
     return f"""<header class="hdr"><div class="wrap">
 <a class="brand" href="index.html" aria-label="Dishaa Platinum — home"><img src="assets/brand/dishaa-horizontal.png" alt="Dishaa Platinum"></a>
@@ -200,16 +220,18 @@ def footer():
 <div><img class="flogo" src="assets/brand/dishaa-lockup-white.png" alt="Dishaa Platinum — The Platinum Hub">
 <p class="hinglish" style="font-size:24px;color:#fff;margin-top:24px">Aapke saath hai hum.</p></div>
 <div><h4>Collections</h4><ul>{cols}<li><a href="accessories.html">Accessories</a></li><li><a href="d-the-platinum.html">D — The Platinum</a></li></ul></div>
-<div><h4>Dishaa</h4><ul><li><a href="about.html">About Us</a></li><li><a href="why-platinum.html">Why Platinum</a></li><li><a href="partner.html">Partner With Us</a></li><li><a href="partner.html#display">Display &amp; Counters</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+<div><h4>Shop by</h4><ul>{"".join(f'<li><a href="explore.html#{a["key"]}">{a["name"]}</a></li>' for a in AUD)}<li><a href="explore.html">All designs</a></li></ul>
+<h4 style="margin-top:26px">Dishaa</h4><ul><li><a href="about.html">About Us</a></li><li><a href="why-platinum.html">Why Platinum</a></li><li><a href="partner.html">Partner With Us</a></li><li><a href="partner.html#display">Display &amp; Counters</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="contact.html">Contact</a></li></ul></div>
 <div><h4>Visit the Hub</h4><address>{ADDRESS}</address><p style="margin-top:16px"><a href="tel:{PHONE1}">{PHONE1_T}</a><br><a href="tel:{PHONE2}">{PHONE2_T}</a><br><a href="mailto:{EMAIL}">{EMAIL}</a></p>
 <img src="assets/brand/pt-logo-white.png" alt="Platinum" style="height:46px;width:auto;opacity:.8;margin-top:18px"></div>
 </div>
 <div class="ftr-bot"><span>© {date.today().year} Dishaa Platinum · The Platinum Hub, Mumbai</span><span>Pure · Precious · Progressive · Authorised PGI Dealer · T&amp;Cs apply</span></div>
 </div></footer>
+<script src="assets/vendor/anime.min.js" defer></script>
 <script src="assets/js/site.js?v={VER}" defer></script>
 </body></html>"""
 
-ROUTES = {"index.html": "/", "about.html": "/about/", "collections.html": "/collections/",
+ROUTES = {"index.html": "/", "about.html": "/about/", "collections.html": "/collections/", "explore.html": "/explore/",
           "accessories.html": "/collections/accessories/", "d-the-platinum.html": "/collections/d-the-platinum/",
           "why-platinum.html": "/why-platinum/", "partner.html": "/partner/", "lookbook.html": "/lookbook/", "contact.html": "/contact/"}
 ROUTES.update({f'{c["slug"]}.html': f'/collections/{c["slug"]}/' for c in COLS})
@@ -342,10 +364,91 @@ GLASS01 = f"""<div class="glass01">
 <div class="g-ctas"><a class="g-btn" href="collections.html">Explore collections {ARROW}</a><a class="g-link" href="partner.html">Become a partner</a></div>
 </div>"""
 
+PAUSE_ICO = '<svg class="i-pause" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 2v10M10 2v10" stroke="currentColor" stroke-width="2"/></svg><svg class="i-play" width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M4 2l8 5-8 5Z" fill="currentColor"/></svg>'
+ED_PANELS = [
+  ("evara", "assets/spotlight/p-evara.webp", "34% 18%", "Elegance that sells."),
+  ("men-of-platinum", "assets/spotlight/p-mop.webp", "44% 14%", "Rare character, rare platinum."),
+  ("platinum-days-of-love", "assets/spotlight/p-pdol.webp", "50% 20%", "For a love so rare."),
+  ("collections", "assets/lookbook/ph10.webp", "50% 50%", "700+ designs, ready for your counter."),
+]
+def editorial_slide():
+    """Hero slide 1: the collection faces in auto-expanding panels + the photoshoot, with the brand promise."""
+    panels = ""
+    for k, (slug, img, pos, tag) in enumerate(ED_PANELS):
+        if slug == "collections":
+            name, logo, href = "The Platinum Hub", "", "collections.html"
+            mark = '<b class="ep-name">The Platinum Hub</b>'
+        else:
+            c = COLMAP[slug]; name, href = c["name"], f"{slug}.html"
+            mark = f'<img class="ep-logo" src="{c["logo"]}" alt="{name}">'
+        panels += f"""<a class="ep{' on' if k == 0 else ''}" href="{href}" data-i="{k}" style="--op:{pos}"><img class="ep-im" src="{img}" alt="{name}" {'fetchpriority="high"' if k == 0 else ''}>
+<span class="ep-bar" aria-hidden="true"></span><span class="ep-v">{name}</span>
+<div class="ep-info">{mark}<p>{tag}</p><span class="ep-go">Explore {ARROW}</span></div></a>"""
+    return f"""<div class="slide s01 ed on" data-dur="12000">
+<div class="ed-bg" aria-hidden="true"></div>{sparkle(26)}
+<span class="shine" aria-hidden="true"></span>
+<div class="ed-in">
+<div class="ed-copy"><span class="g-kick">Dishaa · The Platinum Hub</span>
+<p class="ed-1">Empowering Retailers with</p>
+<p class="ed-h g-2">India’s Most Trusted <em>Platinum Collections</em></p>
+<p class="g-meta"><span>PGI certified</span><span>1000+ jewellers</span><span>25+ years</span></p>
+<div class="g-ctas"><a class="g-btn" href="collections.html">Explore collections {ARROW}</a><a class="g-link" href="partner.html">Become a partner</a></div></div>
+<div class="ed-panels" data-depth="-6">{panels}</div>
+</div></div>"""
+
+# city positions on the India map of plate x02 (art units, 1024 x 512)
+CITIES = [("Mumbai", 100, 196, "hq"), ("Delhi", 148, 90, ""), ("Jaipur", 124, 112, ""), ("Ahmedabad", 92, 152, ""),
+          ("Lucknow", 186, 110, ""), ("Kolkata", 252, 150, ""), ("Hyderabad", 160, 214, ""), ("Pune", 114, 206, ""),
+          ("Bengaluru", 148, 256, ""), ("Chennai", 178, 256, ""), ("Kochi", 138, 286, ""), ("Indore", 130, 156, "")]
+
+def netmap():
+    """Slide 2: glowing links from the Mumbai hub to cities across India (drawn on slide entry)."""
+    hx, hy = CITIES[0][1], CITIES[0][2]
+    paths = ""
+    for k, (name, x, y, _) in enumerate(CITIES[1:]):
+        mx, my = (hx + x) / 2, (hy + y) / 2 - 26
+        paths += f'<path d="M{hx} {hy} Q{mx:.0f} {my:.0f} {x} {y}" style="--d:{0.35 + k * 0.09:.2f}s"/>'
+    dots = "".join(f'<g class="city {c}" style="--d:{0.5 + k * 0.09:.2f}s"><circle class="ring" cx="{x}" cy="{y}" r="7"/><circle class="dot" cx="{x}" cy="{y}" r="{4.2 if c else 2.8}"/></g>' for k, (n, x, y, c) in enumerate(CITIES))
+    return (f'<div class="tx net" aria-hidden="true"><svg viewBox="0 0 1024 512" preserveAspectRatio="none">'
+            f'<g class="links">{paths}</g>{dots}<text x="{hx - 12}" y="{hy + 4}" text-anchor="end">MUMBAI HUB</text></svg></div>')
+
+BSTATS = [(1000, "+", "Jewellers"), (25, "+", "Years"), (200, "+", "Cities")]
+def bstats():
+    it = "".join(f'<div><b data-n="{n}" data-s="{sfx}">{n}{sfx}</b><span>{t}</span></div>' for n, sfx, t in BSTATS)
+    u = 100 / 1024
+    return f'<div class="bstats" style="right:{28 * u:.3f}cqw;top:{352 * u:.3f}cqw">{it}</div>'
+
+def collections_slide(active=False):
+    """Slide 3: six collections, one signature piece at a time on a halo stage; logos light up in turn."""
+    stage, tiles = "", ""
+    order = ["evara", "men-of-platinum", "platinum-days-of-love", "bandhan", "farishtey", "pride-n-perfect"]
+    for k, slug in enumerate(order):
+        c = COLMAP[slug]
+        img = c["hero"] or c["photo"]
+        cls = "cut" if c["hero"] else "photo"
+        stage += f'<a class="cs-item {cls}{" on" if k == 0 else ""}" href="{slug}.html" data-i="{k}"><img src="{img}" alt="{c["name"]}" loading="lazy"></a>'
+        tiles += f'<a class="cs-tile{" on" if k == 0 else ""}" href="{slug}.html" data-i="{k}" aria-label="{c["name"]}"><img src="{c["logo"]}" alt="{c["name"]}" loading="lazy"><i></i></a>'
+    names = "".join(f'<div class="cs-name{" on" if k == 0 else ""}" data-i="{k}"><b>{COLMAP[s]["name"]}</b><span>{COLMAP[s]["tag"]}</span></div>' for k, s in enumerate(order))
+    return f"""<div class="slide s03 cs{' on' if active else ''}" data-dur="13000">
+<div class="cs-bg" aria-hidden="true"></div>{sparkle(22)}
+<span class="shine" aria-hidden="true"></span>
+<div class="cs-in">
+<div class="cs-copy"><span class="g-kick">One brand · six collections</span>
+<p class="ed-1">Select from the Most Famous</p>
+<p class="ed-h g-2">Platinum <em>Collections</em></p>
+<div class="g-ctas"><a class="g-btn" href="collections.html">View all collections {ARROW}</a></div></div>
+<div class="cs-stage"><span class="cs-halo" aria-hidden="true"></span><span class="cs-orbit" aria-hidden="true"></span>{stage}<div class="cs-names">{names}</div></div>
+<div class="cs-tiles">{tiles}</div>
+</div></div>"""
+
 def hero_banners():
     slides = ""
     for i, b in enumerate(BANNERS):
         n = b["n"]
+        if n == "01":
+            slides += editorial_slide(); continue
+        if n == "03":
+            slides += collections_slide(); continue
         t, href, cx, cy, kind = b["cta"][:5]
         u = 100 / 1024
         pos = f"right:{(1024-cx)*u:.3f}cqw" if len(b["cta"]) > 5 else f"left:{cx*u:.3f}cqw"
@@ -355,18 +458,55 @@ def hero_banners():
             logos = f'<div class="tx d">{banner_logos(b["logos_d"], 1024)}</div><div class="tx m">{banner_logos(b["logos_m"], 512)}</div>'
         live = live_layers(n) if n == "01" else ""
         plate = f"x{n}bg" if live else f"x{n}"
-        dcopy = GLASS01 if n == "01" else f"{banner_lines(b['d'], 1024)}{cta}"
+        dcopy = GLASS01 if n == "01" else f"{banner_lines(b['d'], 1024)}{cta}" + (bstats() if n == "02" else "")
         slides += f"""<div class="slide s{n}{' on' if i == 0 else ''}{' is-live' if live else ''}">
 <a class="blink" href="{b['href']}" aria-label="{E(b['alt'])}"><picture><source media="(max-width:760px)" srcset="assets/hero/m{n}.webp"><img class="plate" src="assets/hero/{plate}.webp" alt="{E(b['alt'])}" {'fetchpriority="high"' if i == 0 else 'loading="lazy"'}></picture></a>
 {sparkle(30) if live else ""}
-<div class="art">{live}<div class="tx d">{dcopy}</div>
+<span class="shine" aria-hidden="true"></span>
+<div class="art" data-depth="-10">{live}{netmap() if n == "02" else ""}<div class="tx d">{dcopy}</div>
 <div class="tx m" aria-hidden="true">{banner_lines(b['m'], 512)}</div>{logos}</div>
 </div>"""
     return f"""<section class="bnr" aria-label="Featured">
 <div class="bnr-frame">{slides}
-<div class="art art-ui"><div class="bnr-ui"><div class="hero-dots"><button aria-label="Banner 1"></button><button aria-label="Banner 2"></button><button aria-label="Banner 3"></button></div>
+<div class="art art-ui"><div class="bnr-ui"><div class="hero-dots"><button aria-label="Banner 1"><i>01</i><span>The Platinum Hub</span></button><button aria-label="Banner 2"><i>02</i><span>Preferred partner</span></button><button aria-label="Banner 3"><i>03</i><span>Six collections</span></button></div>
 <div class="hero-arrows"><button data-prev aria-label="Previous banner">{CHEV_L}</button><button data-next aria-label="Next banner">{CHEV_R}</button></div></div></div>
 </div></section>"""
+
+
+# ------------------------------------------------------------------ spotlight banners (PGI BANNERS FOR WEBSITE)
+SPOTS = [
+  dict(slug="evara", img="evara", tag="New collection", alt="Discover the new collection from Platinum Evara and Dishaa"),
+  dict(slug="men-of-platinum", img="mop", tag="Rare character, rare platinum", alt="Men of Platinum: rare character, rare platinum"),
+  dict(slug="platinum-days-of-love", img="pdol", tag="For a love so rare", alt="Platinum Love Bands: for a love so rare, a love so platinum"),
+]
+SPOTMAP = {c["slug"]: c for c in SPOTS}
+
+def camp_pic(c, eager=False):
+    ld = "" if eager else ' loading="lazy"'
+    return (f'<picture><source media="(max-width:640px)" srcset="assets/spotlight/{c["img"]}-m.webp">'
+            f'<img src="assets/spotlight/{c["img"]}-d.webp" alt="{c["alt"]}" width="960" height="540"{ld}></picture>')
+
+def spotlight():
+    """Home: stacked deck of the three collection spotlights (animated with anime.js in site.js)."""
+    cards = "".join(f"""<a class="dk-card{' on' if k == 0 else ''}" href="{c["slug"]}.html" data-i="{k}">{camp_pic(c)}
+<span class="dk-cta">{COLMAP[c["slug"]]["name"]} {ARROW}</span></a>""" for k, c in enumerate(SPOTS))
+    tabs = "".join(f'<button class="dk-tab{" on" if k == 0 else ""}" data-i="{k}"><img src="{COLMAP[c["slug"]]["logo"]}" alt="{COLMAP[c["slug"]]["name"]}"><small>{c["tag"]}</small></button>' for k, c in enumerate(SPOTS))
+    return f"""<section class="sec spot">{sparkle(16)}<div class="wrap">
+<div class="head"><div><span class="kick">In the spotlight</span><h2 class="h2 rv">This season’s <em>platinum stories.</em></h2></div><a class="btn btn-line rv" href="collections.html">All collections {ARROW}</a></div>
+<div class="deck rv"><div class="dk-stage">{cards}</div>
+<div class="dk-side"><div class="dk-tabs">{tabs}</div>
+<div class="dk-ctrl"><button data-dk-prev aria-label="Previous story">{CHEV_L}</button><button class="hp" data-dk-pause aria-label="Pause stories">{PAUSE_ICO}</button><span class="dk-count"><b>01</b> / 0{len(SPOTS)}</span><button data-dk-next aria-label="Next story">{CHEV_R}</button></div></div></div>
+</div></section>"""
+
+def pgi_band():
+    return f"""<section class="sec-sm pgiband"><div class="wrap"><a class="pgi-strip rv" href="why-platinum.html" aria-label="Platinum is the fastest growing jewellery category today — why platinum">
+<img src="assets/spotlight/dishaa-pgi.webp" alt="Platinum is the fastest growing jewellery category today — Platinum and Dishaa, The Platinum Hub" width="1300" height="400" loading="lazy">
+<span class="pgi-go">Why platinum {ARROW}</span></a></div></section>"""
+
+def camp_strip(slug):
+    c = SPOTMAP.get(slug)
+    if not c: return ""
+    return f'<section class="sec-sm campstrip"><div class="wrap"><div class="camp-frame rv">{camp_pic(c)}</div></div></section>'
 
 
 # ------------------------------------------------------------------ v5 showpieces (21st.dev-inspired, native HTML)
@@ -418,6 +558,62 @@ def why_bento():
 <div class="head"><div><span class="kick">Why jewellers choose Dishaa</span><h2 class="h2 rv">Not just a brand. A <em>platinum powerhouse.</em></h2></div></div>
 <div class="tiles bento-tiles">{tl}</div></div></section>"""
 
+# ================================================================== SHOP BY (men / women / kids / couples)
+def aud_count(a):
+    return sum(count(c) for c in a["cols"])
+
+def shop_by():
+    """Home: four doors — Men, Women, Kids, Couples."""
+    t = "".join(f"""<a class="door rv d{k}" href="explore.html#{a["key"]}"><img src="{a["img"]}" alt="Platinum jewellery for {a["name"].lower()}" loading="lazy" style="object-position:{a["pos"]}">
+<div class="door-tx"><span class="door-n">{aud_count(a)} designs</span><h3>{a["name"]}</h3><p>{a["line"]}</p><span class="door-go">Shop {a["name"].lower()} {ARROW}</span></div></a>""" for k, a in enumerate(AUD))
+    return f"""<section class="sec shopby"><div class="wrap">
+<div class="head"><div><span class="kick">Shop by</span><h2 class="h2 rv">For him, for her, <em>for the little ones.</em></h2></div><a class="btn btn-line rv" href="explore.html">Browse all designs {ARROW}</a></div>
+<div class="doors">{t}</div></div></section>"""
+
+def explore():
+    items = []
+    for c in COLS:
+        for it in CAT.get(c["slug"], []):
+            if not it.get("pgi"): items.append((it, c))
+    cats = []
+    for it, _ in items:
+        if it["cat"] not in cats: cats.append(it["cat"])
+    chips = f'<button class="chip on" data-cat="all">All<i>{len(items)}</i></button>' + "".join(
+        f'<button class="chip" data-cat="{E(k)}">{E(k)}<i>{sum(1 for x, _ in items if x["cat"] == k)}</i></button>' for k in cats)
+    allline = "Every Dishaa design in one place: men, women, kids and couples."
+    btns = f'<button class="audb on" data-aud-btn="all" data-line="{E(allline)}" aria-pressed="true"><span class="ai all">{icon("range")}</span><b>All</b><i>{len(items)}</i></button>'
+    btns += "".join(f'<button class="audb" data-aud-btn="{a["key"]}" data-line="{E(a["line"])}" aria-pressed="false"><span class="ai"><img src="{a["img"]}" alt="" style="object-position:{a["pos"]}"></span><b>{a["name"]}</b><i>{aud_count(a)}</i></button>' for a in AUD)
+    cards = ""
+    for it, c in items:
+        code = re.sub(r"-{2,}", " / ", it["code"]).replace("_", "-"); views = it["views"]
+        alt = f'<img class="alt" src="{views[1]}" alt="" loading="lazy">' if len(views) > 1 else ""
+        vtag = f'<span class="views">{len(views)} views</span>' if len(views) > 1 else ""
+        cards += f"""<article class="pcard" tabindex="0" data-aud="{AUDOF[c['slug']]}" data-code="{E(code)}" data-cat="{E(it['cat'])}" data-catlabel="{E(it['cat'])}" data-col="{E(c['name'])}" data-views='{json.dumps(views)}'>
+<div class="im">{alt}<img class="main{' hasalt' if alt else ''}" src="{views[0]}" alt="{E(c['name'])} {E(it['cat'])} {E(code)}" loading="lazy"></div>{vtag}
+<button class="add" aria-label="Add {E(code)} to selection tray">{PLUS}</button>
+<div class="info"><b>{E(code)}</b><span>{E(it['cat'])}</span></div></article>"""
+    looks = ""
+    mix = {"men": [0, 1, 2], "women": [0, 1, 2], "kids": [0], "couples": [0, 1]}
+    for a in AUD:
+        for k, l in enumerate(a["looks"]):
+            all_ = " data-look-all" if k in mix[a["key"]] else ""
+            looks += f'<figure data-look="{a["key"]}"{all_} data-full="assets/{l}.webp"><img src="assets/{l}.webp" alt="Platinum jewellery for {a["name"].lower()}" loading="lazy"></figure>'
+    body = phero("Men · Women · Kids · Couples", "Find the right|<em>platinum look.</em>",
+                 "Browse every design by who it’s for, then by category. Shortlist and send the list in one go.",
+                 "assets/studio/st09.webp", "<span>Shop by</span>") + f"""
+<div class="filters explore-f" id="designs"><div class="wrap audbar" role="group" aria-label="Shop by">{btns}</div><div class="wrap">{chips}</div></div>
+<section class="sec-sm" style="padding-top:26px"><div class="wrap">
+<div class="looks-head"><span class="kick">Get the look</span><p class="aud-line">{allline}</p></div>
+<div class="looks">{looks}</div>
+<div class="pgrid" style="margin-top:clamp(24px,3vw,40px)">{cards}</div>
+<div class="more-wrap"><button class="btn btn-line" data-more>Load more designs</button></div>
+<p class="center" style="color:var(--muted);font-size:14px;margin-top:26px">Tap <b>+</b> to shortlist designs and send the list in one go.</p>
+</div></section>
+{LB}{PLB}
+{cta("Something for every", "customer who walks in.", "assets/banner/ring-sunburst.webp")}"""
+    page("explore.html", "Shop Platinum Jewellery for Men, Women, Kids & Couples | Dishaa Platinum",
+         "Browse Dishaa platinum jewellery by who it is for: men, women, kids and couples, then by category.", body, active="collections")
+
 # ================================================================== HOME
 def home():
     total = sum(count(c) for c in CAT)
@@ -454,6 +650,12 @@ def home():
 <section class="sec-sm mistbg"><div class="wrap">
 <div class="center" style="margin-bottom:40px"><span class="kick">One brand · six collections</span><h2 class="h2 rv" style="margin-top:14px">The best <em>selection.</em></h2></div>
 <div class="ribbon">{ribbon}</div></div></section>
+
+{shop_by()}
+
+{spotlight()}
+
+{pgi_band()}
 
 {impact_bento(total)}
 
@@ -551,7 +753,7 @@ def about():
 <section class="sec"><div class="wrap">
 <div class="head"><div><span class="kick">Making it happen</span><h2 class="h2 rv">Branding. Display. <em>Training.</em></h2></div></div>
 <div class="acc-grid">
-<div class="acc rv"><img src="assets/support/campaigns.webp" alt="Platinum campaign creatives" loading="lazy"><div><h3>Branding</h3><p>A distinct identity, premium marketing, strong digital presence.</p></div></div>
+<div class="acc rv"><img src="assets/support/creatives.webp" alt="Platinum brand creatives" loading="lazy"><div><h3>Branding</h3><p>A distinct identity, premium marketing, strong digital presence.</p></div></div>
 <div class="acc rv d1"><img src="assets/display/fixture-1.webp" alt="Platinum display counter" loading="lazy"><div><h3>Display</h3><p>Visual merchandising that shows platinum at its best.</p></div></div>
 <div class="acc rv d2"><img src="assets/support/training.webp" alt="Sales staff training" loading="lazy"><div><h3>Training</h3><p>Product expertise and selling skills for your team.</p></div></div>
 </div></div></section>
@@ -602,7 +804,7 @@ def product_cards(slug):
         alt = f'<img class="alt" src="{views[1]}" alt="" loading="lazy">' if len(views) > 1 and not it.get("pgi") else ""
         cls = "pcard pgi" if it.get("pgi") else "pcard"
         vtag = f'<span class="views">{len(views)} views</span>' if len(views) > 1 else ""
-        out.append(f"""<article class="{cls}" tabindex="0" data-code="{E(code)}" data-cat="{E(it['cat'])}" data-catlabel="{E(it['cat'])}" data-col="{E(c['name'])}" data-views='{json.dumps(views)}'>
+        out.append(f"""<article class="{cls}" tabindex="0" data-aud="{AUDOF.get(slug, '')}" data-code="{E(code)}" data-cat="{E(it['cat'])}" data-catlabel="{E(it['cat'])}" data-col="{E(c['name'])}" data-views='{json.dumps(views)}'>
 <div class="im">{alt}<img class="main{' hasalt' if alt else ''}" src="{views[0]}" alt="{E(c['name'])} {E(it['cat'])} {E(code)}" loading="lazy"></div>{vtag}
 <button class="add" aria-label="Add {E(code)} to selection tray">{PLUS}</button>
 <div class="info"><b>{E(code)}</b><span>{E(it['cat'])}</span></div></article>""")
@@ -630,9 +832,9 @@ EXTRA = {
 <div class="head"><div><span class="kick">In motion</span><h2 class="h2 rv">Not just a brand. <em>A platinum powerhouse.</em></h2></div></div>
 <div class="films">{films()}</div></div></section>""",
  "evara": lambda: f"""<section class="sec-sm"><div class="wrap split">
-<div class="frame d ar43 rv"><img src="assets/support/evara-campaign.webp" alt="Evara campaign" loading="lazy"></div>
+<div class="frame d ar43 rv"><img src="assets/support/evara-story.webp" alt="Evara, very rare, very you" loading="lazy"></div>
 <div class="rv"><img src="assets/brand/col-evara.png" alt="Evara" style="height:90px;width:auto"><h2 class="h2" style="margin:20px 0 14px">Platinum. <em>Very rare. Very you.</em></h2><a class="btn btn-line" href="partner.html#display">Evara counter props {ARROW}</a></div></div></section>""",
- "platinum-days-of-love": lambda: f"""<section class="sec-sm"><div class="wrap"><div class="mason">{''.join(f'<figure class="rv d{k%3}" data-full="assets/props/{p}.webp"><img src="assets/props/{p}.webp" alt="Platinum couple bands" loading="lazy"></figure>' for k,p in enumerate(["sha00041","sha00066","sha00087","sha00061","sha00079","sha00037"]))}</div></div></section>""",
+ "platinum-days-of-love": lambda: f"""<section class="sec-sm"><div class="wrap"><div class="mason">{''.join(f'<figure class="rv d{k%3}" data-full="assets/props/{p}.webp"><img src="assets/props/{p}.webp" alt="Platinum couple bands" loading="lazy"></figure>' for k,p in enumerate(["sha00041","sha00066","sha00087","sha00061","sha00079","sha00037","sha00036","sha00045","sha00046","sha00057","sha00062","sha00081","sha00089"]))}</div></div></section>""",
  "farishtey": lambda: f"""<section class="sec-sm lavbg"><div class="wrap"><div class="cards c3">
 <div class="card rv">{icon("trust")}<h3>Gentle on young skin</h3><p>Naturally hypoallergenic platinum.</p></div>
 <div class="card rv d1">{icon("quality")}<h3>Secure screw-backs</h3><p>Baby tops that stay put.</p></div>
@@ -644,16 +846,17 @@ def collection_page(c):
     if slug == "pride-n-perfect":
         return pnp_page(c)
     chips, cards, n, cats = product_cards(slug)
-    ncats = len([k for k in cats if k != "PGI Campaign Picks"])
+    ncats = len([k for k in cats if k != "PGI Signature Picks"])
     ins = "".join(f'<figure class="rv d{k%4}" data-full="assets/insta/c{i:02d}.webp" style="margin:0;border-radius:18px;overflow:hidden;cursor:zoom-in"><img src="assets/insta/c{i:02d}.webp" alt="Dishaa creative" loading="lazy"></figure>' for k, i in enumerate(INSTA_FOR.get(slug, [])))
     body = f"""<section class="chero mistbg"><div class="wrap grid">
 <div><div class="crumbs"><a href="index.html">Home</a><span>/</span><a href="collections.html">Collections</a><span>/</span><span>{c["name"]}</span></div>
 <img class="clogo" src="{c["logo"]}" alt="{c["name"]}">
 <h1 class="h2">{c["tag"]}</h1>
-<div class="facts"><div><b>{n}</b><span>Designs</span></div><div><b>{ncats}</b><span>Categories</span></div><div><b>Pt950</b><span>PGI certified</span></div></div>
+<div class="facts"><a class="aud-tag" href="explore.html#{AUDOF[slug]}">For {next(a["name"] for a in AUD if a["key"] == AUDOF[slug])}</a><div><b>{n}</b><span>Designs</span></div><div><b>{ncats}</b><span>Categories</span></div><div><b>Pt950</b><span>PGI certified</span></div></div>
 <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px"><a class="btn btn-royal" href="#designs">Browse designs {ARROW}</a><a class="btn btn-line" href="contact.html?interest={E(c['name'])}">Get the catalogue</a></div></div>
 <div class="stagec"><img class="bgi" src="{c["bg"]}" alt=""><img class="p" src="{c["hero"]}" alt="{c["name"]} signature piece"></div>
 </div></section>
+{camp_strip(slug)}
 <div class="filters" id="designs"><div class="wrap">{chips}</div></div>
 <section class="sec-sm" style="padding-top:28px"><div class="wrap">
 <div class="pgrid">{cards}</div>
@@ -668,7 +871,7 @@ def collection_page(c):
     page(f"{slug}.html", f"{c['name']} — Platinum Collection | Dishaa Platinum", f"{c['line']} Browse {n} {c['name']} platinum designs at Dishaa Platinum.", body, active="collections")
 
 def pnp_page(c):
-    photos = ["sha00318", "sha00313", "sha00035", "sha00038", "sha00047", "sha00092", "sha00097", "sha00109", "sha00041", "sha00061", "sha00171", "img_6357"]
+    photos = ["sha00318", "sha00313", "sha00053", "sha00035", "sha00038", "sha00050", "sha00047", "sha00092", "sha00098", "sha00097", "sha00102", "sha00109", "sha00059", "sha00104", "sha00107", "new1", "sha00041", "sha00061", "sha00171", "img_6357"]
     mason = "".join(f'<figure class="rv d{k%3}" data-full="assets/props/{p}.webp"><img src="assets/props/{p}.webp" alt="Pride N Perfect platinum couple set" loading="lazy"></figure>' for k, p in enumerate(photos))
     body = f"""<section class="chero mistbg"><div class="wrap grid">
 <div><div class="crumbs"><a href="index.html">Home</a><span>/</span><a href="collections.html">Collections</a><span>/</span><span>Pride N Perfect</span></div>
@@ -726,7 +929,7 @@ def why():
     cities = ["Ahmedabad", "Bangalore", "Baroda", "Bhubaneswar", "Chennai", "Cochin", "Coimbatore", "Delhi NCR", "Hyderabad", "Indore", "Kolkata", "Lucknow", "Mumbai", "Pune", "Surat", "Trivandrum"]
     body = phero("The platinum opportunity", "Don’t follow the|platinum wave.|<em>Lead it.</em>",
                  "The fastest-growing category in precious jewellery, and the new-age luxury young India wants.",
-                 "assets/insta/c07.webp", "<span>Why Platinum</span>") + f"""
+                 "assets/insta/c07.webp", "<span>Why Platinum</span>") + pgi_band() + f"""
 <section class="sec"><div class="wrap">
 <div class="head"><div><span class="kick">The business case</span><h2 class="h2 rv">Growth, margin, <em>a new customer.</em></h2></div></div>
 <div class="cards c3 wp-bento">
@@ -754,8 +957,8 @@ def why():
 <div class="head"><div><span class="kick">Backed by Platinum Guild International</span><h2 class="h2 rv">PGI support, <em>via Dishaa.</em></h2></div><img src="assets/brand/logo-pgi.webp" alt="Platinum Guild International" style="height:52px;width:auto" loading="lazy"></div>
 <div class="chips" style="grid-template-columns:repeat(4,1fr)">
 <div class="chipc rv">{icon("display")}<span>Display trays &amp; branding</span></div><div class="chipc rv d1">{icon("training")}<span>Sales staff training</span></div>
-<div class="chipc rv d2">{icon("innovation")}<span>Product development</span></div><div class="chipc rv d3">{icon("promo")}<span>National campaigns</span></div></div>
-<div class="frame d rv" style="margin-top:28px;aspect-ratio:21/8"><img src="assets/support/campaigns.webp" alt="PGI campaigns" loading="lazy"></div>
+<div class="chipc rv d2">{icon("innovation")}<span>Product development</span></div><div class="chipc rv d3">{icon("promo")}<span>National promotions</span></div></div>
+<div class="frame d rv" style="margin-top:28px;aspect-ratio:21/8"><img src="assets/support/creatives.webp" alt="Platinum Guild promotions" loading="lazy"></div>
 </div></section>
 
 <section class="sec royal"><div class="wrap split">
@@ -770,7 +973,7 @@ def partner():
     tiers = [("150", "", ["Tray &amp; poster", "1 reel + 1 creative / month"]),
              ("300", "", ["Tray, display &amp; training", "1 reel + 2 creatives / month"]),
              ("500", "Popular", ["Display, training, poster", "PGI website listing", "Products with your logo"]),
-             ("750", "Flagship", ["Everything in 500g", "Part of PGI campaigns"])]
+             ("750", "Flagship", ["Everything in 500g", "Featured in PGI promotions"])]
     tt = "".join(f'<div class="gram{" feat" if k==2 else ""} rv d{k}">' + (f'<span class="tag">{tag}</span>' if tag else "") + f'<b>{w}{"+" if k==3 else ""}<small>GRAMS</small></b><ul>{"".join(f"<li>{x}</li>" for x in li)}</ul></div>' for k, (w, tag, li) in enumerate(tiers))
     zones = [("zone-1", "4 ft counter", "From ₹1.30 L*"), ("zone-2", "8 ft with LED", "From ₹3.25 L*"), ("zone-3", "12 ft wall", "From ₹4.50 L*"),
              ("zone-4", "12 ft with LED", "From ₹4.50 L*"), ("zone-5", "L-shaped zone", "From ₹5.00 L*"), ("zone-6", "Atrium", "From ₹5.00 L*")]
@@ -810,7 +1013,7 @@ def partner():
 <section class="sec royal">{sparkle(20)}<div class="wrap">
 <div class="head"><div><span class="kick">How it works</span><h2 class="h2 rv">Your platinum journey, <em>in five steps.</em></h2></div></div>
 <div class="steps"><div class="step rv"><b>Connect</b><span>Call, WhatsApp or visit.</span></div><div class="step rv d1"><b>Plan</b><span>Investment &amp; inventory.</span></div>
-<div class="step rv d2"><b>Select</b><span>Ready stock, fast.</span></div><div class="step rv d3"><b>Launch</b><span>Display, branding, training.</span></div><div class="step rv d4"><b>Grow</b><span>Refills &amp; campaigns.</span></div></div>
+<div class="step rv d2"><b>Select</b><span>Ready stock, fast.</span></div><div class="step rv d3"><b>Launch</b><span>Display, branding, training.</span></div><div class="step rv d4"><b>Grow</b><span>Refills &amp; promotions.</span></div></div>
 </div></section>
 
 <section class="sec-sm" id="manufacturers"><div class="wrap center" style="margin-bottom:26px"><span class="kick">All manufacturers’ exclusive products, at one place</span></div>{logos_marquee()}</section>
@@ -822,18 +1025,21 @@ def partner():
 # ================================================================== LOOKBOOK
 def lookbook():
     shots = ["ph10", "phe1", "ph12", "ph7", "phe6", "ph3", "ph8", "phe2", "ph13", "ph9", "phe4", "ph14", "ph16", "phe3", "ph6", "ph11", "phe5", "ph17"]
-    props = ["sha00318", "sha00313", "sha00122", "sha00131", "sha00146", "sha00171", "sha00183", "sha00200", "img_2561"]
+    props = ["sha00318", "sha00313", "sha00122", "sha00131", "sha00146", "sha00171", "sha00183", "sha00200", "img_2561",
+             "sha00119", "sha00130", "sha00145", "sha00147", "sha00115", "sha00118", "sha00136", "13372", "img_2540", "img_63272", "sha00155", "sha00195", "sha00203"]
+    studio = [f"st{k:02d}" for k in range(1, 25)]
+    m3 = "".join(f'<figure class="rv d{k%3}" data-full="assets/studio/{p}.webp"><img src="assets/studio/{p}.webp" alt="Platinum jewellery, studio" loading="lazy"></figure>' for k, p in enumerate(studio))
+    fl = ["chain-blue", "studio-1", "studio-2", "chain-blue-2", "studio-3", "studio-4", "studio-5", "hero-twotone", "studio-6", "studio-7", "studio-8", "chain-light", "studio-9", "studio-10", "studio-11"]
+    reel = "".join(f'<div class="film rv d{k%3}"><video data-auto muted loop playsinline preload="none" poster="assets/video/{v}.jpg"><source src="assets/video/{v}.mp4" type="video/mp4"></video></div>' for k, v in enumerate(fl))
     m0 = "".join(f'<figure class="rv d{k%3}" data-full="assets/insta/c{k+1:02d}.webp"><img src="assets/insta/c{k+1:02d}.webp" alt="Dishaa Platinum creative" loading="lazy"></figure>' for k in range(24))
     m1 = "".join(f'<figure class="rv d{k%3}" data-full="assets/lookbook/{p}.webp"><img src="assets/lookbook/{p}.webp" alt="Platinum jewellery photograph" loading="lazy"></figure>' for k, p in enumerate(shots))
     m2 = "".join(f'<figure class="rv d{k%3}" data-full="assets/props/{p}.webp"><img src="assets/props/{p}.webp" alt="Platinum jewellery still life" loading="lazy"></figure>' for k, p in enumerate(props))
     body = phero("Photography · films", "It’s rare,|<em>and eternal.</em>", "Our platinum, photographed and filmed.",
                  "assets/lookbook/ph10.webp", "<span>Lookbook</span>") + f"""
-<section class="sec-sm royal"><div class="wrap"><div class="films" style="grid-template-columns:repeat(3,1fr);max-width:900px;margin:0 auto">
-<div class="film rv"><video data-auto muted loop playsinline preload="none" poster="assets/video/chain-blue.jpg"><source src="assets/video/chain-blue.mp4" type="video/mp4"></video></div>
-<div class="film rv d1"><video data-auto muted loop playsinline preload="none" poster="assets/video/men-2.jpg"><source src="assets/video/men-2.mp4" type="video/mp4"></video></div>
-<div class="film rv d2"><video data-auto muted loop playsinline preload="none" poster="assets/video/chain-blue-2.jpg"><source src="assets/video/chain-blue-2.mp4" type="video/mp4"></video></div></div></div></section>
+<section class="sec-sm royal"><div class="wrap"><div class="head"><div><span class="kick">In motion</span><h2 class="h2 rv">Platinum, <em>filmed.</em></h2></div></div><div class="films reel">{reel}</div></div></section>
 <section class="sec-sm"><div class="wrap"><div class="head"><div><span class="kick">Series 01</span><h2 class="h2 rv">The <em>blue room.</em></h2></div></div><div class="mason">{m1}</div></div></section>
 <section class="sec-sm lavbg"><div class="wrap"><div class="head"><div><span class="kick">Series 02</span><h2 class="h2 rv">Still <em>life.</em></h2></div></div><div class="mason">{m2}</div></div></section>
+<section class="sec-sm"><div class="wrap"><div class="head"><div><span class="kick">Series 03</span><h2 class="h2 rv">The <em>studio.</em></h2></div></div><div class="mason">{m3}</div></div></section>
 {PLB}
 {cta()}"""
     page("lookbook.html", "Lookbook — Dishaa Platinum", "Creatives, photography and films of platinum jewellery from Dishaa Platinum.", body)
@@ -888,7 +1094,7 @@ def extras():
 if __name__ == "__main__":
     home(); about(); collections()
     for c in COLS: collection_page(c)
-    accessories(); dthe(); why(); partner(); lookbook(); contact(); extras()
+    explore(); accessories(); dthe(); why(); partner(); lookbook(); contact(); extras()
 
 # ------------------------------------------------------------------ flattened banner exports (content-doc formats)
 def export_page():

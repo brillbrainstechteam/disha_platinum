@@ -42,7 +42,7 @@ MAP = {
    ("Baby Pendants", "FARISHTEY/BAY PENDENTS", "FRS-PD"),
  ],
 }
-PGI = {  # PGI campaign layouts (opaque, baked labels) -> cropped
+PGI = {  # PGI promotion layouts (opaque, baked labels) -> cropped
  "men-of-platinum": ["PGI PROMTION IMAGES/PGI MOP product/" + d for d in ["MENS BCT","MENS CHAINS","MENS KADA","MENS RING"]],
  "evara": ["PGI PROMTION IMAGES/PGI EVARA/" + d for d in ["EARING","NECKLES","WOMENS BCT","WOMENS KADA","WOMENS RING"]],
  "platinum-days-of-love": ["PGI PROMTION IMAGES/PGI PDOL product images 2023/COUPLE BAND"],
@@ -126,7 +126,7 @@ def main():
                 slug = re.sub(r"[^a-z0-9]+", "-", f"pgi-{stem}".lower()).strip("-")
                 dst = f"{OUT}/p/{col}/{slug}.webp"
                 jobs.append((f"{path}/{f}", dst, "pgi"))
-                items[f"PGI|{stem}"] = {"code": stem.upper().replace(" ", "-"), "cat": "PGI Campaign Picks",
+                items[f"PGI|{stem}"] = {"code": stem.upper().replace(" ", "-"), "cat": "PGI Signature Picks",
                                         "views": [f"assets/p/{col}/{slug}.webp"], "pgi": True}
         for it in items.values():
             it["views"] = sorted(it["views"])
