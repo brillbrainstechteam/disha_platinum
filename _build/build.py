@@ -53,7 +53,7 @@ AUD = [
   dict(key="women", name="Women", cols=["evara", "bandhan"], img="assets/spotlight/p-evara.webp", pos="34% 18%",
        line="Necklaces, earrings, kadas, pendant sets &amp; mangalsutras.",
        looks=["studio/st09", "studio/st01", "studio/st16", "props/sha00130", "studio/st19", "studio/st07", "props/sha00119", "studio/st22", "studio/st14", "studio/st10", "studio/st20", "studio/st17"]),
-  dict(key="kids", name="Kids", cols=["farishtey"], img="assets/props/sha00115.webp", pos="58% 60%",
+  dict(key="kids", name="Kids", cols=["farishtey"], img="assets/spotlight/p-kids.webp", pos="50% 30%",
        line="Baby tops &amp; pendants, gentle on young skin.",
        looks=["props/sha00115", "props/sha00118"]),
   dict(key="couples", name="Couples", cols=["platinum-days-of-love", "pride-n-perfect"], img="assets/spotlight/p-pdol.webp", pos="50% 20%",
@@ -647,40 +647,13 @@ def home():
     compass_ticks = "".join(f'<line x1="100" y1="6" x2="100" y2="{16 if k%2==0 else 11}" stroke="rgba(255,255,255,.6)" transform="rotate({k*22.5} 100 100)"/>' for k in range(16))
     body = '<h1 class="sr">Dishaa Platinum — India’s most trusted platinum jewellery wholesaler for retail jewellers</h1>' + hero + f"""
 {words(["Couple Bands", "Chains", "Kadas", "Bracelets", "Pendants", "Mangalsutras", "Earrings", "Cufflinks", "Watch Straps"])}
-<section class="sec-sm mistbg"><div class="wrap">
-<div class="center" style="margin-bottom:40px"><span class="kick">One brand · six collections</span><h2 class="h2 rv" style="margin-top:14px">The best <em>selection.</em></h2></div>
-<div class="ribbon">{ribbon}</div></div></section>
-
 {shop_by()}
-
-{spotlight()}
-
-{pgi_band()}
 
 {impact_bento(total)}
 
 {showcase()}
 
 {why_bento()}
-
-<section class="sec royal reach">{sparkle(28)}<div class="wrap reach-grid">
-<div class="reach-copy"><span class="kick">New office · bigger vision</span>
-<h2 class="h2 rv" style="margin:16px 0 18px">Old roots, new reach. <em>Dishaa is everywhere.</em></h2>
-<p class="sub rv">From Zaveri Bazaar to every corner of the country, 1000+ jewellers source their platinum through Dishaa.</p>
-<div class="dirs">
-<div class="dir rv" data-pin="n"><span class="arr" style="--r:0deg"></span><small>Growing in</small><b>North</b></div>
-<div class="dir rv d1" data-pin="e"><span class="arr" style="--r:90deg"></span><small>Rising in</small><b>East</b></div>
-<div class="dir rv d2" data-pin="s"><span class="arr" style="--r:180deg"></span><small>Shining in</small><b>South</b></div>
-<div class="dir rv d3" data-pin="w"><span class="arr" style="--r:270deg"></span><small>Prospering in</small><b>West</b></div>
-</div></div>
-<div class="reach-map rv d1"><img src="assets/brand/india-map.webp" alt="Map of India showing Dishaa's reach" loading="lazy">
-<span class="pin n" style="left:43.2%;top:38.4%"><i></i><em>North</em></span>
-<span class="pin e" style="left:57.5%;top:52%"><i></i><em>East</em></span>
-<span class="pin s" style="left:43.6%;top:71%"><i></i><em>South</em></span>
-<span class="pin w hq" style="left:37%;top:58.4%"><i></i><em>Mumbai<span class="lgx"> · The Platinum Hub</span></em></span>
-</div>
-<div class="hexmini">{HEX}</div></div></section>
-
 <section class="sec mistbg"><div class="wrap">
 <div class="head"><div><span class="kick">Turning potential into performance</span><h2 class="h2 rv">Everything you need to <em>grow platinum.</em></h2></div><a class="btn btn-royal rv" href="partner.html">Partner benefits {ARROW}</a></div>
 <div class="chips">{ch}</div></div></section>
@@ -856,7 +829,6 @@ def collection_page(c):
 <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px"><a class="btn btn-royal" href="#designs">Browse designs {ARROW}</a><a class="btn btn-line" href="contact.html?interest={E(c['name'])}">Get the catalogue</a></div></div>
 <div class="stagec"><img class="bgi" src="{c["bg"]}" alt=""><img class="p" src="{c["hero"]}" alt="{c["name"]} signature piece"></div>
 </div></section>
-{camp_strip(slug)}
 <div class="filters" id="designs"><div class="wrap">{chips}</div></div>
 <section class="sec-sm" style="padding-top:28px"><div class="wrap">
 <div class="pgrid">{cards}</div>
