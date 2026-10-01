@@ -252,6 +252,7 @@ def footer():
 <img src="assets/brand/pt-logo-white.png" alt="Platinum" style="height:46px;width:auto;opacity:.8;margin-top:18px"></div>
 </div>
 <div class="ftr-bot"><span>© {date.today().year} Dishaa Platinum. All Rights Reserved. · The Platinum Hub, Mumbai</span><span>Pure · Precious · Progressive · Authorised PGI Dealer · T&amp;Cs apply</span></div>
+<p class="ftr-pw">Powered by <a href="https://brillbrainsconsultants.com/" target="_blank" rel="noopener">Brillbrains</a></p>
 </div></footer>
 <script src="assets/vendor/anime.min.js" defer></script>
 <script src="assets/js/site.js?v={VER}" defer></script>
@@ -766,8 +767,10 @@ def coll_index():
 # ================================================================== HOME
 def about_home():
     return f"""<section class="sec about-h"><div class="wrap split">
-<div class="ah-art rv"><div class="pf ah-main"><img src="assets/lookbook/ph10.webp" alt="Dishaa platinum necklace" loading="lazy"><span class="pf-line" aria-hidden="true"></span></div>
-<img class="ah-inset" src="assets/props/sha00313.webp" alt="Two-tone platinum couple bands" loading="lazy">
+<div class="ah-col rv">
+<figure class="ahc a"><img src="assets/lookbook/ph7.webp" alt="Dishaa platinum necklace and earring set" loading="lazy"><figcaption>Creative designs</figcaption></figure>
+<figure class="ahc b"><img src="assets/support/store.webp" alt="Platinum display counter at a retail jeweller" loading="lazy"><figcaption>Retail ready</figcaption></figure>
+<figure class="ahc c"><img src="assets/props/sha00183.webp" alt="Platinum chains and bracelets in stock" loading="lazy"><figcaption>Widest range</figcaption></figure>
 <div class="ah-badge"><b>25+</b><span>Years of excellence</span></div></div>
 <div class="rv d1"><span class="kick">About us</span><h2 class="h2" style="margin:14px 0 20px">Creative designs. <em>Exclusive platinum.</em></h2>
 <p class="lead">Dishaa has expertise in creating creative designs and crafting exclusive platinum jewellery for jewellers across India and internationally. Innovation and quality have been the roots of our foundation and success.</p>
