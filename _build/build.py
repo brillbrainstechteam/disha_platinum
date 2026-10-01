@@ -302,11 +302,16 @@ def phero(kick, title, sub, art, crumbs, tagline="", extra=""):
 <h1 class="h1 rv in">{lines(title)}</h1><p class="sub">{sub}</p>{extra}<div class="phx-chips">{chips}</div></div>
 <span class="phx-line" aria-hidden="true"></span></section>"""
 
+CTA_SIDES = ["assets/banner/ring-topaz.webp", "assets/banner/pendant-leaf.webp", "assets/banner/earring-hoop.webp", "assets/banner/ring-sunburst.webp"]
 def cta(title="India’s platinum movement has started.", em="Let’s play.", prod="assets/banner/earring-hoop.webp"):
-    return f"""<section class="sec-sm"><div class="wrap"><div class="ctabox royal rv">{sparkle(18)}
-<div class="cta-copy"><span class="kick">Partner with Dishaa</span><h2 class="h1" style="margin-top:18px">{title} <em>{em}</em></h2>
-<div class="ctas"><a class="btn btn-white" href="contact.html">Start your platinum journey {ARROW}</a><a class="btn btn-ghost" href="https://wa.me/{WA}" target="_blank" rel="noopener">{WA_ICO} WhatsApp</a></div></div>
-<div class="cta-art" aria-hidden="true"><span class="halo"></span><img src="{prod}" alt="" loading="lazy"></div>
+    sides = [x for x in CTA_SIDES if x != prod][:2]
+    return f"""<section class="sec-sm"><div class="wrap"><div class="ctx rv">{sparkle(22)}<span class="ctx-frame" aria-hidden="true"></span>
+<div class="ctx-copy"><span class="kick">Partner with Dishaa</span><h2 class="h1">{title} <em>{em}</em></h2>
+<p>Visit The Platinum Hub at Zaveri Bazaar, Mumbai, or message us. We’ll plan your platinum counter with you.</p>
+<div class="ctas"><a class="btn btn-white" href="contact.html">Book an appointment {ARROW}</a><a class="btn btn-ghost" href="https://wa.me/{WA}" target="_blank" rel="noopener">{WA_ICO} WhatsApp</a></div>
+<a class="ctx-tel" href="tel:{PHONE1}">or call {PHONE1_T}</a></div>
+<div class="ctx-art" aria-hidden="true"><span class="ring r1"></span><span class="ring r2"></span><span class="halo"></span>
+<img class="side l" src="{sides[0]}" alt="" loading="lazy"><img class="main" src="{prod}" alt="" loading="lazy"><img class="side r" src="{sides[1]}" alt="" loading="lazy"></div>
 </div></div></section>"""
 
 def logos_marquee():
@@ -579,17 +584,17 @@ def impact_bento(total):
 
 def why_bento():
     t = [
-      ("b big", "We don’t sell trends.", "We set them", "assets/banner/bracelet-cable.webp"),
-      ("l", "Zero delay.", "100% on-time delivery", "assets/banner/pendant-leaf.webp"),
+      ("royal big", "We don’t sell trends.", "We set them", "assets/banner/bracelet-cable.webp"),
+      ("lilac", "Zero delay.", "100% on-time delivery", "assets/banner/pendant-leaf.webp"),
       ("sky", "We know platinum.", "From production to profit", "assets/banner/ring-topaz.webp"),
-      ("pink", "From concepts to counter.", "We master the art", "assets/banner/earring-hoop.webp"),
-      ("b", "Every gram, every order.", "Crafted with clarity", "assets/banner/ring-sunburst.webp"),
-      ("l wide", "Oldest in the game.", "Fastest in the field", "assets/banner/ring-trillion.webp"),
+      ("blush", "From concepts to counter.", "We master the art", "assets/banner/earring-hoop.webp"),
+      ("deep", "Every gram, every order.", "Crafted with clarity", "assets/banner/ring-sunburst.webp"),
+      ("champ wide", "Oldest in the game.", "Fastest in the field", "assets/banner/ring-trillion.webp"),
     ]
-    tl = "".join(f'<div class="tile {c} rv d{k%3}"><h3>{h}</h3><small>{sub}</small><img src="{im}" alt="" loading="lazy"></div>' for k, (c, h, sub, im) in enumerate(t))
-    return f"""<section class="sec"><div class="wrap">
+    tl = "".join(f'<div class="pwt {c} rv d{k%3}"><span class="pwt-frame" aria-hidden="true"></span><div class="pwt-tx"><h3>{h}</h3><small>{sub}</small></div><img src="{im}" alt="" loading="lazy"></div>' for k, (c, h, sub, im) in enumerate(t))
+    return f"""<section class="sec pw-sec"><div class="wrap">
 <div class="head"><div><span class="kick">Why jewellers choose Dishaa</span><h2 class="h2 rv">Not just a brand. <em>A platinum powerhouse.</em></h2></div></div>
-<div class="tiles bento-tiles">{tl}</div></div></section>"""
+<div class="pwb">{tl}</div></div></section>"""
 
 # ================================================================== SHOP BY (men / women / kids / couples)
 def aud_count(a):
@@ -733,6 +738,8 @@ def home():
 
 {about_home()}
 
+<section class="sec-sm mfr"><div class="wrap center" style="margin-bottom:30px"><span class="kick">Partnered with India’s top manufacturers</span><h2 class="h2 rv" style="margin-top:14px">All manufacturers’ exclusive products, <em>at one place.</em></h2></div>{logos_marquee()}</section>
+
 {impact_bento(total)}
 
 {coll_grid()}
@@ -743,7 +750,7 @@ def home():
 <div class="chips">{ch}</div></div></section>
 
 <section class="sec" style="overflow:hidden"><div class="wrap">
-<div class="head"><div><span class="kick">Men of Platinum</span><h2 class="h2 rv">Serious about platinum? <em>Talk to the pros.</em></h2></div><a class="link rv" href="men-of-platinum.html">Shop the men’s edit {ARROW}</a></div>
+<div class="head"><div><h2 class="h2 rv">Serious about platinum? <em>Talk to the pros.</em></h2></div><div class="talk rv"><a class="btn btn-royal" href="contact.html">Book an appointment {ARROW}</a><a class="btn btn-line" href="https://wa.me/{WA}?text=Hello%20Dishaa%20Platinum%2C%20I%27d%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">{WA_ICO} WhatsApp us</a></div></div>
 <div class="films">{films()}</div></div></section>
 
 {cta()}
