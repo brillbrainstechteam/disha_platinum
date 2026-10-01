@@ -14,7 +14,7 @@ PHONE1, PHONE1_T = "+918169120942", "+91 81691 20942"
 PHONE2, PHONE2_T = "+912268956666", "+91 22 6895 6666"
 EMAIL = "sales@dishaaplatinum.com"
 WA = "918169120942"
-ADDRESS = "F7 A&amp;B, 2nd Floor, 61, Chandra Darshan Building,<br>Next to Diamond Plaza, Dhanji Street,<br>Zaveri Bazaar, Mumbai 400 005"
+ADDRESS = "F7A &amp; B, 2nd Floor, 81, Chandra Darshan Building,<br>Dhanji Street, next to Diamond Plaza,<br>Zaveri Bazaar, Mumbai, Maharashtra 400003"
 # Deploy config (env overrides). BASE is the URL path prefix (e.g. "/disha_platinum" on GitHub Pages,
 # "" on a custom domain). SITE is the public origin + BASE, used for canonical/OG/sitemap URLs.
 BASE = os.environ.get("DISHAA_BASE", "").rstrip("/")
@@ -44,6 +44,28 @@ COLS = [
        hero=None, bg=None, photo="assets/props/sha00318.webp"),
 ]
 COLMAP = {c["slug"]: c for c in COLS}
+DOC = {
+  "men-of-platinum": ("For the modern, ambitious man", "Men of Platinum offers elegant yet durable designs for the modern, ambitious man who embodies power and resilience. Crafted to perfection, this collection represents confidence, success, and timeless style."),
+  "evara": ("Love, blessings &amp; grace", "A tribute to women who embrace elegance and purity, Evara symbolises love, blessings, and grace. Each piece is designed for weddings and cherished moments and reflects sophistication and eternal beauty."),
+  "bandhan": ("Next Gen Mangalsutra", "Deeply rooted in Indian tradition, Bandhan is a collection that celebrates the lifelong commitment of marriage. Featuring platinum mangalsutras, these designs honour unity, love, and the strength of a sacred bond."),
+  "pride-n-perfect": ("Feel The Togetherness", "Pride N Perfect is a couple-centric collection designed for brides and grooms. It captures the beauty of love, partnership, and commitment. Each piece symbolises the essence of togetherness, making it perfect for modern couples."),
+  "platinum-days-of-love": ("Platinum Days of Love (PDOL)", "Celebrate the love that lasts forever with Platinum Days of Love (PDOL). Our exquisitely crafted couple bands symbolise eternal commitment, making them the perfect expression of your unbreakable bond."),
+  "farishtey": ("Next Gen Kids Jewellery", "Inspired by celestial beauty, Farishtey brings an enchanting range of NextGen kids’ jewellery. Designed with intricate detailing, these pieces reflect innocence, purity, and the boundless joy of childhood."),
+}
+for _c in COLS: _c["sub"], _c["desc"] = DOC[_c["slug"]]
+FACTS = [(25, "+", "Years of excellence"), (200, "+", "Cities"), (1000, "+", "Jewellers trust Dishaa")]
+
+def facts_line(cls=""):
+    return f'<div class="factline {cls}">' + "".join(f'<div><b data-count="{n}" data-suffix="{sx}">{n}{sx}</b><span>{t}</span></div>' for n, sx, t in FACTS) + "</div>"
+
+def bl(items, cls="bullets"):
+    return f'<ul class="{cls}">' + "".join(f"<li><span>{i}</span></li>" for i in items) + "</ul>"
+
+def prow(k, img, kick, title, body, alt=""):
+    """Premium image / text row; alternate rows flip."""
+    flip = " flip" if k % 2 else ""
+    return f"""<div class="prow{flip}"><div class="pf rv"><img src="{img}" alt="{alt}" loading="lazy"><span class="pf-line" aria-hidden="true"></span></div>
+<div class="rv d1"><span class="kick">{kick}</span><h2 class="h2" style="margin:14px 0 18px">{title}</h2>{body}</div></div>"""
 
 # Shop by: who the jewellery is for (collection -> audience)
 AUD = [
@@ -99,6 +121,8 @@ ICONS = {
  "cert": '<rect x="6" y="8" width="36" height="26" rx="2"/><circle cx="32" cy="34" r="6"/><path d="m28 39-2 6 6-3 6 3-2-6M12 16h20M12 22h14"/>',
  "fast": '<path d="M26 4 10 28h12l-2 16 16-24H24Z"/>',
  "plan": '<rect x="8" y="6" width="32" height="36" rx="3"/><path d="M16 16h16M16 24h16M16 32h10"/>',
+ "eye": '<path d="M4 24s7-12 20-12 20 12 20 12-7 12-20 12S4 24 4 24Z"/><circle cx="24" cy="24" r="6"/>',
+ "scale": '<path d="M24 6v36M14 42h20M8 14h32"/><path d="M8 14 3 26a5 5 0 0 0 10 0Zm32 0-5 12a5 5 0 0 0 10 0Z"/>',
 }
 def icon(k):
     return f'<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">{ICONS[k]}</svg>'
@@ -122,8 +146,8 @@ ORG_LD = {
   "url": "SITE_URL/", "logo": "SITE_URL/assets/brand/dishaa-lockup.png", "image": "SITE_URL/assets/hero/d01.webp",
   "description": "India’s preferred B2B platinum jewellery partner: PGI-certified collections, display, training and branding support for retail jewellers.",
   "telephone": "+91-81691-20942", "email": "sales@dishaaplatinum.com", "priceRange": "B2B",
-  "address": {"@type": "PostalAddress", "streetAddress": "F7 A&B, 2nd Floor, 61, Chandra Darshan Building, Next to Diamond Plaza, Dhanji Street, Zaveri Bazaar",
-              "addressLocality": "Mumbai", "addressRegion": "Maharashtra", "postalCode": "400005", "addressCountry": "IN"},
+  "address": {"@type": "PostalAddress", "streetAddress": "F7A & B, 2nd Floor, 81, Chandra Darshan Building, Dhanji Street, next to Diamond Plaza, Zaveri Bazaar",
+              "addressLocality": "Mumbai", "addressRegion": "Maharashtra", "postalCode": "400003", "addressCountry": "IN"},
   "areaServed": "IN", "slogan": "Pure · Precious · Progressive",
   "brand": [{"@type": "Brand", "name": n} for n in ["Men of Platinum", "Evara", "Platinum Days of Love", "Bandhan", "Farishtey", "Pride N Perfect"]],
 }
@@ -218,14 +242,16 @@ def footer():
 <div class="wrap">
 <div class="ftr-top">
 <div><img class="flogo" src="assets/brand/dishaa-lockup-white.png" alt="Dishaa Platinum — The Platinum Hub">
-<p class="hinglish" style="font-size:24px;color:#fff;margin-top:24px">Aapke saath hai hum.</p></div>
+<p class="fabout">Dishaa has expertise in creating creative designs and crafting exclusive platinum jewellery for jewellers across India and internationally.</p>
+<p class="hinglish" style="font-size:22px;color:#fff;margin-top:14px">Aapke saath hai hum.</p></div>
 <div><h4>Collections</h4><ul>{cols}<li><a href="accessories.html">Accessories</a></li><li><a href="d-the-platinum.html">D — The Platinum</a></li></ul></div>
 <div><h4>Shop by</h4><ul>{"".join(f'<li><a href="explore.html#{a["key"]}">{a["name"]}</a></li>' for a in AUD)}<li><a href="explore.html">All designs</a></li></ul>
-<h4 style="margin-top:26px">Dishaa</h4><ul><li><a href="about.html">About Us</a></li><li><a href="why-platinum.html">Why Platinum</a></li><li><a href="partner.html">Partner With Us</a></li><li><a href="partner.html#display">Display &amp; Counters</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+<h4 style="margin-top:26px">Dishaa</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="about.html#why-dishaa">Why Dishaa?</a></li><li><a href="why-platinum.html">Why Platinum</a></li><li><a href="partner.html">Partner With Us</a></li><li><a href="partner.html#display">Display &amp; Counters</a></li><li><a href="lookbook.html">Lookbook</a></li><li><a href="contact.html">Contact</a></li></ul></div>
 <div><h4>Visit the Hub</h4><address>{ADDRESS}</address><p style="margin-top:16px"><a href="tel:{PHONE1}">{PHONE1_T}</a><br><a href="tel:{PHONE2}">{PHONE2_T}</a><br><a href="mailto:{EMAIL}">{EMAIL}</a></p>
+<div class="soc"><a href="https://wa.me/{WA}" target="_blank" rel="noopener" aria-label="WhatsApp">{WA_ICO}</a><a href="tel:{PHONE1}" aria-label="Call"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.6" d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2Z"/></svg></a><a href="mailto:{EMAIL}" aria-label="Email"><svg viewBox="0 0 24 24" width="17" height="17" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m3.5 6 8.5 7 8.5-7" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></div>
 <img src="assets/brand/pt-logo-white.png" alt="Platinum" style="height:46px;width:auto;opacity:.8;margin-top:18px"></div>
 </div>
-<div class="ftr-bot"><span>© {date.today().year} Dishaa Platinum · The Platinum Hub, Mumbai</span><span>Pure · Precious · Progressive · Authorised PGI Dealer · T&amp;Cs apply</span></div>
+<div class="ftr-bot"><span>© {date.today().year} Dishaa Platinum. All Rights Reserved. · The Platinum Hub, Mumbai</span><span>Pure · Precious · Progressive · Authorised PGI Dealer · T&amp;Cs apply</span></div>
 </div></footer>
 <script src="assets/vendor/anime.min.js" defer></script>
 <script src="assets/js/site.js?v={VER}" defer></script>
@@ -651,6 +677,19 @@ def coll_grid():
 <div class="cg">{cards}</div></div></section>"""
 
 # ================================================================== HOME
+def about_home():
+    return f"""<section class="sec about-h"><div class="wrap split">
+<div class="ah-art rv"><div class="pf ah-main"><img src="assets/lookbook/ph10.webp" alt="Dishaa platinum necklace" loading="lazy"><span class="pf-line" aria-hidden="true"></span></div>
+<img class="ah-inset" src="assets/props/sha00313.webp" alt="Two-tone platinum couple bands" loading="lazy">
+<div class="ah-badge"><b>25+</b><span>Years of excellence</span></div></div>
+<div class="rv d1"><span class="kick">About us</span><h2 class="h2" style="margin:14px 0 20px">Creative designs. <em>Exclusive platinum.</em></h2>
+<p class="lead">Dishaa has expertise in creating creative designs and crafting exclusive platinum jewellery for jewellers across India and internationally. Innovation and quality have been the roots of our foundation and success.</p>
+<p>Dishaa considers platinum a pure and precious partner in growth. Jewellery made with platinum is believed to be rare and eternal.</p>
+<p>Dishaa has vast experience creating an exclusive range of platinum jewellery. With inventory from top manufacturers in India and superior customer service, it is one of the most preferred B2B platinum jewellery wholesalers. Trusted by 1000+ retail jewellers across India and internationally, with a collective experience of 25+ years.</p>
+{facts_line()}
+<a class="btn btn-royal" href="about.html" style="margin-top:6px">More about Dishaa {ARROW}</a></div>
+</div></section>"""
+
 def home():
     total = sum(count(c) for c in CAT)
     logos6 = "".join(f'<a href="{c["slug"]}.html" style="--i:{k}"><img src="{c["logo"]}" alt="{c["name"]}"></a>' for k, c in enumerate(COLS))
@@ -685,6 +724,8 @@ def home():
 {words(["Couple Bands", "Chains", "Kadas", "Bracelets", "Pendants", "Mangalsutras", "Earrings", "Cufflinks", "Watch Straps"])}
 {shop_by()}
 
+{about_home()}
+
 {impact_bento(total)}
 
 {coll_grid()}
@@ -710,65 +751,103 @@ def home():
 
 # ================================================================== ABOUT
 def about():
-    values = [("Trust", "trust"), ("Innovation", "innovation"), ("Quality", "quality"), ("Commitment", "commitment"),
+    values = [("Transparency", "eye"), ("Integrity", "scale"), ("Trust", "trust"), ("Innovation", "innovation"), ("Quality", "quality"), ("Commitment", "commitment"),
               ("Support", "support"), ("Growth", "growth"), ("Exclusivity", "exclusivity"), ("Reliability", "reliability")]
     vals = "".join(f'<div class="val rv d{k%4}">{icon(ic)}<b>{t}</b></div>' for k, (t, ic) in enumerate(values))
-    usps = [("range", "Widest range &amp; huge inventory"), ("innovation", "Innovative designs"), ("reliability", "25 years of collective experience"),
-            ("chat", "Systematic · smooth · straightforward"), ("quality", "No-compromise QC"), ("box", "Every category"),
-            ("tech", "Latest technology"), ("trust", "Trusted by 1000+ jewellers"), ("exclusivity", "Creative craftsmanship"),
-            ("pgi", "Top manufacturers, partnered"), ("men", "Men’s specialists"), ("custom", "Customised for every occasion")]
-    usp = "".join(f'<div class="chipc rv d{k%4}">{icon(ic)}<span>{t}</span></div>' for k, (ic, t) in enumerate(usps))
+    usps = [("range", "Widest range and huge inventory for platinum jewellery and accessories."),
+            ("innovation", "Leading in the industry due to innovative designs and a passion for promising platinum jewellery."),
+            ("reliability", "25 years of collective experience &amp; knowledge in manufacturing &amp; supplying platinum jewellery across India and to international retail jewellers."),
+            ("chat", "Systematic · smooth · straightforward communication."), ("quality", "Quality products with no compromise and accurate QC."),
+            ("box", "Biggest range of platinum jewellery with all types of categories."), ("tech", "We believe in the latest technology."),
+            ("trust", "Trusted by 1000+ jewellers in India and internationally."), ("exclusivity", "Creative concepts and craftsmanship are what set us apart from the competition."),
+            ("pgi", "Partnered with top platinum manufacturers across India."), ("men", "A wide range of specialised jewellery and accessories specially designed for men."),
+            ("custom", "Customised jewellery crafted with world-class technology for every occasion.")]
+    usp = "".join(f'<div class="uspc rv d{k%4}"><i>{k+1:02d}</i>{icon(ic)}<p>{t}</p></div>' for k, (ic, t) in enumerate(usps))
     pillars = [
-      ("Widest range", "range", ["Couple bands, chains, bracelets, kadas", "Cufflinks, belts, brooches, watch straps", "Customised for every occasion"]),
-      ("Years of excellence", "reliability", ["25+ years of collective experience", "Authorised PGI dealer", "Advanced manufacturing technology"]),
-      ("Quality products", "quality", ["Platinum Guild certified", "India’s top manufacturers", "Rigorous QC on every piece"]),
-      ("Trusted by 1000+", "trust", ["Consistent product quality", "Transparent business practices", "Unparalleled service"]),
+      ("assets/props/sha00183.webp", "Widest range", "India’s most extensive <em>platinum collection.</em>",
+       "Dishaa Platinum offers <b>India’s most extensive collection of platinum jewellery</b> with various designs, from classic to contemporary. Our inventory includes:",
+       ["Couple bands, chains, bracelets, and kadas", "Exclusive platinum accessories – cufflinks, belts, brooches, watch straps", "Customised platinum jewellery for every occasion"]),
+      ("assets/support/store.webp", "Years of excellence", "25+ years of <em>collective experience.</em>",
+       "With <b>over 25 years of collective experience</b> in manufacturing and supplying platinum jewellery, Dishaa Platinum has built a strong reputation in the industry. Our legacy is built on:",
+       ["Authorised PGI dealer", "Expertise in exclusive platinum craftsmanship", "Advanced manufacturing technology for precision and perfection", "A dedicated team ensuring innovation and quality"]),
+      ("assets/brand/pt950-program.webp", "Quality products", "Quality is <em>non-negotiable.</em>",
+       "At Dishaa, quality is <b>non-negotiable</b>. We maintain the highest standards by:",
+       ["Platinum Guild certified products", "Partnering with India’s top platinum manufacturers", "Conducting rigorous quality control checks for every product", "Using <b>world-class technology</b> to ensure precision and durability"]),
+      ("assets/lookbook/ph7.webp", "Trusted by 1000+ jewellers", "The preferred choice <em>of 1000+ jewellers.</em>",
+       "With a clientele spanning India and international markets, Dishaa Platinum is the preferred choice of <b>1000+ retail jewellers</b>. Our strong partnerships are built on the following:",
+       ["Consistent product quality", "Transparent business practices", "Unparalleled customer service"]),
     ]
-    pl = "".join(f'<div class="card rv d{k}">{icon(ic)}<h3>{t}</h3><ul class="bullets" style="font-size:15px;color:var(--muted)">{"".join(f"<li>{b}</li>" for b in bl)}</ul></div>' for k, (t, ic, bl) in enumerate(pillars))
+    pl = "".join(prow(k, im, kick, t, f"<p>{intro}</p>" + bl(items), kick) for k, (im, kick, t, intro, items) in enumerate(pillars))
     body = phero("Mumbai · India · International", "Built on legacy.|<em>Driven by platinum.</em>",
                  "A renowned platinum jewellery wholesaler and manufacturer in Mumbai, trusted by 1000+ retail jewellers across India and abroad.",
                  "assets/insta/c18.webp", "<span>About</span>") + f"""
 <section class="sec"><div class="wrap split">
 <div class="frame d ar45 rv"><img src="assets/props/sha00313.webp" alt="Two-tone platinum couple bands" loading="lazy"></div>
-<div><span class="kick">About us</span><h2 class="h2 rv" style="margin:16px 0 22px">Innovation and quality are <em>our roots.</em></h2>
-<p class="sub rv">We create and craft exclusive platinum jewellery for jewellers across India and internationally. We see platinum as a pure and precious partner in growth, rare and eternal.</p>
+<div><span class="kick">Who we are?</span><h2 class="h2 rv" style="margin:16px 0 22px">Dishaa – <em>The Platinum Hub.</em></h2>
+<p class="lead rv">Dishaa – The Platinum Hub is a renowned platinum jewellery wholesaler and manufacturer based in Mumbai, India.</p>
+<p class="rv">Dishaa has expertise in creating creative designs and crafting exclusive platinum jewellery for jewellers across India and internationally. Innovation and quality have been the roots of our foundation and success.</p>
+<p class="rv">Dishaa considers platinum a pure and precious partner in growth. Jewellery made with platinum is believed to be rare and eternal.</p>
+<p class="rv">Dishaa has vast experience creating an exclusive range of platinum jewellery products. With inventory from top Indian manufacturers and superior customer service, it is one of the most preferred B2B platinum and gold jewellery manufacturers and wholesalers. It is trusted by 1000+ retail jewellers across India and internationally.</p>
 <p class="quote rv" style="font-size:clamp(20px,1.8vw,25px);margin-top:26px">“Platinum is the perfect and precious metal for life. We go above and beyond every day to take it to every corner of the country.”</p></div>
 </div></section>
 
 <section class="sec-sm"><div class="wrap vm">
-<div class="rv"><img src="assets/lookbook/phe3.webp" alt="" loading="lazy"><span class="kick">Our vision</span><h3>India’s biggest &amp; most trusted platinum jewellery partner.</h3></div>
-<div class="rv d1"><img src="assets/lookbook/ph14.webp" alt="" loading="lazy"><span class="kick">Our mission</span><h3>A benchmark for classic platinum creations, and the best service to jewellers worldwide.</h3></div>
+<div class="rv"><img src="assets/lookbook/phe3.webp" alt="" loading="lazy"><span class="kick">Our vision</span><h3>To become known as India’s biggest &amp; most trusted platinum jewellery partner.</h3></div>
+<div class="rv d1"><img src="assets/lookbook/ph14.webp" alt="" loading="lazy"><span class="kick">Our mission</span><h3>Setting up a benchmark for classic innovations &amp; creations in the world of platinum jewellery, and providing the best service to jewellers across the globe.</h3></div>
 </div></section>
 
 <section class="sec mistbg"><div class="wrap center"><span class="kick">What we stand for</span><h2 class="h2 rv" style="margin:14px auto 44px">Innovation is routine. <em>Excellence is standard.</em></h2>
-<div class="values">{vals}</div></div></section>
+<div class="values v10">{vals}</div></div></section>
+
+<section class="sec-sm"><div class="wrap">{facts_line("big")}</div></section>
 
 <section class="sec royal">{sparkle(24)}<div class="wrap split">
 <div class="rv"><span class="kick">Director’s message</span>
-<p class="quote" style="margin-top:22px">“The next-generation metal is in demand across every state of India. We serve jewellers anything to everything they need in platinum, and train their teams to grow it.”</p>
-<p class="hinglish" style="margin-top:24px">Team Dishaa is at your service — <span class="rosegold">aapke saath hai hum.</span></p>
+<p class="quote" style="margin-top:22px">“The Next Generation metal is picking up demand from all states of India and is already very well consumed in international markets.”</p>
+<p style="color:#dcdcf5;margin-top:18px">Indian jewellers indeed have a tremendous opportunity to grow this precious metal, and we at Dishaa believe in serving them anything to everything they need in platinum jewellery. We aim to help the jeweller and educate their entire team with the right knowledge about platinum products and collections, supporting them with the best possible ways to help them grow their platinum business.</p>
+<p class="hinglish" style="margin-top:20px">Remember these lines: Team Dishaa is at your service regarding platinum — <span class="rosegold">aapke saath hai hum.</span></p>
 <p style="margin-top:20px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:#cfd0f0">— Director, Dishaa Platinum</p></div>
 <div class="frame d ar45 rv d1" style="background:#fff;display:grid;place-items:center"><img src="assets/brand/dishaa-lockup.png" alt="Dishaa Platinum" style="width:56%;height:auto;object-fit:contain"></div>
 </div></section>
 
-<section class="sec"><div class="wrap">
-<div class="head"><div><span class="kick">The Dishaa difference</span><h2 class="h2 rv">Your preferred <em>platinum partner.</em></h2></div></div>
-<div class="cards">{pl}</div></div></section>
+<section class="sec" id="why-dishaa"><div class="wrap">
+<div class="head"><div><span class="kick">Why Dishaa?</span><h2 class="h2 rv">Your preferred <em>platinum partner.</em></h2></div></div>
+<div class="prows">{pl}</div></div></section>
 
 <section class="sec-sm lavbg"><div class="wrap">
 <div class="head"><div><span class="kick">Our USPs</span><h2 class="h2 rv">Twelve reasons to <em>choose Dishaa.</em></h2></div></div>
-<div class="chips">{usp}</div></div></section>
+<div class="uspg">{usp}</div></div></section>
 
 <section class="sec"><div class="wrap">
-<div class="head"><div><span class="kick">Making it happen</span><h2 class="h2 rv">Branding. Display. <em>Training.</em></h2></div></div>
-<div class="acc-grid">
-<div class="acc rv"><img src="assets/support/creatives.webp" alt="Platinum brand creatives" loading="lazy"><div><h3>Branding</h3><p>A distinct identity, premium marketing, strong digital presence.</p></div></div>
-<div class="acc rv d1"><img src="assets/display/fixture-1.webp" alt="Platinum display counter" loading="lazy"><div><h3>Display</h3><p>Visual merchandising that shows platinum at its best.</p></div></div>
-<div class="acc rv d2"><img src="assets/support/training.webp" alt="Sales staff training" loading="lazy"><div><h3>Training</h3><p>Product expertise and selling skills for your team.</p></div></div>
+<div class="head"><div><span class="kick">Making brand to a retailer</span><h2 class="h2 rv">Branding. Display. <em>Training.</em></h2></div><p class="sub rv" style="max-width:46ch;margin:0">As your <b>B2B partner</b>, Dishaa Platinum empowers retailers to create a strong and successful brand through strategic branding, impactful displays, expert training, and more.</p></div>
+<div class="bgrid">
+<div class="bcard rv"><div class="pf"><img src="assets/support/creatives.webp" alt="Platinum brand creatives" loading="lazy"><span class="pf-line" aria-hidden="true"></span></div><h3>Branding</h3><p>We help retailers establish a unique brand identity with consistent messaging, premium marketing strategies, and a strong digital presence to attract and retain customers.</p></div>
+<div class="bcard rv d1"><div class="pf"><img src="assets/display/fixture-1.webp" alt="Platinum display counter" loading="lazy"><span class="pf-line" aria-hidden="true"></span></div><h3>Display</h3><p>Enhance customer engagement with <b>expert visual merchandising</b>, well-structured product displays, and store aesthetics that showcase platinum jewellery in its finest form.</p></div>
+<div class="bcard rv d2"><div class="pf"><img src="assets/support/training.webp" alt="Sales staff training" loading="lazy"><span class="pf-line" aria-hidden="true"></span></div><h3>Training</h3><p>Equip your sales team with <b>product expertise, customer engagement skills, and brand communication techniques</b> to boost sales and enhance customer experience.</p></div>
+<div class="bcard more royal rv d3">{sparkle(10)}<h3>And many more…</h3><p>From <b>marketing campaigns and in-store events</b> to <b>exclusive retail partnerships</b>, Dishaa Platinum supports retailers in building a premium and successful jewellery brand.</p><a class="btn btn-white" href="partner.html">Partner with us {ARROW}</a></div>
+</div></div></section>
+
+<section class="sec-sm lavbg"><div class="wrap"><div class="center" style="margin-bottom:26px"><span class="kick">Affiliations</span></div>
+<div class="affs">
+<div class="aff rv"><div class="aff-im"><img src="assets/brand/logo-pgi.webp" alt="Platinum Guild International" loading="lazy"></div><b>Platinum Guild International</b><span>Authorised PGI dealer</span></div>
+<div class="aff rv d1"><div class="aff-im"><img src="assets/brand/pt-logo.png" alt="Platinum" loading="lazy"></div><b>Platinum</b><span>Platinum Guild certified products</span></div>
+<div class="aff rv d2"><div class="aff-im"><img src="assets/brand/pt950-card.webp" alt="Pt950 purity assurance" loading="lazy"></div><b>Pt950 purity assurance</b><span>95% pure, every piece</span></div>
 </div></div></section>
 {cta("Your growth is our", "platinum mission.", "assets/banner/ring-leaf.webp")}"""
     page("about.html", "About Dishaa Platinum — The Platinum Hub, Mumbai",
          "Dishaa Platinum, The Platinum Hub: a Mumbai platinum jewellery wholesaler and manufacturer with 25+ years of collective experience, trusted by 1000+ jewellers.", body)
+
+HUB_JEW = [("Bangles", "Elegant platinum bangles designed for a timeless appeal."), ("Bracelets", "Stylish and sophisticated platinum bracelets for every occasion."),
+           ("Chains", "Sleek and durable platinum chains for a refined look."), ("Chain Necklaces", "A statement piece that embodies luxury and craftsmanship."),
+           ("Couple Rings", "Symbolising eternal love and togetherness."), ("Earrings", "Minimalist and elegant platinum earrings to complement any style."),
+           ("Kada", "A bold representation of strength, tradition, and modernity."), ("Mangalsutra", "Platinum’s purity meets tradition in a symbol of eternal commitment."),
+           ("Necklaces", "Exquisite craftsmanship in timeless platinum designs."), ("Nosepins", "A subtle touch of platinum elegance."),
+           ("Pendants", "Intricately designed platinum pendants for a sophisticated look."), ("Rings", "Platinum rings crafted for style, elegance, and exclusivity."),
+           ("Platinum Bar and Coins", "Timeless purity, crafted for prestige and value.")]
+HUB_ACC = [("Cufflinks", "A symbol of refinement and prestige for modern professionals."), ("Belt Buckles", "Platinum-crafted buckles for a statement of luxury."),
+           ("Brooches", "Elegantly designed to add sophistication to any attire."), ("Specs", "Platinum-rimmed eyewear for a distinctive look."),
+           ("Watch Straps", "Premium platinum watch straps offer durability and style."), ("Tie Pins", "A subtle yet powerful finishing touch to formal wear."),
+           ("Buttons", "Platinum-infused buttons redefine elegance in fashion.")]
 
 # ================================================================== COLLECTIONS OVERVIEW
 def collections():
@@ -785,13 +864,20 @@ def collections():
         rows += f"""<div class="split rv" style="padding:clamp(34px,5vw,70px) 0">
 <div {order}>{art}</div>
 <div><img src="{c["logo"]}" alt="{c["name"]}" style="height:clamp(70px,7vw,100px);width:auto;max-width:80%;object-fit:contain" loading="lazy">
-<p class="quote" style="margin:22px 0 18px">{c["tag"]}</p>
+<h2 class="h3" style="margin:20px 0 10px;color:var(--navy)">{c["name"]} <em>– {c["sub"]}</em></h2>
+<p style="color:#4d5078;margin:0 0 18px">{c["desc"]}</p>
 <div class="tagrow" style="margin-bottom:26px">{tags}</div>
 <a class="btn btn-royal" href="{c["slug"]}.html">{f"Explore {n} designs" if n else "Explore"} {ARROW}</a></div></div>"""
     body = phero("Men · Women · Couples · Brides · Kids", "One brand.|Six collections.|<em>The best selection.</em>",
                  "Plus platinum accessories and bars &amp; coins, all from one hub.", "assets/insta/c05.webp", "<span>Collections</span>") + f"""
 {coll_grid()}
 <section class="sec" style="padding-top:0"><div class="wrap">{rows}</div></section>
+<section class="sec hubsec"><div class="wrap">
+<div class="head"><div><span class="kick">The Platinum Hub</span><h2 class="h2 rv">Classic &amp; contemporary <em>platinum jewellery.</em></h2></div><a class="btn btn-line rv" href="explore.html">Browse all designs {ARROW}</a></div>
+<div class="hubcols">
+<div class="hubcol rv"><h3>Jewellery collections</h3><dl>{"".join(f"<div><dt>{a}</dt><dd>{b}</dd></div>" for a, b in HUB_JEW)}</dl></div>
+<div class="hubcol rv d1"><h3>Platinum accessories</h3><dl>{"".join(f"<div><dt>{a}</dt><dd>{b}</dd></div>" for a, b in HUB_ACC)}</dl><a class="link" href="accessories.html" style="margin-top:22px">See platinum accessories {ARROW}</a></div>
+</div></div></section>
 <section class="sec-sm lavbg"><div class="wrap"><div class="acc-grid">
 <a class="acc rv" href="accessories.html"><img src="assets/props/sha00151.webp" alt="Platinum cufflinks" loading="lazy"><div><h3>Accessories</h3><p>Cufflinks, watch straps, specks &amp; more</p></div></a>
 <a class="acc rv d1" href="d-the-platinum.html"><img src="assets/dthe/dthe-5.webp" alt="D The Platinum bars" loading="lazy"><div><h3>D — The Platinum</h3><p>Platinum bars &amp; coins</p></div></a>
@@ -861,6 +947,7 @@ def collection_page(c):
 <div><div class="crumbs"><a href="index.html">Home</a><span>/</span><a href="collections.html">Collections</a><span>/</span><span>{c["name"]}</span></div>
 <img class="clogo" src="{c["logo"]}" alt="{c["name"]}">
 <h1 class="h2">{c["tag"]}</h1>
+<p class="csub"><b>{c["name"]} – {c["sub"]}</b>{c["desc"]}</p>
 <div class="facts"><a class="aud-tag" href="explore.html#{AUDOF[slug]}">For {next(a["name"] for a in AUD if a["key"] == AUDOF[slug])}</a><div><b>{n}</b><span>Designs</span></div><div><b>{ncats}</b><span>Categories</span></div><div><b>Pt950</b><span>PGI certified</span></div></div>
 <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px"><a class="btn btn-royal" href="#designs">Browse designs {ARROW}</a><a class="btn btn-line" href="contact.html?interest={E(c['name'])}">Get the catalogue</a></div></div>
 <div class="stagec"><img class="bgi" src="{c["bg"]}" alt=""><img class="p" src="{c["hero"]}" alt="{c["name"]} signature piece"></div>
@@ -901,10 +988,13 @@ def pnp_page(c):
 def accessories():
     items = [i for i in CAT["men-of-platinum"] if i["cat"] == "Cufflinks"]
     cl = "".join(f'<div class="pcard rv d{k%4}" style="cursor:default"><div class="im"><img src="{i["views"][0]}" alt="Platinum cufflinks {i["code"]}" loading="lazy"></div><div class="info"><b>{i["code"]}</b><span>Cufflinks</span></div></div>' for k, i in enumerate(items))
-    acc = [("Cufflinks", "sha00151"), ("Watch Straps", "sha00153"), ("Specks", "sha00201"), ("Watches", "sha00155"), ("Chains &amp; Links", "sha00195"), ("Brooches &amp; Buttons", "sha00203")]
-    grid = "".join(f'<div class="acc rv d{k%3}"><img src="assets/props/{p}.webp" alt="Platinum {t}" loading="lazy"><div><h3>{t}</h3></div></div>' for k, (t, p) in enumerate(acc))
+    acc = [("Cufflinks", "sha00151", HUB_ACC[0][1]), ("Watch Straps", "sha00153", HUB_ACC[4][1]), ("Specs", "sha00201", HUB_ACC[3][1]),
+           ("Watches", "sha00155", "Platinum on the wrist, crafted for every day."), ("Chains &amp; Links", "sha00195", "Platinum links for him, made to last."),
+           ("Brooches &amp; Buttons", "sha00203", HUB_ACC[2][1] + " " + HUB_ACC[6][1])]
+    grid = "".join(f'<div class="acc rv d{k%3}"><img src="assets/props/{p}.webp" alt="Platinum {t}" loading="lazy"><div><h3>{t}</h3><p>{d}</p></div></div>' for k, (t, p, d) in enumerate(acc))
+    grid += "".join(f'<div class="acc mono rv d{k%3}"><img src="assets/brand/d-mark.png" alt="" loading="lazy"><div><h3>{t}</h3><p>{d}</p><span class="onreq">Made on order</span></div></div>' for k, (t, d) in enumerate([HUB_ACC[1], HUB_ACC[5]]))
     body = phero("Delicate craftsmanship · immensely beautiful", "Platinum accessories|<em>you would love.</em>",
-                 "Cufflinks, belts, brooches, specks, watch straps, buttons, plus custom and industrial pieces on order.",
+                 "Cufflinks, belt buckles, brooches, specs, watch straps, tie pins, buttons, plus custom pieces on order.",
                  "assets/props/sha00153.webp", '<a href="collections.html">Collections</a><span>/</span><span>Accessories</span>') + f"""
 <section class="sec"><div class="wrap"><div class="acc-grid">{grid}</div></div></section>
 <section class="sec-sm lavbg"><div class="wrap"><div class="head"><div><span class="kick">In stock now</span><h2 class="h2 rv">Platinum <em>cufflinks.</em></h2></div><a class="btn btn-line" href="men-of-platinum.html#designs">All in Men of Platinum {ARROW}</a></div>
@@ -938,6 +1028,20 @@ def why():
     body = phero("The platinum opportunity", "Don’t follow the|platinum wave.|<em>Lead it.</em>",
                  "The fastest-growing category in precious jewellery, and the new-age luxury young India wants.",
                  "assets/insta/c07.webp", "<span>Why Platinum</span>") + f"""
+<section class="sec"><div class="wrap">
+<div class="center" style="max-width:900px;margin:0 auto clamp(30px,4vw,52px)"><span class="kick">Why platinum in your showroom?</span>
+<p class="lead rv" style="margin-top:18px">Platinum is the most ductile of pure metals, more ductile than gold, silver, or copper. However, it is less malleable than gold. Platinum has excellent corrosion resistance, is stable at high temperatures, and has stable electrical properties. Gold and platinum are the two most commonly used metals for engagement and wedding rings. Both metals are unique yet similar in several ways. Let’s look at how gold and platinum compare in appearance, cost, durability, and comfort.</p></div>
+<div class="qpair">
+<div class="qcard rv"><span class="qm">“</span><h3>Platinum is one of a kind.</h3><p>Platinum is naturally white, so it will not cast any colour onto a diamond. Since it is 95% pure, platinum will never fade, just like the bond you share with your loved one. Platinum, being 30 times more rare than gold, is an exclusive possession.</p></div>
+<div class="qcard royal rv d1"><span class="qm">“</span><h3>Platinum is a rare metal.</h3><p>Its rareness makes it ideal for symbolising your most memorable and precious bonds of love, which you share only with your close ones. A celestial metal, platinum was found on Earth after a meteorite crash over 2 billion years ago. Platinum is 30 times rarer than gold and an ideal expression of rare love.</p></div>
+</div></div></section>
+
+<section class="sec mistbg"><div class="wrap prows">
+{prow(0, "assets/lookbook/ph8.webp", "Reasons to choose platinum", "Not just a metal. <em>An emotion.</em>", "<p>Platinum is a symbol of rarity and endurance. Unlike other metals, platinum’s strength, purity, and timeless appeal make it the ultimate choice for fine jewellery. Here’s why:</p>" + bl(["<b>Purity &amp; hypoallergenic nature</b> – Platinum is 95% pure, perfect for sensitive skin.", "<b>Durability &amp; strength</b> – Highly resistant to wear and tear, ensuring heirloom-quality jewellery.", "<b>Naturally white</b> – Unlike other metals, platinum does not change colour over time.", "<b>Rarity &amp; exclusivity</b> – 30 times rarer than gold, making it a precious possession."]), "Platinum necklace with emerald")}
+{prow(1, "assets/props/sha00318.webp", "Platinum for always", "The <em>forever metal.</em>", "<p>Platinum is the ultimate metal to symbolise everlasting love and firm commitment. Its unique properties make it a “Forever Metal”:</p>" + bl(["<b>Holds precious stones securely</b> – A platinum setting provides unmatched security for diamonds and gemstones.", "<b>Symbol of rare love</b> – Just like strong relationships, platinum never weakens over time."]), "Platinum couple rings")}
+{prow(2, "assets/lookbook/phe6.webp", "Why platinum reigns supreme", "Above <em>all metals.</em>", "<p>Platinum stands above all metals in jewellery, offering a combination of luxury, exclusivity, and durability.</p>" + bl(["<b>Higher density</b> – More substantial and luxurious feel compared to other metals.", "<b>Corrosion &amp; tarnish resistant</b> – Platinum doesn’t react with air or water, unlike gold or silver.", "<b>A legacy metal</b> – Used by royalty and connoisseurs for centuries.", "<b>A symbol of status &amp; prestige</b> – Owning platinum is a statement of exclusivity."]), "Platinum earrings")}
+</div></section>
+
 <section class="sec"><div class="wrap">
 <div class="head"><div><span class="kick">The business case</span><h2 class="h2 rv">Growth, margin, <em>a new customer.</em></h2></div></div>
 <div class="cards c3 wp-bento">
@@ -1061,8 +1165,8 @@ def contact():
                  "Tell us about your store. We’ll plan your platinum counter with you.", "assets/insta/c11.webp", "<span>Contact</span>") + f"""
 <section class="sec" style="padding-top:20px"><div class="wrap split" style="align-items:start;grid-template-columns:.8fr 1.2fr">
 <div class="cinfo">
-<div class="card rv">{icon("display")}<h3 {lab}>The Platinum Hub</h3><p>{ADDRESS}</p></div>
-<div class="card rv d1">{icon("chat")}<h3 {lab}>Call · Write</h3><a href="tel:{PHONE1}">{PHONE1_T}</a><a href="tel:{PHONE2}">{PHONE2_T}</a><a href="mailto:{EMAIL}" style="font-size:18px">{EMAIL}</a></div>
+<div class="card rv">{icon("display")}<h3 {lab}>Office address</h3><p>{ADDRESS}</p></div>
+<div class="card rv d1">{icon("chat")}<h3 {lab}>Contact number · Email address</h3><a href="tel:{PHONE1}">{PHONE1_T}</a><a href="tel:{PHONE2}">{PHONE2_T}</a><a href="mailto:{EMAIL}" style="font-size:18px">{EMAIL}</a></div>
 <a class="btn btn-royal rv d2" href="https://wa.me/{WA}" target="_blank" rel="noopener" style="justify-content:center">{WA_ICO} Chat on WhatsApp</a>
 </div>
 <form id="enquiry" class="form rv d1" novalidate>
