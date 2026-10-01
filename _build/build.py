@@ -292,15 +292,65 @@ PH_BG = {"assets/insta/c18.webp": "assets/lookbook/ph12.webp", "assets/insta/c05
          "assets/lookbook/ph10.webp": "assets/lookbook/ph16.webp", "assets/insta/c11.webp": "assets/lookbook/phe1.webp",
          "assets/props/sha00153.webp": "assets/props/sha00151.webp", "assets/studio/st09.webp": "assets/studio/st08.webp"}
 
+PB_KEY = {"assets/studio/st09.webp": "explore", "assets/insta/c18.webp": "about", "assets/insta/c05.webp": "collections",
+          "assets/props/sha00153.webp": "acc", "assets/insta/c07.webp": "why", "assets/insta/c10.webp": "partner",
+          "assets/lookbook/ph10.webp": "look", "assets/insta/c11.webp": "contact"}
+
+def pb_visual(key):
+    """Page-specific banner art: each inner page gets its own idea."""
+    if key == "about":
+        chips = [("1000+", "jewellers trust Dishaa"), ("Mumbai", "Zaveri Bazaar"), ("PGI", "authorised dealer")]
+        ch = "".join(f'<div class="sl-chip c{k}"><b>{a}</b><span>{b}</span></div>' for k, (a, b) in enumerate(chips))
+        return f"""<div class="pv-seal"><svg viewBox="0 0 320 320" aria-hidden="true"><defs><path id="sealc" d="M160,160 m-128,0 a128,128 0 1,1 256,0 a128,128 0 1,1 -256,0"/></defs>
+<text><textPath href="#sealc">PURE · PRECIOUS · PROGRESSIVE · THE PLATINUM HUB · PURE · PRECIOUS · PROGRESSIVE · </textPath></text></svg>
+<div class="sl-core"><img src="assets/brand/d-mark.png" alt=""><b>25+</b><span>years of collective experience</span></div>{ch}</div>"""
+    if key == "collections":
+        order = ["men-of-platinum", "evara", "bandhan", "platinum-days-of-love", "farishtey", "pride-n-perfect"]
+        it = ""
+        for k, sl in enumerate(order):
+            c = COLMAP[sl]
+            im = f'<img class="cut" src="{c["hero"]}" alt="">' if c["hero"] else f'<img class="ph" src="{c["photo"]}" alt="">'
+            it += f'<a class="shelf-i" href="{sl}.html" style="--i:{k}"><span class="ped"></span>{im}<b>{c["name"]}</b></a>'
+        return f'<div class="pv-shelf">{it}</div>'
+    if key == "why":
+        facts = ["95% pure", "30× rarer than gold", "Naturally white", "2 billion years in the making"]
+        fl = "".join(f'<span class="orb o{k}">{f}</span>' for k, f in enumerate(facts))
+        return f"""<div class="pv-elem"><span class="meteor" aria-hidden="true"></span><span class="orbit"></span>
+<div class="elem"><i>78</i><b>Pt</b><span>Platinum</span><small>195.084</small></div>{fl}</div>"""
+    if key == "partner":
+        tiers = [("150", "Tray &amp; poster"), ("300", "Display &amp; training"), ("500", "Products with your logo"), ("750+", "PGI promotions")]
+        bars = "".join(f'<div class="bar b{k}" style="--h:{30 + k * 22}%"><span class="bv"><b>{g}</b>g</span><span class="bl">{t}</span></div>' for k, (g, t) in enumerate(tiers))
+        return f"""<div class="pv-bars"><svg class="arc" viewBox="0 0 400 220" preserveAspectRatio="none" aria-hidden="true"><path d="M10 200 C 120 190, 220 120, 390 20"/></svg>{bars}
+<p class="bars-cap">The more you stock, <em>the more we give.</em></p></div>"""
+    if key == "look":
+        cols = [["lookbook/ph12", "studio/st09", "props/sha00318", "lookbook/phe1", "studio/st16"],
+                ["props/sha00130", "lookbook/ph8", "studio/st01", "props/sha00145", "lookbook/ph4"],
+                ["lookbook/phe6", "props/sha00119", "lookbook/ph16", "studio/st19", "props/sha00053"]]
+        cc = "".join('<div class="mv-col">' + "".join(f'<img src="assets/{x}.webp" alt="" loading="lazy">' for x in col * 2) + "</div>" for col in cols)
+        return f'<div class="pv-mosaic">{cc}</div>'
+    if key == "contact":
+        return f"""<div class="pv-map"><div class="map-card"><svg class="streets" viewBox="0 0 400 260" aria-hidden="true">
+<path d="M-10 70 L410 40 M-10 150 L410 190 M60 -10 L120 270 M250 -10 L210 270 M330 -10 L380 270 M-10 230 L410 120"/>
+<path class="main" d="M-10 110 C 120 120, 260 90, 410 100"/></svg>
+<span class="pin"><i></i></span><div class="map-lbl"><b>The Platinum Hub</b><span>Zaveri Bazaar, Mumbai 400003</span></div></div>
+<div class="map-acts"><a href="tel:{PHONE1}">Call</a><a href="https://wa.me/{WA}" target="_blank" rel="noopener">WhatsApp</a><a href="mailto:{EMAIL}">Email</a></div></div>"""
+    if key == "explore":
+        return '<div class="pv-aud">' + "".join(f'<a class="au a{k}" href="explore.html#{a["key"]}"><img src="{a["img"]}" alt="" style="object-position:{a["pos"]}"><b>{a["name"]}</b></a>' for k, a in enumerate(AUD)) + "</div>"
+    if key == "acc":
+        th = "".join(f'<span class="ath t{k}"><img src="assets/props/{x}.webp" alt=""></span>' for k, x in enumerate(["sha00153", "sha00201", "sha00203", "sha00155"]))
+        return f'<div class="pv-spot"><span class="beam"></span><span class="disc"></span><img class="hero-cl" src="assets/p/men-of-platinum/mop-cl-ppf00001-copy.webp" alt="">{th}</div>'
+    return ""
+
 def phero(kick, title, sub, art, crumbs, tagline="", extra=""):
-    """Inner-page banner: royal field, a jewellery photograph that fades into it, headline on the left."""
-    bg = PH_BG.get(art, art)
+    """Inner-page banner: copy on the left, a page-specific visual on the right."""
+    key = PB_KEY.get(art, "plain")
     chips = "".join(f"<span>{k.strip()}</span>" for k in kick.split("·") if k.strip())
-    return f"""<section class="phx">{sparkle(26)}
-<div class="phx-photo" aria-hidden="true"><img src="{bg}" alt="" fetchpriority="high"></div>
-<div class="wrap phx-in"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span>{crumbs}</nav>
-<h1 class="h1 rv in">{lines(title)}</h1><p class="sub">{sub}</p>{extra}<div class="phx-chips">{chips}</div></div>
-<span class="phx-line" aria-hidden="true"></span></section>"""
+    spark = sparkle(30) if key in ("why", "partner", "acc", "look") else sparkle(14)
+    return f"""<section class="pb pb-{key}">{spark}<div class="wrap pb-in">
+<div class="pb-copy"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span>{crumbs}</nav>
+<h1 class="h1 rv in">{lines(title)}</h1><p class="sub">{sub}</p>{extra}<div class="pb-chips">{chips}</div></div>
+<div class="pb-vis" aria-hidden="{'false' if key in ('collections', 'contact', 'explore') else 'true'}">{pb_visual(key)}</div>
+</div></section>"""
 
 CTA_SIDES = ["assets/banner/ring-topaz.webp", "assets/banner/pendant-leaf.webp", "assets/banner/earring-hoop.webp", "assets/banner/ring-sunburst.webp"]
 def cta(title="India’s platinum movement has started.", em="Let’s play.", prod="assets/banner/earring-hoop.webp"):
@@ -951,7 +1001,7 @@ def collection_page(c):
     chips, cards, n, cats = product_cards(slug)
     ncats = len([k for k in cats if k != "PGI Signature Picks"])
     ins = "".join(f'<figure class="rv d{k%4}" data-full="assets/insta/c{i:02d}.webp" style="margin:0;border-radius:18px;overflow:hidden;cursor:zoom-in"><img src="assets/insta/c{i:02d}.webp" alt="Dishaa creative" loading="lazy"></figure>' for k, i in enumerate(INSTA_FOR.get(slug, [])))
-    body = f"""<section class="chx">{sparkle(24)}<div class="wrap chx-grid">
+    body = f"""<section class="chx t-{slug}">{sparkle(24)}<div class="wrap chx-grid">
 <div><div class="crumbs"><a href="index.html">Home</a><span>/</span><a href="collections.html">Collections</a><span>/</span><span>{c["name"]}</span></div>
 <img class="clogo" src="{c["logo"]}" alt="{c["name"]}">
 <h1 class="h2">{c["tag"]}</h1>
@@ -976,7 +1026,7 @@ def collection_page(c):
 def pnp_page(c):
     photos = ["sha00318", "sha00313", "sha00053", "sha00035", "sha00038", "sha00050", "sha00047", "sha00092", "sha00098", "sha00097", "sha00102", "sha00109", "sha00059", "sha00104", "sha00107", "new1", "sha00041", "sha00061", "sha00171", "img_6357"]
     mason = "".join(f'<figure class="rv d{k%3}" data-full="assets/props/{p}.webp"><img src="assets/props/{p}.webp" alt="Pride N Perfect platinum couple set" loading="lazy"></figure>' for k, p in enumerate(photos))
-    body = f"""<section class="chx">{sparkle(24)}<div class="wrap chx-grid">
+    body = f"""<section class="chx t-pride-n-perfect">{sparkle(24)}<div class="wrap chx-grid">
 <div><div class="crumbs"><a href="index.html">Home</a><span>/</span><a href="collections.html">Collections</a><span>/</span><span>Pride N Perfect</span></div>
 <img class="clogo" src="{c["logo"]}" alt="Pride N Perfect">
 <h1 class="h2">{c["tag"]}</h1>
