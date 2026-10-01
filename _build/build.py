@@ -149,6 +149,9 @@ ORG_LD = {
   "address": {"@type": "PostalAddress", "streetAddress": "F7A & B, 2nd Floor, 81, Chandra Darshan Building, Dhanji Street, next to Diamond Plaza, Zaveri Bazaar",
               "addressLocality": "Mumbai", "addressRegion": "Maharashtra", "postalCode": "400003", "addressCountry": "IN"},
   "areaServed": "IN", "slogan": "Pure · Precious · Progressive",
+  "hasMap": "https://maps.google.com/?q=Chandra+Darshan+Building,+Dhanji+Street,+Zaveri+Bazaar,+Mumbai+400003",
+  "contactPoint": [{"@type": "ContactPoint", "contactType": "sales", "telephone": "+91-81691-20942", "email": "sales@dishaaplatinum.com", "areaServed": "IN", "availableLanguage": ["en", "hi"]}],
+  "knowsAbout": ["Platinum jewellery", "PGI certified platinum", "Platinum couple bands", "Platinum mangalsutra", "Men's platinum jewellery"],
   "brand": [{"@type": "Brand", "name": n} for n in ["Men of Platinum", "Evara", "Platinum Days of Love", "Bandhan", "Farishtey", "Pride N Perfect"]],
 }
 CRUMB_NAMES = {"explore": "Shop by", "about": "About", "collections": "Collections", "why-platinum": "Why Platinum", "partner": "Partner With Us",
@@ -157,10 +160,23 @@ CRUMB_NAMES = {"explore": "Shop by", "about": "About", "collections": "Collectio
 def ld_json(obj):
     return '<script type="application/ld+json">' + json.dumps(obj, ensure_ascii=False).replace("SITE_URL", SITE) + "</script>"
 
-def head(title, desc, page, img="assets/hero/d01.webp", crumbs=None):
+_DIMS = {}
+def img_dims(rel):
+    """Pixel size of a local asset (cached)."""
+    if rel not in _DIMS:
+        try:
+            from PIL import Image
+            with Image.open(os.path.join(ROOT, rel)) as im: _DIMS[rel] = im.size
+        except Exception:
+            _DIMS[rel] = None
+    return _DIMS[rel]
+
+def head(title, desc, page, img="assets/hero/d01.webp", crumbs=None, extra_ld=None):
     url = f"{SITE}{page}"
     ogimg = f"{SITE}/{img}"
-    lds = [ld_json(ORG_LD)]
+    dims = img_dims(img)
+    ogdims = f'<meta property="og:image:width" content="{dims[0]}">\n<meta property="og:image:height" content="{dims[1]}">\n' if dims else ""
+    lds = [ld_json(ORG_LD)] + [ld_json(x) for x in (extra_ld or [])]
     if page == "/":
         lds.append(ld_json({"@context": "https://schema.org", "@type": "WebSite", "name": "Dishaa Platinum", "url": "SITE_URL/",
                             "inLanguage": "en-IN", "publisher": {"@id": "SITE_URL/#org"}}))
@@ -191,11 +207,15 @@ def head(title, desc, page, img="assets/hero/d01.webp", crumbs=None):
 <meta property="og:title" content="{E(title)}">
 <meta property="og:description" content="{E(desc)}">
 <meta property="og:image" content="{ogimg}">
+{ogdims}<meta property="og:image:alt" content="{E(title)}">
 <meta property="og:image:alt" content="Dishaa Platinum — platinum jewellery">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{E(title)}">
 <meta name="twitter:description" content="{E(desc)}">
 <meta name="twitter:image" content="{ogimg}">
+<meta name="twitter:image:alt" content="{E(title)}">
+<link rel="alternate" hreflang="en-IN" href="{url}">
+<link rel="alternate" hreflang="x-default" href="{url}">
 <link rel="icon" href="assets/brand/d-mark.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/brand/d-mark.png">
 <link rel="sitemap" type="application/xml" href="sitemap.xml">
@@ -276,11 +296,45 @@ OG_IMG = {"index.html": "assets/hero/d01.webp", "about.html": "assets/insta/c18.
           "why-platinum.html": "assets/insta/c07.webp", "partner.html": "assets/insta/c10.webp", "lookbook.html": "assets/lookbook/ph10.webp",
           "contact.html": "assets/insta/c11.webp", "accessories.html": "assets/props/sha00153.webp", "d-the-platinum.html": "assets/dthe/dthe-5.webp"}
 
+SITEMAP_IMGS = {}
+def size_imgs(h):
+    """Give every local <img> its intrinsic width/height so the browser reserves space (no layout shift)."""
+    def fix(m):
+        tag = m.group(0)
+        if " width=" in tag or " height=" in tag: return tag
+        src = re.search(r'src="(assets/[^"]+)"', tag)
+        d = img_dims(src.group(1)) if src else None
+        return tag[:-1] + f' width="{d[0]}" height="{d[1]}">' if d else tag
+    return re.sub(r"<img\b[^>]*>", fix, h)
+
+def page_ld(fname, title, desc, route):
+    """Structured data that describes what each page is."""
+    url = f"SITE_URL{route}"
+    base = {"@context": "https://schema.org", "url": url, "name": html.unescape(title), "description": desc,
+            "inLanguage": "en-IN", "isPartOf": {"@type": "WebSite", "name": "Dishaa Platinum", "url": "SITE_URL/"}, "publisher": {"@id": "SITE_URL/#org"}}
+    kind = {"about.html": "AboutPage", "contact.html": "ContactPage", "collections.html": "CollectionPage", "explore.html": "CollectionPage",
+            "accessories.html": "CollectionPage", "d-the-platinum.html": "CollectionPage"}.get(fname, "WebPage")
+    col = next((c for c in COLS if f'{c["slug"]}.html' == fname), None)
+    if col:
+        kind = "CollectionPage"
+        items = [i for i in CAT.get(col["slug"], []) if not i.get("pgi")][:30]
+        base["about"] = {"@type": "Brand", "name": col["name"]}
+        if items:
+            base["mainEntity"] = {"@type": "ItemList", "numberOfItems": len([i for i in CAT.get(col["slug"], []) if not i.get("pgi")]),
+                                  "itemListElement": [{"@type": "ListItem", "position": k + 1, "name": f'{col["name"]} platinum {i["cat"].lower()} {i["code"]}',
+                                                       "image": f'SITE_URL/{i["views"][0]}'} for k, i in enumerate(items)]}
+    if fname == "index.html":
+        return []
+    base["@type"] = kind
+    return [base]
+
 def page(fname, title, desc, body, active=None):
     route = ROUTES[fname]
     hero = "light"  # header is always the solid light bar (readable over dark page heroes)
     img = OG_IMG.get(fname) or next((c["hero"] or c["photo"] for c in COLS if f'{c["slug"]}.html' == fname), "assets/hero/d01.webp")
-    out = head(title, desc, route, img) + f'\n<body data-hero="{hero}">\n' + header(active or fname) + "\n<main>" + body + "</main>\n" + shells() + footer()
+    out = head(title, desc, route, img, extra_ld=page_ld(fname, title, desc, route)) + f'\n<body data-hero="{hero}">\n' + header(active or fname) + "\n<main>" + body + "</main>\n" + shells() + footer()
+    out = size_imgs(out)
+    SITEMAP_IMGS[route] = list(dict.fromkeys(re.findall(r'<img[^>]+src="(assets/(?:p|props|lookbook|studio|spotlight|dthe|display|support)/[^"]+)"', body)))[:40]
     out = route_links(out)
     d = os.path.join(OUT or ROOT, route.strip("/").replace("/", os.sep))
     os.makedirs(d, exist_ok=True)
@@ -700,8 +754,8 @@ def explore():
 </div></section>
 {LB}{PLB}
 {cta("Something for every", "customer who walks in.", "assets/banner/ring-sunburst.webp")}"""
-    page("explore.html", "Shop Platinum Jewellery for Men, Women, Kids & Couples | Dishaa Platinum",
-         "Browse Dishaa platinum jewellery by who it is for: men, women, kids and couples, then by category.", body, active="collections")
+    page("explore.html", "Platinum Jewellery for Men, Women, Kids & Couples | Dishaa",
+         "Browse 375+ platinum jewellery designs by who they are for: men, women, kids and couples. Filter by chains, kadas, rings, earrings and more.", body, active="collections")
 
 
 # ------------------------------------------------------------------ six-collection gallery (home + collections overview)
@@ -834,7 +888,7 @@ def home():
 {cta()}
 {PLB}"""
     page("index.html", "Dishaa Platinum — India’s Most Trusted Platinum Jewellery Partner",
-         "Dishaa Platinum, The Platinum Hub: India’s biggest stockist of PGI-certified platinum jewellery. Men of Platinum, Evara, PDOL, Bandhan, Farishtey & Pride N Perfect for retail jewellers.", body)
+         "Dishaa Platinum, The Platinum Hub in Mumbai: B2B wholesaler of PGI-certified platinum jewellery, trusted by 1000+ retail jewellers for 25+ years.", body)
 
 # ================================================================== ABOUT
 def about():
@@ -1069,7 +1123,7 @@ def pnp_page(c):
 <div class="mason">{mason}</div></div></section>
 {PLB}
 {cta("Couple sets that", "sell in pairs.", "assets/banner/ring-sunburst.webp")}"""
-    page("pride-n-perfect.html", "Pride N Perfect — Platinum Couple Sets | Dishaa Platinum", c["line"], body, active="collections")
+    page("pride-n-perfect.html", "Pride N Perfect — Platinum Couple Sets | Dishaa Platinum", "Pride N Perfect by Dishaa Platinum: couple-centric platinum sets for brides and grooms, made for weddings, gifting and festive picks.", body, active="collections")
 
 # ================================================================== ACCESSORIES
 def accessories():
@@ -1087,8 +1141,8 @@ def accessories():
 <section class="sec-sm lavbg"><div class="wrap"><div class="head"><div><span class="kick">In stock now</span><h2 class="h2 rv">Platinum <em>cufflinks.</em></h2></div><a class="btn btn-line" href="men-of-platinum.html#designs">All in Men of Platinum {ARROW}</a></div>
 <div class="pgrid">{cl}</div></div></section>
 {cta("Rare accessories.", "Few can offer them.", "assets/p/men-of-platinum/mop-cl-ppf00001-copy.webp")}"""
-    page("accessories.html", "Platinum Accessories — Cufflinks, Watch Straps, Brooches | Dishaa Platinum",
-         "Platinum cufflinks, belts, brooches, specks and watch straps from Dishaa Platinum, Mumbai.", body, active="collections")
+    page("accessories.html", "Platinum Accessories: Cufflinks, Watch Straps | Dishaa",
+         "Platinum cufflinks, belt buckles, brooches, specs, watch straps, tie pins and buttons from Dishaa Platinum, Mumbai. Custom pieces made on order.", body, active="collections")
 
 # ================================================================== D THE PLATINUM
 def dthe():
@@ -1164,7 +1218,7 @@ def why():
 <div><span class="kick">Stocking criteria</span><h2 class="h2 rv" style="margin-top:16px">PGI support in <em>16 cities.</em></h2><a class="btn btn-white rv" href="partner.html" style="margin-top:26px">See the partner plan {ARROW}</a></div>
 <div class="cities rv d1">{''.join(f'<span>{c}</span>' for c in cities)}</div></div></section>
 {cta()}"""
-    page("why-platinum.html", "Why Platinum — The Platinum Business Opportunity | Dishaa Platinum",
+    page("why-platinum.html", "Why Platinum in Your Showroom? | Dishaa Platinum",
          "Platinum jewellery grows 25%+ year on year with margins almost five times higher. The platinum opportunity for retail jewellers.", body)
 
 # ================================================================== PARTNER
@@ -1218,7 +1272,7 @@ def partner():
 <section class="sec-sm mfr" id="manufacturers"><div class="wrap center" style="margin-bottom:30px"><span class="kick">Partnered with India’s top manufacturers</span><h2 class="h2 rv" style="margin-top:14px">All manufacturers’ exclusive products, <em>at one place.</em></h2></div>{logos_marquee()}</section>
 {PLB}
 {cta("Turning platinum potential into", "retail performance.", "assets/banner/bracelet-cable.webp")}"""
-    page("partner.html", "Partner With Dishaa Platinum — PGI Support, Display, Training & Branding",
+    page("partner.html", "Partner With Dishaa: PGI Support, Display & Training",
          "Become a Dishaa Platinum partner: PGI enrolment, tiered support, display zones, staff training, customised products and the best buyback policy.", body)
 
 # ================================================================== LOOKBOOK
@@ -1241,7 +1295,7 @@ def lookbook():
 <section class="sec-sm"><div class="wrap"><div class="head"><div><span class="kick">Series 03</span><h2 class="h2 rv">The <em>studio.</em></h2></div></div><div class="mason">{m3}</div></div></section>
 {PLB}
 {cta()}"""
-    page("lookbook.html", "Lookbook — Dishaa Platinum", "Creatives, photography and films of platinum jewellery from Dishaa Platinum.", body)
+    page("lookbook.html", "Lookbook: Platinum Jewellery Photos & Films | Dishaa", "Photography and films of Dishaa platinum jewellery: necklaces, chains, couple bands, earrings and men’s pieces, shot in the studio and on set.", body)
 
 # ================================================================== CONTACT
 def contact():
@@ -1274,17 +1328,18 @@ def contact():
 def extras():
     out = OUT or ROOT
     pri = lambda r: "1.0" if r == "/" else ("0.9" if r.count("/") == 2 else "0.8")
-    sm = "".join(f"<url><loc>{SITE}{r}</loc><lastmod>{LASTMOD}</lastmod><changefreq>monthly</changefreq><priority>{pri(r)}</priority></url>" for r in ROUTES.values())
-    open(os.path.join(out, "sitemap.xml"), "w").write(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{sm}</urlset>\n')
+    imgs = lambda r: "".join(f"<image:image><image:loc>{SITE}/{i}</image:loc></image:image>" for i in SITEMAP_IMGS.get(r, []))
+    sm = "".join(f"<url><loc>{SITE}{r}</loc><lastmod>{LASTMOD}</lastmod><changefreq>monthly</changefreq><priority>{pri(r)}</priority>{imgs(r)}</url>" for r in ROUTES.values())
+    open(os.path.join(out, "sitemap.xml"), "w").write(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">{sm}</urlset>\n')
     open(os.path.join(out, "robots.txt"), "w").write(f"User-agent: *\nAllow: /\n\nSitemap: {SITE}/sitemap.xml\n")
     # branded 404 (GitHub Pages / most hosts serve /404.html)
     body = f"""<section class="phero mistbg" style="min-height:70vh;display:flex;align-items:center"><div class="wrap center">
 <span class="kick">Error 404</span><h1 class="h1" style="margin:18px auto 14px">This piece isn’t <em>in our vault.</em></h1>
 <p class="sub">The page you’re looking for has moved or doesn’t exist.</p>
 <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px"><a class="btn btn-royal" href="index.html">Back to home {ARROW}</a><a class="btn btn-line" href="collections.html">Browse collections</a></div></div></section>"""
-    html404 = head("Page not found | Dishaa Platinum", "The page you are looking for could not be found.", "/404.html").replace('content="index, follow, max-image-preview:large"', 'content="noindex, follow"')
+    html404 = head("Page not found | Dishaa Platinum", "The page you are looking for could not be found. Browse Dishaa Platinum collections or contact The Platinum Hub, Mumbai.", "/404.html").replace('content="index, follow, max-image-preview:large"', 'content="noindex, follow"')
     html404 += '\n<body data-hero="light">\n' + header("") + "\n<main>" + body + "</main>\n" + shells() + footer()
-    open(os.path.join(out, "404.html"), "w", encoding="utf-8").write(route_links(html404))
+    open(os.path.join(out, "404.html"), "w", encoding="utf-8").write(route_links(size_imgs(html404)))
     # remove the old flat *.html pages (now served from folders)
     for f in ROUTES:
         fp = os.path.join(ROOT, f)
