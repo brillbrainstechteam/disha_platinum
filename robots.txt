@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brillbrainstechteam.github.io/disha_platinum/sitemap.xml
