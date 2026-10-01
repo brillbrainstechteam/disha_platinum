@@ -739,11 +739,6 @@ def home():
 <div class="head"><div><span class="kick">Men of Platinum</span><h2 class="h2 rv">Serious about platinum? <em>Talk to the pros.</em></h2></div><a class="link rv" href="men-of-platinum.html">Shop the men’s edit {ARROW}</a></div>
 <div class="films">{films()}</div></div></section>
 
-<section class="sec-sm lavbg" style="overflow:hidden"><div class="wrap head" style="margin-bottom:34px"><div><span class="kick">From our feed</span><h2 class="h2 rv">Zaveri Bazaar just got a <em>platinum upgrade.</em></h2></div></div>
-{insta_wall()}</section>
-
-<section class="sec-sm"><div class="wrap center" style="margin-bottom:26px"><span class="kick">Partnered with India’s top manufacturers</span></div>{logos_marquee()}</section>
-
 {cta()}
 {PLB}"""
     page("index.html", "Dishaa Platinum — India’s Most Trusted Platinum Jewellery Partner",
@@ -1128,7 +1123,7 @@ def partner():
 <div class="step rv d2"><b>Select</b><span>Ready stock, fast.</span></div><div class="step rv d3"><b>Launch</b><span>Display, branding, training.</span></div><div class="step rv d4"><b>Grow</b><span>Refills &amp; promotions.</span></div></div>
 </div></section>
 
-<section class="sec-sm" id="manufacturers"><div class="wrap center" style="margin-bottom:26px"><span class="kick">All manufacturers’ exclusive products, at one place</span></div>{logos_marquee()}</section>
+<section class="sec-sm mfr" id="manufacturers"><div class="wrap center" style="margin-bottom:30px"><span class="kick">Partnered with India’s top manufacturers</span><h2 class="h2 rv" style="margin-top:14px">All manufacturers’ exclusive products, <em>at one place.</em></h2></div>{logos_marquee()}</section>
 {PLB}
 {cta("Turning platinum potential into", "retail performance.", "assets/banner/bracelet-cable.webp")}"""
     page("partner.html", "Partner With Dishaa Platinum — PGI Support, Display, Training & Branding",

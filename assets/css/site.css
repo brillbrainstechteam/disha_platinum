@@ -1409,3 +1409,10 @@ a,button,[data-i]{cursor:pointer}
   .ah-badge{left:0}
 }
 .qcard.royal{background:var(--grad-royal)}
+/* manufacturers strip (partner page) */
+.mfr{background:linear-gradient(180deg,var(--paper),#f3f1fb)}
+.mfr .logos .item{padding:0 9px}
+.mfr .logos .item{width:clamp(170px,15vw,220px);height:clamp(92px,8vw,112px);margin:8px 0;display:grid;place-items:center;background:#fff;border-radius:20px 20px 46px 20px;box-shadow:0 18px 34px -28px rgba(34,40,110,.5);position:relative;margin-right:14px}
+.mfr .logos .item::after{content:"";position:absolute;inset:6px;border:1px solid rgba(196,134,107,.3);border-radius:15px 15px 40px 15px;pointer-events:none}
+.mfr .logos img{max-width:78%;max-height:60%;height:auto;width:auto;filter:grayscale(1) contrast(1.05);opacity:.8;mix-blend-mode:multiply}
+.mfr .logos .item:hover img{filter:none;opacity:1}
