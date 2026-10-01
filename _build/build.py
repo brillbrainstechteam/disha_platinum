@@ -314,10 +314,10 @@ def pb_visual(key):
             cards += f'<a class="car-c {CG_TONE[sl]}" href="{sl}.html" style="--i:{k}" aria-label="{c["name"]}"><img class="lg" src="{c["logo"]}" alt="">{im}<span>{c["sub"]}</span></a>'
         return f'<div class="pv-car"><div class="car-tilt"><div class="car">{cards}</div></div><span class="car-floor"></span></div>'
     if key == "why":
-        facts = ["95% pure", "30× rarer than gold", "Naturally white", "2 billion years in the making"]
-        fl = "".join(f'<span class="orb o{k}">{f}</span>' for k, f in enumerate(facts))
-        return f"""<div class="pv-elem"><span class="meteor" aria-hidden="true"></span><span class="orbit"></span>
-<div class="elem"><i>78</i><b>Pt</b><span>Platinum</span><small>195.084</small></div>{fl}</div>"""
+        facts = [("95%", "pure"), ("30×", "rarer than gold"), ("White", "naturally, for ever"), ("2 billion", "years in the making")]
+        fc = "".join(f'<div class="ef f{k}"><b>{n}</b><span>{t}</span></div>' for k, (n, t) in enumerate(facts))
+        return f"""<div class="pv-elem2"><span class="ering" aria-hidden="true"></span>{fc}
+<div class="elem2"><i>78</i><b>Pt</b><span>Platinum</span><small>195.084</small></div></div>"""
     if key == "partner":
         tiers = [("150", "Tray &amp; poster"), ("300", "Display &amp; training"), ("500", "Products with your logo"), ("750+", "PGI promotions")]
         bars = "".join(f'<div class="bar b{k}" style="--h:{30 + k * 22}%"><span class="bv"><b>{g}</b>g</span><span class="bl">{t}</span></div>' for k, (g, t) in enumerate(tiers))
