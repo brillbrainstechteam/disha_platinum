@@ -306,12 +306,12 @@ def pb_visual(key):
 <div class="sl-core"><img src="assets/brand/d-mark.png" alt=""><b>25+</b><span>years of collective experience</span></div>{ch}</div>"""
     if key == "collections":
         order = ["men-of-platinum", "evara", "bandhan", "platinum-days-of-love", "farishtey", "pride-n-perfect"]
-        it = ""
+        cards = ""
         for k, sl in enumerate(order):
             c = COLMAP[sl]
             im = f'<img class="cut" src="{c["hero"]}" alt="">' if c["hero"] else f'<img class="ph" src="{c["photo"]}" alt="">'
-            it += f'<a class="shelf-i" href="{sl}.html" style="--i:{k}"><span class="ped"></span>{im}<b>{c["name"]}</b></a>'
-        return f'<div class="pv-shelf">{it}</div>'
+            cards += f'<a class="car-c {CG_TONE[sl]}" href="{sl}.html" style="--i:{k}" aria-label="{c["name"]}"><img class="lg" src="{c["logo"]}" alt="">{im}<span>{c["sub"]}</span></a>'
+        return f'<div class="pv-car"><div class="car-tilt"><div class="car">{cards}</div></div><span class="car-floor"></span></div>'
     if key == "why":
         facts = ["95% pure", "30× rarer than gold", "Naturally white", "2 billion years in the making"]
         fl = "".join(f'<span class="orb o{k}">{f}</span>' for k, f in enumerate(facts))

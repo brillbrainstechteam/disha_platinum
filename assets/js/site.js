@@ -189,6 +189,25 @@
     if (!matchMedia("(prefers-reduced-motion: reduce)").matches) go(0);
   });
 
+  /* collections banner: six cards orbiting on an ellipse, front one largest */
+  $$(".pv-car").forEach(box => {
+    const cards = $$(".car-c", box), n = cards.length; let ang = 0, hold = false, last = 0;
+    const place = () => {
+      const W = box.clientWidth, rx = Math.min(W * 0.42, 340), ry = Math.min(box.clientHeight * 0.13, 52);
+      cards.forEach((c, k) => {
+        const t = ang + (k / n) * Math.PI * 2, d = (Math.cos(t) + 1) / 2;  // d: 1 front, 0 back
+        const x = Math.sin(t) * rx, y = -Math.cos(t) * ry, sc = 0.58 + d * 0.42;
+        c.style.transform = `translate(-50%,-50%) translate(${x.toFixed(1)}px,${y.toFixed(1)}px) scale(${sc.toFixed(3)})`;
+        c.style.zIndex = Math.round(d * 100); c.style.filter = `brightness(${(0.82 + d * 0.18).toFixed(2)}) saturate(${(0.75 + d * 0.25).toFixed(2)})`;
+        c.style.opacity = (0.55 + d * 0.45).toFixed(2);
+      });
+    };
+    const tick = ts => { if (!hold) ang -= Math.min(32, ts - (last || ts)) * 0.00022; last = ts; place(); requestAnimationFrame(tick); };
+    box.addEventListener("mouseenter", () => hold = true); box.addEventListener("mouseleave", () => hold = false);
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) place(); else requestAnimationFrame(tick);
+    addEventListener("resize", place);
+  });
+
   /* collection cards: gentle 3D tilt that follows the pointer */
   if (matchMedia("(hover: hover) and (min-width: 901px)").matches && !matchMedia("(prefers-reduced-motion: reduce)").matches)
     $$(".cgc").forEach(c => {
