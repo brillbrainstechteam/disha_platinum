@@ -614,6 +614,41 @@ def explore():
     page("explore.html", "Shop Platinum Jewellery for Men, Women, Kids & Couples | Dishaa Platinum",
          "Browse Dishaa platinum jewellery by who it is for: men, women, kids and couples, then by category.", body, active="collections")
 
+
+# ------------------------------------------------------------------ six-collection gallery (home + collections overview)
+CG_TONE = {"men-of-platinum": "dark", "evara": "lilac", "bandhan": "blush", "platinum-days-of-love": "sky", "farishtey": "pastel", "pride-n-perfect": "photo"}
+CG_ORDER = ["men-of-platinum", "evara", "bandhan", "platinum-days-of-love", "farishtey", "pride-n-perfect"]
+
+def cg_thumbs(slug, hero):
+    items = [i for i in CAT.get(slug, []) if not i.get("pgi") and i["views"][0] != hero]
+    out, cats = [], []
+    for i in items:
+        if i["cat"] not in cats:
+            cats.append(i["cat"]); out.append(i["views"][0])
+    for i in items:
+        if len(out) >= 3: break
+        if i["views"][0] not in out: out.append(i["views"][0])
+    return out[:3]
+
+def coll_grid():
+    cards = ""
+    for k, slug in enumerate(CG_ORDER):
+        c = COLMAP[slug]; n = count(slug); tone = CG_TONE[slug]
+        if c["hero"]:
+            media = f'<div class="cg-stage"><span class="cg-halo"></span><img class="cg-prod" src="{c["hero"]}" alt="{c["name"]} signature piece" loading="lazy"></div>'
+        else:
+            media = f'<img class="cg-photo" src="{c["photo"]}" alt="{c["name"]} couple set" loading="lazy">'
+        th = "".join(f'<span><img src="{t}" alt="" loading="lazy"></span>' for t in cg_thumbs(slug, c["hero"]))
+        th = f'<div class="cg-thumbs" aria-hidden="true">{th}</div>' if th else ""
+        cnt = f"{n} designs" if n else "Couple sets"
+        cards += f"""<a class="cgc {tone} rv d{k % 3}" href="{slug}.html">
+<div class="cg-top"><img class="cg-logo" src="{c["logo"]}" alt="{c["name"]}" loading="lazy"><span class="cg-n">{cnt}</span></div>
+{media}
+<div class="cg-foot"><p>{c["tag"]}</p><span class="cg-go">{ARROW_UR}</span></div>{th}</a>"""
+    return f"""<section class="sec cg-sec"><div class="wrap">
+<div class="head"><div><span class="kick">Our collections</span><h2 class="h2 rv">Six collections. <em>One hub.</em></h2></div><a class="btn btn-line rv" href="collections.html">View all {ARROW}</a></div>
+<div class="cg">{cards}</div></div></section>"""
+
 # ================================================================== HOME
 def home():
     total = sum(count(c) for c in CAT)
@@ -651,7 +686,7 @@ def home():
 
 {impact_bento(total)}
 
-{showcase()}
+{coll_grid()}
 
 {why_bento()}
 <section class="sec mistbg"><div class="wrap">
@@ -754,7 +789,7 @@ def collections():
 <a class="btn btn-royal" href="{c["slug"]}.html">{f"Explore {n} designs" if n else "Explore"} {ARROW}</a></div></div>"""
     body = phero("Men · Women · Couples · Brides · Kids", "One brand.|Six collections.|<em>The best selection.</em>",
                  "Plus platinum accessories and bars &amp; coins, all from one hub.", "assets/insta/c05.webp", "<span>Collections</span>") + f"""
-{showcase()}
+{coll_grid()}
 <section class="sec" style="padding-top:0"><div class="wrap">{rows}</div></section>
 <section class="sec-sm lavbg"><div class="wrap"><div class="acc-grid">
 <a class="acc rv" href="accessories.html"><img src="assets/props/sha00151.webp" alt="Platinum cufflinks" loading="lazy"><div><h3>Accessories</h3><p>Cufflinks, watch straps, specks &amp; more</p></div></a>
