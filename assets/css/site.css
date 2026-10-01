@@ -1896,3 +1896,10 @@ img{height:auto}
   .ix-row small{font-size:10px}
 }
 @media (max-width:640px){.door-n{font-size:10px}.door-go{font-size:10.5px}.bl{font-size:10px;letter-spacing:.02em}}
+/* manufacturers: logos always fit inside their tile */
+.mfr .logos .item{overflow:hidden}
+.mfr .logos img{width:auto!important;height:auto!important;max-width:calc(100% - 36px)!important;max-height:calc(100% - 30px)!important;object-fit:contain}
+.mfr .logos img{max-height:clamp(52px,4.6vw,66px)!important;max-width:clamp(120px,11vw,170px)!important}
+.hdr .brand img{height:54px}
+@media (max-width:1180px){.hdr .brand img{height:46px}}
+@media (max-width:640px){.hdr .brand img{height:42px}}

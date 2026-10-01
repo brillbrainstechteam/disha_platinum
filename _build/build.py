@@ -216,8 +216,9 @@ def head(title, desc, page, img="assets/hero/d01.webp", crumbs=None, extra_ld=No
 <meta name="twitter:image:alt" content="{E(title)}">
 <link rel="alternate" hreflang="en-IN" href="{url}">
 <link rel="alternate" hreflang="x-default" href="{url}">
-<link rel="icon" href="assets/brand/d-mark.png" type="image/png">
-<link rel="apple-touch-icon" href="assets/brand/d-mark.png">
+<link rel="icon" href="assets/brand/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="assets/brand/favicon-512.png" type="image/png" sizes="512x512">
+<link rel="apple-touch-icon" href="assets/brand/favicon-180.png">
 <link rel="sitemap" type="application/xml" href="sitemap.xml">
 {'<link rel="preload" as="image" href="assets/hero/x01bg.webp" media="(min-width:761px)"><link rel="preload" as="image" href="assets/hero/m01.webp" media="(max-width:760px)">' if page == "/" else ""}
 <link rel="preconnect" href="https://fonts.googleapis.com">
