@@ -355,7 +355,7 @@ def phero(kick, title, sub, art, crumbs, tagline="", extra=""):
 CTA_SIDES = ["assets/banner/ring-topaz.webp", "assets/banner/pendant-leaf.webp", "assets/banner/earring-hoop.webp", "assets/banner/ring-sunburst.webp"]
 def cta(title="India’s platinum movement has started.", em="Let’s play.", prod="assets/banner/earring-hoop.webp"):
     sides = [x for x in CTA_SIDES if x != prod][:2]
-    return f"""<section class="sec-sm"><div class="wrap"><div class="ctx rv">{sparkle(22)}<span class="ctx-frame" aria-hidden="true"></span>
+    return f"""<section class="ctx-sec">{sparkle(26)}<div class="wrap"><div class="ctx rv">
 <div class="ctx-copy"><span class="kick">Partner with Dishaa</span><h2 class="h1">{title} <em>{em}</em></h2>
 <p>Visit The Platinum Hub at Zaveri Bazaar, Mumbai, or message us. We’ll plan your platinum counter with you.</p>
 <div class="ctas"><a class="btn btn-white" href="contact.html">Book an appointment {ARROW}</a><a class="btn btn-ghost" href="https://wa.me/{WA}" target="_blank" rel="noopener">{WA_ICO} WhatsApp</a></div>
