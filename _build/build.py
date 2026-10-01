@@ -555,7 +555,7 @@ def why_bento():
     ]
     tl = "".join(f'<div class="tile {c} rv d{k%3}"><h3>{h}</h3><small>{sub}</small><img src="{im}" alt="" loading="lazy"></div>' for k, (c, h, sub, im) in enumerate(t))
     return f"""<section class="sec"><div class="wrap">
-<div class="head"><div><span class="kick">Why jewellers choose Dishaa</span><h2 class="h2 rv">Not just a brand. A <em>platinum powerhouse.</em></h2></div></div>
+<div class="head"><div><span class="kick">Why jewellers choose Dishaa</span><h2 class="h2 rv">Not just a brand. <em>A platinum powerhouse.</em></h2></div></div>
 <div class="tiles bento-tiles">{tl}</div></div></section>"""
 
 # ================================================================== SHOP BY (men / women / kids / couples)
@@ -635,14 +635,15 @@ def coll_grid():
     for k, slug in enumerate(CG_ORDER):
         c = COLMAP[slug]; n = count(slug); tone = CG_TONE[slug]
         if c["hero"]:
-            media = f'<div class="cg-stage"><span class="cg-halo"></span><img class="cg-prod" src="{c["hero"]}" alt="{c["name"]} signature piece" loading="lazy"></div>'
+            media = f'<div class="cg-stage"><span class="cg-halo"></span><img class="cg-prod" src="{c["hero"]}" alt="{c["name"]} signature piece" loading="lazy"><span class="cg-plinth"></span></div>'
         else:
             media = f'<img class="cg-photo" src="{c["photo"]}" alt="{c["name"]} couple set" loading="lazy">'
         th = "".join(f'<span><img src="{t}" alt="" loading="lazy"></span>' for t in cg_thumbs(slug, c["hero"]))
         th = f'<div class="cg-thumbs" aria-hidden="true">{th}</div>' if th else ""
         cnt = f"{n} designs" if n else "Couple sets"
-        cards += f"""<a class="cgc {tone} rv d{k % 3}" href="{slug}.html">
-<div class="cg-top"><img class="cg-logo" src="{c["logo"]}" alt="{c["name"]}" loading="lazy"><span class="cg-n">{cnt}</span></div>
+        cards += f"""<a class="cgc {tone} rv d{k % 3}" href="{slug}.html"><span class="cg-frame" aria-hidden="true"></span><span class="cg-sheen" aria-hidden="true"></span>
+<div class="cg-label"><i>0{k + 1}</i><span>Collection</span><b>{cnt}</b></div>
+<div class="cg-top"><img class="cg-logo" src="{c["logo"]}" alt="{c["name"]}" loading="lazy"></div>
 {media}
 <div class="cg-foot"><p>{c["tag"]}</p><span class="cg-go">{ARROW_UR}</span></div>{th}</a>"""
     return f"""<section class="sec cg-sec"><div class="wrap">

@@ -189,6 +189,16 @@
     if (!matchMedia("(prefers-reduced-motion: reduce)").matches) go(0);
   });
 
+  /* collection cards: gentle 3D tilt that follows the pointer */
+  if (matchMedia("(hover: hover) and (min-width: 901px)").matches && !matchMedia("(prefers-reduced-motion: reduce)").matches)
+    $$(".cgc").forEach(c => {
+      c.addEventListener("mousemove", e => {
+        const r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+        c.style.setProperty("--ry", (x * 7).toFixed(2) + "deg"); c.style.setProperty("--rx", (y * -6).toFixed(2) + "deg");
+      });
+      c.addEventListener("mouseleave", () => { c.style.setProperty("--ry", "0deg"); c.style.setProperty("--rx", "0deg"); });
+    });
+
   /* stagger reveals inside grids */
   $$(".bento, .bento-tiles, .chips, .cards, .values, .pgrid, .zones, .ribbon").forEach(g =>
     [...g.children].forEach((el, k) => { if (el.classList.contains("rv")) el.style.transitionDelay = (k % 8) * 70 + "ms"; }));
