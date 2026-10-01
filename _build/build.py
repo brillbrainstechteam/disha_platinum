@@ -901,7 +901,7 @@ def why():
     cities = ["Ahmedabad", "Bangalore", "Baroda", "Bhubaneswar", "Chennai", "Cochin", "Coimbatore", "Delhi NCR", "Hyderabad", "Indore", "Kolkata", "Lucknow", "Mumbai", "Pune", "Surat", "Trivandrum"]
     body = phero("The platinum opportunity", "Don’t follow the|platinum wave.|<em>Lead it.</em>",
                  "The fastest-growing category in precious jewellery, and the new-age luxury young India wants.",
-                 "assets/insta/c07.webp", "<span>Why Platinum</span>") + pgi_band() + f"""
+                 "assets/insta/c07.webp", "<span>Why Platinum</span>") + f"""
 <section class="sec"><div class="wrap">
 <div class="head"><div><span class="kick">The business case</span><h2 class="h2 rv">Growth, margin, <em>a new customer.</em></h2></div></div>
 <div class="cards c3 wp-bento">
