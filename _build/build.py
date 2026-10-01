@@ -738,6 +738,31 @@ def coll_grid():
 <div class="head"><div><span class="kick">Our collections</span><h2 class="h2 rv">Six collections. <em>One hub.</em></h2></div><a class="btn btn-line rv" href="collections.html">View all {ARROW}</a></div>
 <div class="cg">{cards}</div></div></section>"""
 
+
+def coll_index():
+    """Home: editorial index of the six collections; the stage changes with the active name."""
+    tint = {"men-of-platinum": "#4a50b8", "evara": "#9b7fd0", "bandhan": "#d48aa8", "platinum-days-of-love": "#7fb6e0", "farishtey": "#e7a6c6", "pride-n-perfect": "#d3a78f"}
+    rows, stages = "", ""
+    for k, slug in enumerate(CG_ORDER):
+        c = COLMAP[slug]; n = count(slug)
+        cnt = f"{n} designs" if n else "Couple sets"
+        rows += f"""<a class="ix-row{' on' if k == 0 else ''}" href="{slug}.html" data-i="{k}"><i>0{k + 1}</i><span class="ix-name">{c["name"]}</span><small>{c["tag"].rstrip(".") if c["sub"].startswith(c["name"]) else c["sub"]} · {cnt}</small><span class="ix-bar" aria-hidden="true"></span></a>"""
+        if c["hero"]:
+            art = f'<span class="ix-halo"></span><img class="ix-prod" src="{c["hero"]}" alt="{c["name"]} signature piece" loading="lazy">'
+        else:
+            art = f'<span class="ix-halo"></span><img class="ix-photo" src="{c["photo"]}" alt="{c["name"]} couple set" loading="lazy">'
+        th = "".join(f'<span><img src="{t}" alt="" loading="lazy"></span>' for t in cg_thumbs(slug, c["hero"]))
+        th = f'<div class="ix-thumbs">{th}</div>' if th else ""
+        stages += f"""<div class="ix-stage{' on' if k == 0 else ''}" data-i="{k}" style="--t:{tint[slug]}">
+<img class="ix-logo" src="{c["logo"]}" alt="{c["name"]}" loading="lazy"><div class="ix-art">{art}</div>
+<div class="ix-foot"><p>{c["tag"]}</p>{th}<a class="btn btn-white" href="{slug}.html">{f"Explore {n} designs" if n else "Explore the collection"} {ARROW}</a></div></div>"""
+    return f"""<section class="sec ix-sec">{sparkle(24)}<div class="wrap ix">
+<div class="ix-left"><span class="kick">Our collections</span><h2 class="h2 rv">Six collections. <em>One hub.</em></h2>
+<nav class="ix-list" aria-label="Collections">{rows}</nav>
+<a class="link" href="collections.html" style="margin-top:26px">View all collections {ARROW}</a></div>
+<div class="ix-right">{stages}</div>
+</div></section>"""
+
 # ================================================================== HOME
 def about_home():
     return f"""<section class="sec about-h"><div class="wrap split">
@@ -792,7 +817,7 @@ def home():
 
 {impact_bento(total)}
 
-{coll_grid()}
+{coll_index()}
 
 {why_bento()}
 <section class="sec mistbg"><div class="wrap">

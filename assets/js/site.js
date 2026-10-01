@@ -189,6 +189,22 @@
     if (!matchMedia("(prefers-reduced-motion: reduce)").matches) go(0);
   });
 
+  /* home: collection index — names on the left drive the stage on the right */
+  $$(".ix").forEach(ix => {
+    const rows = $$(".ix-row", ix), stages = $$(".ix-stage", ix), MS = 4500; let k = 0, t, hold = false;
+    const set = n => {
+      k = (n + rows.length) % rows.length;
+      rows.forEach((r, j) => { r.classList.toggle("on", j === k); r.classList.remove("run"); });
+      stages.forEach((s, j) => s.classList.toggle("on", j === k));
+      const r = rows[k]; r.style.setProperty("--ix", MS + "ms"); void r.offsetWidth; if (!hold) r.classList.add("run");
+      clearTimeout(t); if (!hold) t = setTimeout(() => set(k + 1), MS);
+    };
+    rows.forEach((r, j) => { r.addEventListener("mouseenter", () => set(j)); r.addEventListener("focus", () => set(j)); });
+    ix.addEventListener("mouseenter", () => { hold = true; clearTimeout(t); rows[k].classList.remove("run"); });
+    ix.addEventListener("mouseleave", () => { hold = false; set(k); });
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) set(0);
+  });
+
   /* collections banner: six cards orbiting on an ellipse, front one largest */
   $$(".pv-car").forEach(box => {
     const cards = $$(".car-c", box), n = cards.length; let ang = 0, hold = false, last = 0;
