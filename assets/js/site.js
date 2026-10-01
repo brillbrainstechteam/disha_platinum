@@ -344,6 +344,7 @@
     $$(".chip").forEach(ch => ch.addEventListener("click", () => {
       $$(".chip").forEach(x => x.classList.remove("on")); ch.classList.add("on");
       cat = ch.dataset.cat; shown = PAGE; apply();
+      const ln = $(".catline"); if (ln) { ln.textContent = ch.dataset.line || ""; ln.classList.toggle("on", !!ch.dataset.line); }
       const f = $(".filters"); if (f && f.getBoundingClientRect().top < 0) scrollTo({ top: grid.offsetTop - 160, behavior: "smooth" });
     }));
     /* Shop by: men / women / kids / couples */

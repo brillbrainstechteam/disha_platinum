@@ -1416,3 +1416,60 @@ a,button,[data-i]{cursor:pointer}
 .mfr .logos .item::after{content:"";position:absolute;inset:6px;border:1px solid rgba(196,134,107,.3);border-radius:15px 15px 40px 15px;pointer-events:none}
 .mfr .logos img{max-width:78%;max-height:60%;height:auto;width:auto;filter:grayscale(1) contrast(1.05);opacity:.8;mix-blend-mode:multiply}
 .mfr .logos .item:hover img{filter:none;opacity:1}
+
+/* ================= v14 — inner-page banners, collection stage, values ================= */
+.phx,.chx{position:relative;margin-top:86px;overflow:hidden;color:#fff;isolation:isolate;
+  background:radial-gradient(75% 95% at 12% 25%,#3e44a6 0%,#2e3490 42%,#1b2058 100%)}
+.phx::before,.chx::before{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;opacity:.5;background:radial-gradient(40% 60% at 0% 100%,rgba(103,56,127,.55),transparent 70%),radial-gradient(35% 45% at 45% 0%,rgba(134,198,234,.22),transparent 70%)}
+.phx .sparkle,.chx .sparkle{z-index:0}
+.phx{min-height:clamp(440px,62vh,620px);display:flex;align-items:center}
+.phx-photo{position:absolute;top:0;right:0;bottom:0;width:62%;z-index:-1;-webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.55) 22%,#000 46%);mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.55) 22%,#000 46%)}
+.phx-photo img{width:100%;height:100%;object-fit:cover;animation:kb 18s ease-out both}
+.phx-photo::before{content:"";position:absolute;inset:0;z-index:1;background:#2e3490;mix-blend-mode:color;opacity:.28}
+.phx-photo::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(27,32,88,.55),transparent 38%),linear-gradient(180deg,rgba(27,32,88,.35),transparent 30%)}
+.phx-in{position:relative;z-index:2;padding-top:clamp(40px,6vh,70px);padding-bottom:clamp(54px,8vh,90px)}
+.phx .crumbs,.chx .crumbs{color:#cfd0f0}.phx .crumbs a:hover,.chx .crumbs a:hover{color:#fff}
+.phx h1{color:#fff;margin:18px 0 18px;max-width:13ch;font-size:clamp(44px,5.6vw,86px)}
+.phx h1 em,.chx h1 em{color:#c9c8f3}
+.phx .sub{color:#dcdcf5;max-width:44ch;margin:0}
+.phx-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.phx-chips span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;padding:8px 14px;border-radius:30px;border:1px solid rgba(255,255,255,.28);background:rgba(255,255,255,.06);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.phx-line{position:absolute;left:0;right:0;bottom:0;height:2px;background:linear-gradient(90deg,transparent,#e3ae95 30%,#f1d3c3 50%,#e3ae95 70%,transparent);opacity:.8}
+.phx .tagrow span{background:rgba(255,255,255,.1);color:#fff;box-shadow:none;border:1px solid rgba(255,255,255,.25)}
+.phx img[alt="D — The Platinum"]{filter:brightness(0) invert(1)}
+/* collection pages */
+.chx-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,4vw,70px);align-items:center;padding-top:clamp(40px,6vh,70px);padding-bottom:clamp(50px,7vh,84px);position:relative;z-index:2}
+.chx .clogo{height:clamp(76px,8vw,116px);width:auto;max-width:100%;object-fit:contain;margin:24px 0 12px;filter:brightness(0) invert(1)}
+.chx h1{color:#fff;margin:10px 0 6px}
+.chx .csub{color:#dcdcf5}.chx .csub b{color:#f1d3c3}
+.chx .facts div{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);box-shadow:none}
+.chx .facts b{color:#fff}.chx .facts span{color:#cfd0f0}
+.chx .aud-tag{background:#fff!important;color:var(--royal)}
+.chx-stage{position:relative;height:clamp(340px,40vw,500px);display:grid;place-items:center}
+.chx-stage .cs-orbit{position:absolute;height:92%;width:auto;aspect-ratio:1;border-color:rgba(255,255,255,.22)}
+.chx-halo{position:absolute;height:78%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 50% 45%,rgba(255,255,255,.95) 0%,rgba(236,234,252,.85) 40%,rgba(180,184,240,.35) 62%,rgba(180,184,240,0) 72%)}
+.chx-prod{position:relative;height:52%;width:auto;max-width:70%;object-fit:contain;filter:drop-shadow(0 28px 26px rgba(10,12,40,.45));animation:float 7s ease-in-out infinite}
+.chx-photo{position:relative;height:62%;aspect-ratio:1;width:auto;object-fit:cover;border-radius:50%;border:6px solid rgba(255,255,255,.9);box-shadow:0 30px 60px -30px rgba(10,12,40,.7)}
+/* category line under the filters */
+.catline{margin:0 auto;font-family:var(--serif);font-style:italic;font-size:clamp(17px,1.4vw,20px);color:var(--royal);max-height:0;opacity:0;overflow:hidden;transition:max-height .5s var(--ease),opacity .4s,padding .4s}
+.catline.on{max-height:60px;opacity:1;padding-bottom:12px}
+/* about: values */
+.vgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(10px,1.2vw,16px);text-align:center}
+.vt{position:relative;background:#fff;border-radius:22px 22px 54px 22px;padding:30px 14px 26px;display:flex;flex-direction:column;align-items:center;gap:12px;box-shadow:0 20px 40px -32px rgba(34,40,110,.5);transition:transform .5s var(--ease),box-shadow .5s}
+.vt::after{content:"";position:absolute;inset:7px;border:1px solid rgba(196,134,107,.3);border-radius:16px 16px 48px 16px;pointer-events:none;transition:border-color .5s}
+.vt i{position:absolute;top:14px;left:18px;font-style:normal;font-family:var(--serif);font-size:15px;color:var(--rose)}
+.vt-ic{width:70px;height:70px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(196,134,107,.55);background:radial-gradient(circle at 50% 35%,#fff,#f1f0fb);transition:background .5s,border-color .5s}
+.vt-ic svg{width:34px;height:34px;color:var(--royal);transition:color .5s}
+.vt b{font-family:var(--serif);font-weight:500;font-size:clamp(19px,1.5vw,22px);color:var(--navy)}
+.vt:hover{transform:translateY(-6px);box-shadow:0 30px 50px -30px rgba(34,40,110,.55)}
+.vt:hover::after{border-color:rgba(196,134,107,.8)}
+.vt:hover .vt-ic{background:var(--grad-royal);border-color:transparent}.vt:hover .vt-ic svg{color:#fff}
+@media (max-width:900px){
+  .phx-photo{width:100%;top:auto;height:58%;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 55%);mask-image:linear-gradient(180deg,transparent 0%,#000 55%)}
+  .phx{min-height:620px;align-items:flex-start}
+  .chx-grid{grid-template-columns:1fr}.chx-stage{height:320px}
+  .vgrid{grid-template-columns:repeat(3,1fr)}
+}
+@media (max-width:640px){.phx,.chx{margin-top:72px}.phx h1{font-size:40px}.vgrid{grid-template-columns:1fr 1fr}.filters{top:72px}}
+.phx h1{max-width:18ch;font-size:clamp(42px,5vw,78px)}
+.phx h1 em,.phx h1 .split-line{white-space:normal}

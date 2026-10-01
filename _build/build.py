@@ -287,13 +287,20 @@ def page(fname, title, desc, body, active=None):
         f.write(out)
     print("wrote", route, f"{len(out)//1024} KB")
 
-def phero(kick, title, sub, art, crumbs, tagline=""):
-    tg = f'<div class="tagline">{tagline}</div>' if tagline else ""
-    return f"""<section class="phero mistbg"><div class="wrap grid">
-<div><div class="crumbs"><a href="index.html">Home</a><span>/</span>{crumbs}</div>
-<h1 class="h1 rv in">{lines(title)}</h1><p class="sub">{sub}</p><span class="kick" style="margin-top:22px">{kick}</span></div>
-<div class="art rv in"><img src="{art}" alt="" fetchpriority="high">{tg}</div>
-</div></section>"""
+PH_BG = {"assets/insta/c18.webp": "assets/lookbook/ph12.webp", "assets/insta/c05.webp": "assets/lookbook/ph10.webp",
+         "assets/insta/c07.webp": "assets/lookbook/phe6.webp", "assets/insta/c10.webp": "assets/lookbook/ph13.webp",
+         "assets/lookbook/ph10.webp": "assets/lookbook/ph16.webp", "assets/insta/c11.webp": "assets/lookbook/phe1.webp",
+         "assets/props/sha00153.webp": "assets/props/sha00151.webp", "assets/studio/st09.webp": "assets/studio/st08.webp"}
+
+def phero(kick, title, sub, art, crumbs, tagline="", extra=""):
+    """Inner-page banner: royal field, a jewellery photograph that fades into it, headline on the left."""
+    bg = PH_BG.get(art, art)
+    chips = "".join(f"<span>{k.strip()}</span>" for k in kick.split("·") if k.strip())
+    return f"""<section class="phx">{sparkle(26)}
+<div class="phx-photo" aria-hidden="true"><img src="{bg}" alt="" fetchpriority="high"></div>
+<div class="wrap phx-in"><nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span>/</span>{crumbs}</nav>
+<h1 class="h1 rv in">{lines(title)}</h1><p class="sub">{sub}</p>{extra}<div class="phx-chips">{chips}</div></div>
+<span class="phx-line" aria-hidden="true"></span></section>"""
 
 def cta(title="India’s platinum movement has started.", em="Let’s play.", prod="assets/banner/earring-hoop.webp"):
     return f"""<section class="sec-sm"><div class="wrap"><div class="ctabox royal rv">{sparkle(18)}
@@ -605,7 +612,7 @@ def explore():
     for it, _ in items:
         if it["cat"] not in cats: cats.append(it["cat"])
     chips = f'<button class="chip on" data-cat="all">All<i>{len(items)}</i></button>' + "".join(
-        f'<button class="chip" data-cat="{E(k)}">{E(k)}<i>{sum(1 for x, _ in items if x["cat"] == k)}</i></button>' for k in cats)
+        f'<button class="chip" data-cat="{E(k)}" data-line="{cl(k)}">{E(k)}<i>{sum(1 for x, _ in items if x["cat"] == k)}</i></button>' for k in cats)
     allline = "Every Dishaa design in one place: men, women, kids and couples."
     btns = f'<button class="audb on" data-aud-btn="all" data-line="{E(allline)}" aria-pressed="true"><span class="ai all">{icon("range")}</span><b>All</b><i>{len(items)}</i></button>'
     btns += "".join(f'<button class="audb" data-aud-btn="{a["key"]}" data-line="{E(a["line"])}" aria-pressed="false"><span class="ai"><img src="{a["img"]}" alt="" style="object-position:{a["pos"]}"></span><b>{a["name"]}</b><i>{aud_count(a)}</i></button>' for a in AUD)
@@ -627,7 +634,7 @@ def explore():
     body = phero("Men · Women · Kids · Couples", "Find the right|<em>platinum look.</em>",
                  "Browse every design by who it’s for, then by category. Shortlist and send the list in one go.",
                  "assets/studio/st09.webp", "<span>Shop by</span>") + f"""
-<div class="filters explore-f" id="designs"><div class="wrap audbar" role="group" aria-label="Shop by">{btns}</div><div class="wrap">{chips}</div></div>
+<div class="filters explore-f" id="designs"><div class="wrap audbar" role="group" aria-label="Shop by">{btns}</div><div class="wrap">{chips}</div><p class="wrap catline" aria-live="polite"></p></div>
 <section class="sec-sm" style="padding-top:26px"><div class="wrap">
 <div class="looks-head"><span class="kick">Get the look</span><p class="aud-line">{allline}</p></div>
 <div class="looks">{looks}</div>
@@ -748,7 +755,7 @@ def home():
 def about():
     values = [("Transparency", "eye"), ("Integrity", "scale"), ("Trust", "trust"), ("Innovation", "innovation"), ("Quality", "quality"), ("Commitment", "commitment"),
               ("Support", "support"), ("Growth", "growth"), ("Exclusivity", "exclusivity"), ("Reliability", "reliability")]
-    vals = "".join(f'<div class="val rv d{k%4}">{icon(ic)}<b>{t}</b></div>' for k, (t, ic) in enumerate(values))
+    vals = "".join(f'<div class="vt rv d{k%4}"><i>{k+1:02d}</i><span class="vt-ic">{icon(ic)}</span><b>{t}</b></div>' for k, (t, ic) in enumerate(values))
     usps = [("range", "Widest range and huge inventory for platinum jewellery and accessories."),
             ("innovation", "Leading in the industry due to innovative designs and a passion for promising platinum jewellery."),
             ("reliability", "25 years of collective experience &amp; knowledge in manufacturing &amp; supplying platinum jewellery across India and to international retail jewellers."),
@@ -792,7 +799,7 @@ def about():
 </div></section>
 
 <section class="sec mistbg"><div class="wrap center"><span class="kick">What we stand for</span><h2 class="h2 rv" style="margin:14px auto 44px">Innovation is routine. <em>Excellence is standard.</em></h2>
-<div class="values v10">{vals}</div></div></section>
+<div class="vgrid">{vals}</div></div></section>
 
 <section class="sec-sm"><div class="wrap">{facts_line("big")}</div></section>
 
@@ -844,6 +851,12 @@ HUB_ACC = [("Cufflinks", "A symbol of refinement and prestige for modern profess
            ("Watch Straps", "Premium platinum watch straps offer durability and style."), ("Tie Pins", "A subtle yet powerful finishing touch to formal wear."),
            ("Buttons", "Platinum-infused buttons redefine elegance in fashion.")]
 
+CAT_LINE = {"Chains": HUB_JEW[2][1], "Bracelets": HUB_JEW[1][1], "Kadas": HUB_JEW[6][1], "Rings": HUB_JEW[11][1], "Bands": HUB_JEW[11][1],
+            "Pendants": HUB_JEW[10][1], "Pendant Sets": HUB_JEW[10][1], "Earrings": HUB_JEW[5][1], "Balis & Studs": HUB_JEW[5][1],
+            "Necklaces": HUB_JEW[8][1], "Mangalsutras": HUB_JEW[7][1], "Couple Bands": HUB_JEW[4][1], "Cufflinks": HUB_ACC[0][1]}
+def cl(k):
+    return E(CAT_LINE.get(html.unescape(k), ""))
+
 # ================================================================== COLLECTIONS OVERVIEW
 def collections():
     rows = ""
@@ -865,14 +878,7 @@ def collections():
 <a class="btn btn-royal" href="{c["slug"]}.html">{f"Explore {n} designs" if n else "Explore"} {ARROW}</a></div></div>"""
     body = phero("Men · Women · Couples · Brides · Kids", "One brand.|Six collections.|<em>The best selection.</em>",
                  "Plus platinum accessories and bars &amp; coins, all from one hub.", "assets/insta/c05.webp", "<span>Collections</span>") + f"""
-{coll_grid()}
 <section class="sec" style="padding-top:0"><div class="wrap">{rows}</div></section>
-<section class="sec hubsec"><div class="wrap">
-<div class="head"><div><span class="kick">The Platinum Hub</span><h2 class="h2 rv">Classic &amp; contemporary <em>platinum jewellery.</em></h2></div><a class="btn btn-line rv" href="explore.html">Browse all designs {ARROW}</a></div>
-<div class="hubcols">
-<div class="hubcol rv"><h3>Jewellery collections</h3><dl>{"".join(f"<div><dt>{a}</dt><dd>{b}</dd></div>" for a, b in HUB_JEW)}</dl></div>
-<div class="hubcol rv d1"><h3>Platinum accessories</h3><dl>{"".join(f"<div><dt>{a}</dt><dd>{b}</dd></div>" for a, b in HUB_ACC)}</dl><a class="link" href="accessories.html" style="margin-top:22px">See platinum accessories {ARROW}</a></div>
-</div></div></section>
 <section class="sec-sm lavbg"><div class="wrap"><div class="acc-grid">
 <a class="acc rv" href="accessories.html"><img src="assets/props/sha00151.webp" alt="Platinum cufflinks" loading="lazy"><div><h3>Accessories</h3><p>Cufflinks, watch straps, specks &amp; more</p></div></a>
 <a class="acc rv d1" href="d-the-platinum.html"><img src="assets/dthe/dthe-5.webp" alt="D The Platinum bars" loading="lazy"><div><h3>D — The Platinum</h3><p>Platinum bars &amp; coins</p></div></a>
@@ -902,7 +908,7 @@ def product_cards(slug):
     for it in order:
         if it["cat"] not in cats: cats.append(it["cat"])
     chips = f'<button class="chip on" data-cat="all">All<i>{len(order)}</i></button>' + "".join(
-        f'<button class="chip" data-cat="{E(k)}">{E(k)}<i>{sum(1 for x in order if x["cat"]==k)}</i></button>' for k in cats)
+        f'<button class="chip" data-cat="{E(k)}" data-line="{cl(k)}">{E(k)}<i>{sum(1 for x in order if x["cat"]==k)}</i></button>' for k in cats)
     return chips, "".join(out), len(order), cats
 
 LB = f"""<div class="lb pdlb" role="dialog" aria-modal="true" aria-label="Design viewer">
@@ -938,16 +944,16 @@ def collection_page(c):
     chips, cards, n, cats = product_cards(slug)
     ncats = len([k for k in cats if k != "PGI Signature Picks"])
     ins = "".join(f'<figure class="rv d{k%4}" data-full="assets/insta/c{i:02d}.webp" style="margin:0;border-radius:18px;overflow:hidden;cursor:zoom-in"><img src="assets/insta/c{i:02d}.webp" alt="Dishaa creative" loading="lazy"></figure>' for k, i in enumerate(INSTA_FOR.get(slug, [])))
-    body = f"""<section class="chero mistbg"><div class="wrap grid">
+    body = f"""<section class="chx">{sparkle(24)}<div class="wrap chx-grid">
 <div><div class="crumbs"><a href="index.html">Home</a><span>/</span><a href="collections.html">Collections</a><span>/</span><span>{c["name"]}</span></div>
 <img class="clogo" src="{c["logo"]}" alt="{c["name"]}">
 <h1 class="h2">{c["tag"]}</h1>
 <p class="csub"><b>{c["name"]} – {c["sub"]}</b>{c["desc"]}</p>
 <div class="facts"><a class="aud-tag" href="explore.html#{AUDOF[slug]}">For {next(a["name"] for a in AUD if a["key"] == AUDOF[slug])}</a><div><b>{n}</b><span>Designs</span></div><div><b>{ncats}</b><span>Categories</span></div><div><b>Pt950</b><span>PGI certified</span></div></div>
-<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px"><a class="btn btn-royal" href="#designs">Browse designs {ARROW}</a><a class="btn btn-line" href="contact.html?interest={E(c['name'])}">Get the catalogue</a></div></div>
-<div class="stagec"><img class="bgi" src="{c["bg"]}" alt=""><img class="p" src="{c["hero"]}" alt="{c["name"]} signature piece"></div>
-</div></section>
-<div class="filters" id="designs"><div class="wrap">{chips}</div></div>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px"><a class="btn btn-white" href="#designs">Browse designs {ARROW}</a><a class="btn btn-ghost" href="contact.html?interest={E(c['name'])}">Get the catalogue</a></div></div>
+<div class="chx-stage"><span class="cs-orbit" aria-hidden="true"></span><span class="chx-halo" aria-hidden="true"></span><img class="chx-prod" src="{c["hero"]}" alt="{c["name"]} signature piece"></div>
+</div><span class="phx-line" aria-hidden="true"></span></section>
+<div class="filters" id="designs"><div class="wrap">{chips}</div><p class="wrap catline" aria-live="polite"></p></div>
 <section class="sec-sm" style="padding-top:28px"><div class="wrap">
 <div class="pgrid">{cards}</div>
 <div class="more-wrap"><button class="btn btn-line" data-more>Load more designs</button></div>
@@ -963,13 +969,14 @@ def collection_page(c):
 def pnp_page(c):
     photos = ["sha00318", "sha00313", "sha00053", "sha00035", "sha00038", "sha00050", "sha00047", "sha00092", "sha00098", "sha00097", "sha00102", "sha00109", "sha00059", "sha00104", "sha00107", "new1", "sha00041", "sha00061", "sha00171", "img_6357"]
     mason = "".join(f'<figure class="rv d{k%3}" data-full="assets/props/{p}.webp"><img src="assets/props/{p}.webp" alt="Pride N Perfect platinum couple set" loading="lazy"></figure>' for k, p in enumerate(photos))
-    body = f"""<section class="chero mistbg"><div class="wrap grid">
+    body = f"""<section class="chx">{sparkle(24)}<div class="wrap chx-grid">
 <div><div class="crumbs"><a href="index.html">Home</a><span>/</span><a href="collections.html">Collections</a><span>/</span><span>Pride N Perfect</span></div>
 <img class="clogo" src="{c["logo"]}" alt="Pride N Perfect">
-<h1 class="h2">{c["tag"]}</h1><p class="sub" style="margin-top:14px">Perfect for weddings, gifting &amp; festive picks.</p>
-<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px"><a class="btn btn-royal" href="contact.html?interest=Pride N Perfect">Get the catalogue {ARROW}</a><a class="btn btn-line" href="platinum-days-of-love.html">See PDOL love bands</a></div></div>
-<div class="stagec"><img class="bgi" src="assets/props/sha00318.webp" alt="Pride N Perfect couple set"></div>
-</div></section>
+<h1 class="h2">{c["tag"]}</h1>
+<p class="csub"><b>{c["name"]} – {c["sub"]}</b>{c["desc"]}</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px"><a class="btn btn-white" href="contact.html?interest=Pride N Perfect">Get the catalogue {ARROW}</a><a class="btn btn-ghost" href="platinum-days-of-love.html">See PDOL love bands</a></div></div>
+<div class="chx-stage"><span class="cs-orbit" aria-hidden="true"></span><span class="chx-halo" aria-hidden="true"></span><img class="chx-photo" src="assets/props/sha00318.webp" alt="Pride N Perfect couple set"></div>
+</div><span class="phx-line" aria-hidden="true"></span></section>
 <section class="sec-sm"><div class="wrap"><div class="cards c3" style="margin-bottom:40px">
 <div class="card rv">{icon("commitment")}<h3>Weddings</h3><p>Matched sets for the bride and groom.</p></div>
 <div class="card rv d1">{icon("box")}<h3>Gifting</h3><p>Anniversaries and milestone moments.</p></div>
@@ -1000,14 +1007,14 @@ def accessories():
 
 # ================================================================== D THE PLATINUM
 def dthe():
-    body = f"""<section class="phero royal">{sparkle(30)}<div class="wrap grid">
-<div><div class="crumbs" style="color:#cfd0f0"><a href="index.html">Home</a><span>/</span><a href="collections.html">Collections</a><span>/</span><span>D — The Platinum</span></div>
+    body = f"""<section class="phx">{sparkle(30)}<div class="phx-photo" aria-hidden="true"><img src="assets/dthe/dthe-5.webp" alt="" fetchpriority="high"></div><div class="wrap phx-in">
+<div><div class="crumbs"><a href="index.html">Home</a><span>/</span><a href="collections.html">Collections</a><span>/</span><span>D — The Platinum</span></div>
 <img src="assets/dthe/dthe-logo.webp" alt="D — The Platinum" style="width:170px;margin:30px 0 16px">
 <h1 class="h1 rv in" style="color:#fff;margin-bottom:6px">{lines("Designed with|<em class='silver'>purity.</em>")}</h1>
-<p class="sub" style="margin-top:16px">A symbol of wealth and fortune. Platinum bars &amp; coins, a first in India.</p>
+<p class="sub" style="margin-top:16px">Platinum bar and coins: timeless purity, crafted for prestige and value. A symbol of wealth and fortune, a first in India.</p>
 <div class="tagrow" style="margin:22px 0 28px"><span>Guaranteed purity</span><span>Certificate of authenticity</span><span>100% buyback</span></div>
 <a class="btn btn-white" href="contact.html?interest=Platinum Bars %26 Coins">Ask for available weights {ARROW}</a></div>
-<div class="art" style="background:#1f4a8f"><img src="assets/dthe/dthe-5.webp" alt="D The Platinum bars"></div></div></section>
+</div><span class="phx-line" aria-hidden="true"></span></section>
 <section class="sec"><div class="wrap"><div class="zones">
 <div class="frame d rv" style="aspect-ratio:1"><img src="assets/dthe/dthe-4.webp" alt="Platinum bar" loading="lazy"></div>
 <div class="frame rv d1" style="aspect-ratio:1"><img src="assets/dthe/dthe-6.webp" alt="Platinum coins" loading="lazy"></div>
